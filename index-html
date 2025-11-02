@@ -13,6 +13,8 @@
     }
     *{box-sizing:border-box}
     body {
+<h1 style="text-align:center; font-size:50px; font-weight:bold; color:#000;">Zala Yuvraj Sinh B.</h1>
+<hr>
       margin:0;
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background:var(--bg);
