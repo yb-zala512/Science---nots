@@ -3,159 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Science Notes - NEET | JEE | MCQ</title>
-
+  <title>Zala Yuvraj Sinh B. | Science Notes</title>
   <style>
     :root {
-      --brand:#0074D9;
-      --bg:#f4f9ff;
+      --brand:#0066cc;
+      --bg:#f9fbff;
       --card:#ffffff;
-      --muted:#555;
+      --text:#111;
+      --muted:#666;
     }
-    *{box-sizing:border-box;}
+
+    *{box-sizing:border-box;margin:0;padding:0}
     body {
-      margin:0;
-      font-family:"Segoe UI", Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:#111;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height:1.6;
     }
 
     header {
-      text-align:center;
-      padding:40px 10px 20px;
-      background:linear-gradient(90deg,#0074D9,#004d99);
-      color:#fff;
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+      background: linear-gradient(90deg, #0059b3, #0099ff);
+      color: #fff;
+      text-align: center;
+      padding: 40px 10px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     }
+
     header h1 {
-      font-size:45px;
-      font-weight:900;
-      margin:0;
-      text-transform:uppercase;
-      letter-spacing:1px;
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: 1px;
     }
+
     header p {
-      font-size:16px;
-      margin:8px 0 0;
-      opacity:0.9;
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     main {
-      max-width:1000px;
-      margin:20px auto;
-      padding:20px;
-    }
-    .card {
-      background:var(--card);
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 30px auto;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
     }
 
-    h2 {text-align:center; color:#0074D9;}
+    section {
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      color: var(--brand);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p.center {
+      text-align:center;
+      color: var(--muted);
+    }
+
     .btn {
       display:inline-block;
       background:var(--brand);
       color:#fff;
-      padding:10px 16px;
-      margin:6px;
+      padding:10px 18px;
       border-radius:8px;
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
+      margin: 6px;
     }
-    .btn:hover{opacity:0.9;}
 
-    iframe {
+    .btn:hover {
+      opacity:0.9;
+    }
+
+    .video {
+      text-align:center;
+      margin-top:14px;
+    }
+
+    .video iframe {
       width:100%;
-      height:260px;
+      max-width:560px;
+      height:315px;
       border-radius:12px;
       border:none;
-      margin-top:12px;
-    }
-
-    /* Comments Section */
-    .comments {
-      margin-top:30px;
-      background:#f0f4ff;
-      padding:18px;
-      border-radius:10px;
-    }
-    .comments h3 {
-      text-align:center;
-      color:#004d99;
-    }
-    .comments textarea {
-      width:100%;
-      height:80px;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:14px;
-    }
-    .comments button {
-      background:#0074D9;
-      color:#fff;
-      padding:10px 20px;
-      border:none;
-      border-radius:8px;
-      margin-top:8px;
-      cursor:pointer;
-    }
-    .comments button:hover {
-      opacity:0.9;
     }
 
     footer {
       text-align:center;
       color:var(--muted);
       font-size:13px;
-      margin:20px 0;
+      margin-top:20px;
+    }
+
+    /* Comments box */
+    .comment-box {
+      margin-top:20px;
+      text-align:center;
+    }
+
+    textarea {
+      width:90%;
+      height:80px;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:14px;
+      resize:none;
+    }
+
+    button.send {
+      background:var(--brand);
+      color:#fff;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      margin-top:8px;
+      font-weight:600;
+    }
+
+    button.send:hover {opacity:0.9;}
+
+    @media(max-width:520px){
+      header h1{font-size:34px}
+      header p{font-size:15px}
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Zala Yuvraj Sinh .B</h1>
-    <p>NEET | JEE | MCQ | Gujarati | Hindi | English</p>
+    <h1>Zala Yuvraj Sinh B.</h1>
+    <p>Science Notes — NEET | JEE | MCQ (Gujarati | Hindi | English)</p>
   </header>
 
   <main>
-    <div class="card">
-      <h2>📘 Science Notes & MCQs</h2>
-      <p style="text-align:center; font-size:15px;">
-        અહીં તમે NEET અને JEE માટે ઉપયોગી MCQ, નોટ્સ અને વિડીયો જોઈ શકો છો.
-      </p>
-
+    <section>
+      <h2>📘 વિષય પસંદ કરો</h2>
+      <p class="center">નીચેના બટનથી વિષય પસંદ કરો:</p>
       <div style="text-align:center;">
-        <a href="https://youtube.com/@yuvrajsinhzala-u5k" class="btn" target="_blank">🎬 મારા YouTube ચેનલ પર જાઓ</a>
+        <a class="btn" href="biology.html">Biology MCQ</a>
+        <a class="btn" href="chemistry.html">Chemistry MCQ</a>
+        <a class="btn" href="physics.html">Physics MCQ</a>
       </div>
+    </section>
 
-      <h3 style="text-align:center; margin-top:20px;">🎥 Latest Video</h3>
+    <section class="video">
+      <h2>🎥 મારું YouTube વિડિયો</h2>
       <iframe src="https://www.youtube.com/embed/4PVcXPBtS90" allowfullscreen></iframe>
+      <p class="center">
+        <a class="btn" href="https://youtube.com/@yuvrajsinhzala-u5k" target="_blank">મારા ચેનલ પર જાઓ</a>
+      </p>
+    </section>
 
-      <section style="margin-top:30px;">
-        <h3 style="text-align:center;">🧠 Add Your MCQs Here (Coming Soon)</h3>
-        <p style="text-align:center; color:gray;">અહીં MCQ ઉમેરવા માટેની સુવિધા ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-      </section>
+    <section class="comment-box">
+      <h2>💬 Comment કરો</h2>
+      <textarea placeholder="તમારો કોમેન્ટ અહીં લખો..."></textarea><br>
+      <button class="send">મોકલો</button>
+      <p class="center">(આ ફીચર હજી બેટા વર્ઝનમાં છે)</p>
+    </section>
 
-      <!-- Comments Section -->
-      <div class="comments">
-        <h3>💬 તમારી ટિપ્પણી લખો</h3>
-        <textarea placeholder="અહીં તમારી ટિપ્પણી લખો..."></textarea><br>
-        <button>મોકલો</button>
-        <p style="font-size:12px; color:#555; text-align:center; margin-top:6px;">
-          નોંધ: આ કોમેન્ટ ડેમો છે (અસલમાં સેવ થતી નથી)
-        </p>
-      </div>
-    </div>
+    <footer>
+      © 2025 Science Notes | Created by <strong>Zala Yuvraj Sinh B.</strong>
+    </footer>
   </main>
-
-  <footer>
-    © 2025 Science Notes | Created by <b>Zala Yuvraj Sinh .B</b>
-  </footer>
 
 </body>
 </html>
