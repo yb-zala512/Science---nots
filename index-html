@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Science Notes | NEET & JEE</title>
+  <style>
+    :root {
+      --brand:#0b63b6;
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --muted:#666;
+    }
+    *{box-sizing:border-box}
+    body {
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* OWNER HEADER */
+    .owner-header {
+      background: linear-gradient(90deg,var(--brand), #00509e);
+      color: #fff;
+      padding: 28px 14px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(6,30,60,0.08);
+    }
+    .owner-header h1 {
+      margin:0;
+      font-size:28px;       /* મોટું અને સ્પષ્ટ */
+      font-weight:900;      /* બોલ્ડ */
+      letter-spacing:0.2px;
+    }
+    .owner-header p {
+      margin:8px 0 0 0;
+      font-size:13px;
+      opacity:0.95;
+    }
+
+    /* MAIN CARD */
+    .container {
+      max-width:980px;
+      margin:18px auto;
+      padding:18px;
+    }
+    .card {
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 20px rgba(8,30,60,0.04);
+    }
+
+    .intro {
+      text-align:center;
+      margin-bottom:14px;
+    }
+
+    .buttons {
+      text-align:center;
+      margin:12px 0 20px;
+    }
+    .btn {
+      display:inline-block;
+      background:var(--brand);
+      color:#fff;
+      padding:10px 16px;
+      margin:8px 6px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn:hover{opacity:0.95}
+
+    /* video box */
+    .video {
+      margin-top:12px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .video iframe {
+      width:100%;
+      height:260px;
+      border:0;
+      display:block;
+    }
+
+    footer{color:var(--muted); font-size:13px; text-align:center; margin-top:14px}
+    
+    /* mobile friendly */
+    @media (max-width:520px){
+      .owner-header h1 { font-size:20px }
+      .video iframe { height:200px }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OWNER HEADER (બોલ્ડ નામ) -->
+  <header class="owner-header" role="banner">
+    <h1>Zala Yuvraj Sinh .B</h1>
+    <p>Science Notes — NEET & JEE (Gujarati | Hindi | English)</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" role="main">
+    <div class="card">
+      <section class="intro">
+        <h2>MCQ • Notes • Video Lectures</h2>
+        <p>અહીં NEET અને JEE તૈયારી માટે ઉપયોગી વિષયવસ્તુ (Gujarati / Hindi / English) ઉપલબ્ધ છે.</p>
+      </section>
+
+      <section class="buttons" aria-label="Subjects">
+        <a class="btn" href="biology.html">Biology MCQ</a>
+        <a class="btn" href="chemistry.html">Chemistry MCQ</a>
+        <a class="btn" href="physics.html">Physics MCQ</a>
+      </section>
+
+      <!-- YouTube Channel Button -->
+      <section style="text-align:center; margin-top:6px;">
+        <h3 style="margin-bottom:8px">🎬 મારા YouTube ચેનલ માટે</h3>
+        <!-- CHANNEL LINK: બદલી ન કરશો જો આપેલી લિંક સાચી છે -->
+        <a class="btn" href="https://youtube.com/@yuvrajsinhzala-u5k" target="_blank" rel="noopener noreferrer">મારા ચેનલ પર જાઓ</a>
+      </section>
+
+      <!-- LATEST VIDEO (OPTIONAL: બદલો VIDEO_ID પર) -->
+      <section style="margin-top:14px;">
+        <h3 style="text-align:center">🎥 Latest Video</h3>
+        <div class="video">
+          <!-- સુધારો: "VIDEO_ID" ને તમે બદલશો (ઉદાહરણ: 4PVcXPBtS90) -->
+          <iframe src="https://www.youtube.com/embed/4PVcXPBtS90" allowfullscreen title="Latest Video"></iframe>
+        </div>
+      </section>
+
+      <p style="margin-top:14px; color:var(--muted); font-size:13px; text-align:center;">
+        નોંધ: આ પેજ પર કોઈ પણ પ્રકારનો ફોન નંબર કે ઇમેલ આપમેળે જાહેર નથી. 
+        <strong>તમારું અંગત સંપર્ક અન્યત્ર ઉમેરશો તો જ તે દેખાશે.</strong>
+      </p>
+
+      <footer>© 2025 Science Notes | Created by Zala Yuvraj Sinh .B</footer>
+    </div>
+  </main>
+
+</body>
+</html>
