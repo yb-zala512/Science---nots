@@ -13,12 +13,18 @@
     }
     *{box-sizing:border-box}
     body {
-<h1 style="text-align:center; font-size:50px; font-weight:bold; color:#000;">Zala Yuvraj Sinh B.</h1>
-<hr>
+<hr><body>
+  <h1 style="text-align:center; font-size:50px; font-weight:bold; color:#000;">
+    Zala Yuvraj Sinh B.
+  </h1>
+  <hr>
+
+  <!-- અહીંથી તમારું બાકીનુ કન્ટેન્ટ શરૂ થાય છે -->
+</body>
       margin:0;
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background:var(--bg);
-      color:#111;
+      color:#111
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
