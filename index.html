@@ -53,37 +53,99 @@
     <button class="btnPrimary" onclick="showPanel('jee')">JEE</button>
   </div>
 </div><div class="section mt-10">
-  <h2 class="text-2xl font-bold mb-4">STD પસંદ કરો</h2>
-  <div class="grid gap-4 grid-cols-2 max-w-md mx-auto">
-    <button class="btnSecondary" onclick="showPanel('std10')">STD 10</button>
-    <button class="btnSecondary" onclick="showPanel('std11')">STD 11</button>
-    <button class="btnSecondary" onclick="showPanel('std12')">STD 12</button>
-    <button class="btnSecondary" onclick="openNotes()">My Notes</button>
-  </div>
-</div><style>
-  .btnPrimary {
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 12px 24px;
-    color: #fff;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-  .btnPrimary:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
-  }
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  .btnSecondary {
-    background: linear-gradient(45deg, #ff9800, #ffc107);
-    font-size: 1.05rem;
-    font-weight: 600;
-    padding: 12px 24px;
-    color: #000;
-    border-radius: 12px
+    .section {
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .panel {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .panel.active {
+      display: block;
+    }
+  </style>
+  <script>
+    function showPanel(panelId) {
+      const panels = document.querySelectorAll('.panel');
+      panels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+      const selectedPanel = document.getElementById(panelId);
+      selectedPanel.classList.add('active');
+    }
+
+    function openNotes() {
+      alert("My Notes section is under construction!");
+    }
+  </script>
+  <title>STD Selection</title>
+</head>
+<body>
+
+  <div class="section">
+    <h2>STD પસંદ કરો</h2>
+    <button onclick="showPanel('std10')">STD 10</button>
+    <button onclick="showPanel('std11')">STD 11</button>
+    <button onclick="showPanel('std12')">STD 12</button>
+    <button onclick="openNotes()">My Notes</button>
+  </div>
+
+  <div id="std10" class="panel">
+    <h3>STD 10 Content</h3>
+    <p>Content for STD 10...</p>
+  </div>
+
+  <div id="std11" class="panel">
+    <h3>STD 11 Content</h3>
+    <p>Content for STD 11...</p>
+  </div>
+
+  <div id="std12" class="panel">
+    <h3>STD 12 Content</h3>
+    <p>Content for STD 12...</p>
+  </div>
+
+</body>
+</html>
+  
+
 
 <!-- Panels -->
 <div id="neet" class="panel">
