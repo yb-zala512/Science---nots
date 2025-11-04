@@ -120,30 +120,40 @@
 <body>
 
   <div class="section">
-    <h2>STD પસંદ કરો</h2>
-    <button onclick="showPanel('std10')">STD 10</button>
-    <button onclick="showPanel('std11')">STD 11</button>
-    <button onclick="showPanel('std12')">STD 12</button>
+    <!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .hidden { display:none; }
+    button { margin: 5px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>School Portal</h1>
+  <div id="menu">
+    <button onclick="showStd('std11')">STD 11</button>
+    <button onclick="showStd('std12')">STD 12</button>
+    <button onclick="showStd('std10')">STD 10</button>
+    <button onclick="showStd('notes')">My Notes</button>
+  </div>  <div id="std11" class="hidden">
+    <button onclick="openInfo('biology11.html')">Biology</button>
+    <button onclick="openInfo('chemistry11.html')">Chemistry</button>
+    <button onclick="openInfo('physics11.html')">Physics</button>
+    <button onclick="openInfo('maths11.html')">Maths</button>
+  </div>  <div id="std12" class="hidden">
+    <button onclick="openInfo('biology12.html')">Biology</button>
+    <button onclick="openInfo('chemistry12.html')">Chemistry</button>
+    <button onclick="openInfo('physics12.html')">Physics</button>
+    <button onclick="openInfo('maths12.html')">Maths</button>
+  </div>  <div id="std10" class="hidden">
+    <button onclick="openInfo('science10.html')">Science</button>
+    <button onclick="openInfo('maths10.html')">Maths</button>
+    <button onclick="openInfo('social10.html')">Social Science</button>
     <button onclick="openNotes()">My Notes</button>
-  </div>
-
-  <div id="std10" class="panel">
-    <h3>STD 10 Content</h3>
-    <p>Content for STD 10...</p>
-  </div>
-
-  <div id="std11" class="panel">
-    <h3>STD 11 Content</h3>
-    <p>Content for STD 11...</p>
-  </div>
-
-  <div id="std12" class="panel">
-    <h3>STD 12 Content</h3>
-    <p>Content for STD 12...</p>
-  </div>
-
-</body>
-</html>
+  </div 
   
 
 
