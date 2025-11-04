@@ -44,15 +44,69 @@
   <button onclick="showPanel('neet')">NEET</button>
   <button onclick="showPanel('jee')">JEE</button>
 </div>
+  
+<div class="section"> 
+  <!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium School Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      text-align: center;
+    }
+    h1 { margin-top: 20px; }.hidden { display: none; }
 
-  <div class="section"> 
-  <h2>STD પસંદ કરો</h2>
-  <button onclick="showPanel('std10')">STD 10</button>
-  <button onclick="showPanel('std11')">STD 11</button>
-  <button onclick="showPanel('std12')">STD 12</button>
-  <button onclick="openNotes()">My Notes</button>
-</div>
+.btn { margin: 10px; padding: 12px 25px; font-size: 18px; border: none; border-radius: 12px; background: rgba(255,255,255,0.15); color: #fff; backdrop-filter: blur(10px); cursor: pointer; transition: 0.3s; }
+.btn:hover { background: rgba(255,255,255,0.3); transform: scale(1.04); }
 
+.box { margin: 20px auto; padding: 20px; width: 90%; max-width: 600px; background: rgba(255,255,255,0.12); border-radius: 12px; backdrop-filter: blur(12px); }
+
+textarea { width: 100%; min-height: 200px; background: rgba(0,0,0,0.25); border: none; color: white; border-radius: 12px; padding: 10px; }
+
+  </style>
+</head>
+<body>
+  <h1>📚 Premium School Portal</h1><button class="btn" onclick="show('std11')">STD 11</button> <button class="btn" onclick="show('std12')">STD 12</button> <button class="btn" onclick="show('std10')">STD 10</button> <button class="btn" onclick="show('notes')">My Notes</button>
+
+  <div id="std11" class="box hidden">
+    <button class="btn" onclick="openPage('biology11.html')">BIOLOGY</button>
+    <button class="btn" onclick="openPage('chemistry11.html')">CHEMISTRY</button>
+    <button class="btn" onclick="openPage('physics11.html')">PHYSICS</button>
+    <button class="btn" onclick="openPage('maths11.html')">MATHS</button>
+  </div>  <div id="std12" class="box hidden">
+    <button class="btn" onclick="openPage('biology12.html')">BIOLOGY</button>
+    <button class="btn" onclick="openPage('chemistry12.html')">CHEMISTRY</button>
+    <button class="btn" onclick="openPage('physics12.html')">PHYSICS</button>
+    <button class="btn" onclick="openPage('maths12.html')">MATHS</button>
+  </div>  <div id="std10" class="box hidden">
+    <button class="btn" onclick="openPage('science10.html')">SCIENCE</button>
+    <button class="btn" onclick="openPage('maths10.html')">MATHS</button>
+    <button class="btn" onclick="openPage('sst10.html')">SOCIAL SCIENCE</button>
+  </div>  <div id="notes" class="box hidden">
+    <h2>📝 My Notes</h2>
+    <textarea id="notesArea" oninput="saveNotes()"></textarea>
+  </div>  <script>
+    function show(section){
+      document.querySelectorAll('.box').forEach((e)=>e.classList.add('hidden'));
+      document.getElementById(section).classList.remove('hidden');
+    }
+
+    function openPage(page){ window.location.href = page; }
+
+    function saveNotes(){ localStorage.setItem('myNotes', document.getElementById('notesArea').value); }
+
+    window.onload = ()=>{
+      let data = localStorage.getItem('myNotes');
+      if(data){ document.getElementById('notesArea').value = data; }
+    }
+  </script></body>
+  </html>
+    
   </style>
 </head>
 <body>
