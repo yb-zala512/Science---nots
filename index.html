@@ -3,419 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zala Yuvraj Sinh B - Science Notes</title>
+  <title>Zala Yuvraj Sinh B - Science & Study Notes</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
+      margin:0; padding:0;
       background: linear-gradient(135deg, #2a2a72, #009ffd);
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
+      color: white; text-align: center;
     }
-
     header {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
+      background: rgba(0,0,0,0.5); padding: 20px;
     }
-
-    h1 {
-      font-size: 2.2em;
-      margin: 0;
-    }
-
-    .youtube {
-      margin-top: 10px;
-      display: inline-block;
-      background: red;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section {
-      margin-top: 30px;
-    }
-
+    h1 { font-size: 2em; margin:0; }
+    .youtube { display:inline-block; background:red; color:white; padding:10px 20px; border-radius:10px; text-decoration:none; margin-top:10px; font-weight:bold;}
+    .section { margin-top:30px; }
     button {
-      background: #ffbb00;
-      color: #000;
-      border: none;
-      margin: 10px;
-      padding: 15px 30px;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: 0.3s;
+      background:#ffbb00; color:#000; border:none; margin:10px; padding:15px 30px;
+      border-radius:8px; font-size:1em; cursor:pointer; transition:0.3s;
     }
-
-    button:hover {
-      background: #ffdd33;
-      transform: scale(1.05);
-    }
-
-    .mcq-section {
-      display: none;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .footer {
-      margin-top: 30px;
-      background: rgba(0,0,0,0.4);
-      padding: 10px;
-      font-size: 0.9em;
-    }
-
-    iframe {
-      width: 90%;
-      height: 400px;
-      border-radius: 10px;
-      border: none;
-      margin-top: 20px;
-    }
+    button:hover { background:#ffdd33; transform:scale(1.05); }
+    .panel { display:none; background:rgba(255,255,255,0.1); margin:20px; padding:20px; border-radius:10px; }
+    iframe { width:90%; height:400px; border:none; border-radius:10px; margin-top:20px; }
+    .footer { margin-top:30px; background: rgba(0,0,0,0.4); padding:10px; font-size:0.9em;}
+    /* My Notes modal */
+    #notesModal { display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; color:#000; padding:20px; border-radius:10px; z-index:1000; width:90%; max-width:500px; box-shadow:0 0 10px #000;}
+    #notesModal textarea { width:100%; height:200px; padding:10px; font-size:1em; }
+    #notesModal button { margin-top:10px; padding:10px 20px; font-size:1em; }
+    #overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;}
   </style>
 </head>
 <body>
-  <header>
-    <h1>🌟 Zala Yuvraj Sinh B – Science Notes 🌟</h1>
-    <a href="https://youtube.com/@yuvrajsinhzala-u5k?si=buc6_6gqTNSDgUNL" target="_blank" class="youtube">🎥 Visit My YouTube Channel</a>
-  </header>
 
-  <div class="section">
-    <h2>Entrance Exam પસંદ કરો</h2>
-    <button onclick="showExam('neet')">NEET</button>
-    <button onclick="showExam('jee')">JEE</button>
-  </div>
+<header>
+  <h1>🌟 Zala Yuvraj Sinh B – Study Notes 🌟</h1>
+  <a href="https://youtube.com/@yuvrajsinhzala-u5k" target="_blank" class="youtube">🎥 My YouTube Channel</a>
+</header>
 
-  <!-- NEET Section -->
-  <div id="neet" class="mcq-section">
-    <h3>📘 NEET માટે વિષય પસંદ કરો</h3>
-    <button onclick="openMCQ('biology-ch1-mcq.html')">Biology</button>
-    <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
-    <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
-  </div>
+<div class="section">
+  <h2>Entrance Exam પસંદ કરો</h2>
+  <button onclick="showPanel('neet')">NEET</button>
+  <button onclick="showPanel('jee')">JEE</button>
+</div>
 
-  <!-- JEE Section -->
-  <div id="jee" class="mcq-section">
-    <h3>📗 JEE માટે વિષય પસંદ કરો</h3>
-    <button onclick="openMCQ('maths-ch1-mcq.html')">Mathematics</button>
-    <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
-    <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
-  </div>
+<div class="section">
+  <h2>STD પસંદ કરો</h2>
+  <button onclick="showPanel('std10')">STD 10</button>
+  <button onclick="showPanel('std11')">STD 11</button>
+  <button onclick="showPanel('std12')">STD 12</button>
+  <button onclick="openNotes()">My Notes</button>
+</div>
 
-  <!-- MCQ Viewer -->
-  <iframe id="mcqFrame"></iframe>
+<!-- Panels -->
+<div id="neet" class="panel">
+  <h3>📘 NEET વિષય પસંદ કરો</h3>
+  <button onclick="openMCQ('biology-ch1-mcq.html')">Biology</button>
+  <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
+  <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
+</div>
 
-  <div class="footer">
-    <p>© 2025 Zala Yuvraj Sinh B | Made with ❤️ for Students</p>
-    <p>💬 નીચે તમારો પ્રતિભાવ આપો 👇</p>
-    <!-- Comment Section -->
-    <div id="disqus_thread"></div>
-  </div>
+<div id="jee" class="panel">
+  <h3>📗 JEE વિષય પસંદ કરો</h3>
+  <button onclick="openMCQ('maths-ch1-mcq.html')">Maths</button>
+  <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
+  <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
+</div>
 
-  <script>
-    function showExam(exam) {
-      document.getElementById('neet').style.display = "none";
-      document.getElementById('jee').style.display = "none";
-      document.getElementById(exam).style.display = "block";
-    }
+<div id="std10" class="panel">
+  <h3>STD 10 વિષય પસંદ કરો</h3>
+  <button onclick="openMCQ('std10-science.html')">Science</button>
+  <button onclick="openMCQ('std10-maths.html')">Maths</button>
+  <button onclick="openMCQ('std10-social.html')">Social Science</button>
+</div>
 
-    function openMCQ(page) {
-      document.getElementById('mcqFrame').src = page;
-      window.scrollTo({ top: 600, behavior: 'smooth' });
-    }
+<div id="std11" class="panel">
+  <h3>STD 11 વિષય પસંદ કરો</h3>
+  <button onclick="openMCQ('biology-ch1-mcq.html')">Biology</button>
+  <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
+  <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
+  <button onclick="openMCQ('maths-ch1-mcq.html')">Maths</button>
+</div>
 
-    // Comment system (Disqus)
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://YOUR-DISQUS-SHORTNAME.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
+<div id="std12" class="panel">
+  <h3>STD 12 વિષય પસંદ કરો</h3>
+  <button onclick="openMCQ('biology-ch1-mcq.html')">Biology</button>
+  <button onclick="openMCQ('chemistry-ch1-mcq.html')">Chemistry</button>
+  <button onclick="openMCQ('physics-ch1-mcq.html')">Physics</button>
+  <button onclick="openMCQ('maths-ch1-mcq.html')">Maths</button>
+</div>
 
-  <!-- Google AdSense (replace ca-pub-XXXX with your real publisher ID) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+<iframe id="mcqFrame"></iframe>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chemistry Chapter 1 MCQ – Some Basic Concepts of Chemistry</title>
-  <style>
-    body { font-family: 'Noto Sans Gujarati', sans-serif; background:#e3f2fd; margin:20px; }
-    h2 { text-align:center; color:#1565c0; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-    button { background:#1565c0; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Chemistry Chapter 1: Some Basic Concepts of Chemistry (ગુજરાતીમાં)</h2>
-  
-  <div class="mcq">
-    <p><b>Q1:</b> 1 mole માં કેટલા અણુઓ હોય છે?</p>
-    <p>① 6.022 × 10²³<br>② 3.011 × 10²³<br>③ 1.022 × 10²²<br>④ 6.022 × 10²²</p>
-    <p><b>Answer:</b> ①</p>
-  </div>
+<!-- My Notes Modal -->
+<div id="overlay"></div>
+<div id="notesModal">
+  <h3>My Notes</h3>
+  <textarea id="notesContent" placeholder="તમારા નોટ્સ અહીં લખો..."></textarea><br>
+  <button onclick="saveNotes()">Save</button>
+  <button onclick="clearNotes()">Clear</button>
+  <button onclick="downloadNotes()">Download</button>
+  <button onclick="closeNotes()">Close</button>
+</div>
 
-  <div class="mcq">
-    <p><b>Q2:</b> Avogadro સંખ્યાનો અર્થ શું છે?</p>
-    <p>① 1 ગ્રામમાં અણુની સંખ્યા<br>② 1 મોલમાં અણુની સંખ્યા<br>③ 1 લિટરમાં અણુની સંખ્યા<br>④ 1 કિલોમાં અણુની સંખ્યા</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
+<div class="footer">
+  <p>© 2025 Zala Yuvraj Sinh B | Made with ❤️ for Students</p>
+  <p>💬 Comment કરો નીચે 👇</p>
+  <div id="disqus_thread"></div>
+</div>
 
-  <p style="text-align:center;">
-    <a href="https://ybzala512.github.io/Science-notes/">🏠 Home પર પાછા જાઓ</a>
-  </p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Physics Chapter 1 MCQ – Units and Measurements</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#fff3e0; margin:20px; }
-    h2 { text-align:center; color:#e65100; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Physics Chapter 1: Units and Measurements (ગુજરાતીમાં)</h2>
+<script>
+  // Show only selected panel
+  function showPanel(panelId) {
+    const panels = document.querySelectorAll('.panel');
+    panels.forEach(p => p.style.display = 'none');
+    document.getElementById(panelId).style.display = 'block';
+  }
 
-  <div class="mcq">
-    <p><b>Q1:</b> લંબાઈનું SI એકમ શું છે?</p>
-    <p>① મીટર<br>② કિલોગ્રામ<br>③ સેકંડ<br>④ એમ્પિયર</p>
-    <p><b>Answer:</b> ①</p>
-  </div>
+  // Open MCQ file in iframe
+  function openMCQ(file) {
+    document.getElementById('mcqFrame').src = file;
+    window.scrollTo({ top: 600, behavior: 'smooth' });
+  }
 
-  <div class="mcq">
-    <p><b>Q2:</b> સમયનું SI એકમ કયું છે?</p>
-    <p>① મીટર<br>② સેકંડ<br>③ કેલ્વિન<br>④ મોલ</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
+  // My Notes functions
+  function openNotes() { document.getElementById('overlay').style.display='block'; document.getElementById('notesModal').style.display='block'; loadNotes();}
+  function closeNotes() { document.getElementById('overlay').style.display='none'; document.getElementById('notesModal').style.display='none'; }
+  function saveNotes() { localStorage.setItem('myNotes', document.getElementById('notesContent').value); alert('Notes Saved!'); }
+  function loadNotes() { document.getElementById('notesContent').value = localStorage.getItem('myNotes') || ''; }
+  function clearNotes() { document.getElementById('notesContent').value=''; localStorage.removeItem('myNotes'); alert('Notes Cleared!'); }
+  function downloadNotes() {
+    const blob = new Blob([document.getElementById('notesContent').value], {type:'text/plain'});
+    const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='MyNotes.txt'; a.click();
+  }
 
-  <p style="text-align:center;">
-    <a href="https://ybzala512.github.io/Science-notes/">🏠 Home પર પાછા જાઓ</a>
-  </p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biology Chapter 1 MCQ – The Living World</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#e8f5e9; margin:20px; }
-    h2 { text-align:center; color:#1b5e20; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Biology Chapter 1: The Living World (ગુજરાતીમાં)</h2>
+  // Disqus
+  (function() {
+    var d=document,s=d.createElement('script');
+    s.src='https://YOUR-DISQUS-SHORTNAME.disqus.com/embed.js';
+    s.setAttribute('data-timestamp',+new Date());
+    (d.head||d.body).appendChild(s);
+  })();
+</script>
 
-  <div class="mcq">
-    <p><b>Q1:</b> જીવંત વસ્તુની મુખ્ય લક્ષણ શું છે?</p>
-    <p>① વૃદ્ધિ<br>② ચેતનતા<br>③ પ્રજનન<br>④ ઉપરના બધાં</p>
-    <p><b>Answer:</b> ④</p>
-  </div>
+<!-- AdSense (Optional) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
 
-  <div class="mcq">
-    <p><b>Q2:</b> વૈજ્ઞાનિક રીતે નામકરણ માટે બે ભાગ કયા છે?</p>
-    <p>① Genera અને Family<br>② Family અને Order<br>③ Genus અને Species<br>④ Order અને Class</p>
-    <p><b>Answer:</b> ③</p>
-  </div>
-
-  <p style="text-align:center;">
-    <a href="https://ybzala512.github.io/Science-notes/">🏠 Home પર પાછા જાઓ</a>
-  </p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathematics Chapter 1 MCQ – Sets</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#f3e5f5; margin:20px; }
-    h2 { text-align:center; color:#4a148c; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Mathematics Chapter 1: Sets (ગુજરાતીમાં)</h2>
-
-  <div class="mcq">
-    <p><b>Q1:</b> Set ની વ્યાખ્યા કોણે આપી હતી?</p>
-    <p>① Newton<br>② Cantor<br>③ Einstein<br>④ Euclid</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <div class="mcq">
-    <p><b>Q2:</b> {1, 2, 3} એ કયો પ્રકારનો Set છે?</p>
-    <p>① Infinite Set<br>② Finite Set<br>③ Null Set<br>④ Equal Set</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <p style="text-align:center;">
-    <a href="https://ybzala512.github.io/Science-notes/">🏠 Home પર પાછા જાઓ</a>
-  </p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chemistry Chapter 1 MCQ – Some Basic Concepts of Chemistry</title>
-  <style>
-    body { font-family: 'Noto Sans Gujarati', sans-serif; background:#e3f2fd; margin:20px; }
-    h2 { text-align:center; color:#1565c0; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-    .btn {
-      display:inline-block; background:#1565c0; color:white; padding:10px 20px;
-      border-radius:6px; text-decoration:none; margin:5px;
-    }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Chemistry Chapter 1: Some Basic Concepts of Chemistry (ગુજરાતીમાં)</h2>
-  
-  <div class="mcq">
-    <p><b>Q1:</b> 1 mole માં કેટલા અણુઓ હોય છે?</p>
-    <p>① 6.022 × 10²³<br>② 3.011 × 10²³<br>③ 1.022 × 10²²<br>④ 6.022 × 10²²</p>
-    <p><b>Answer:</b> ①</p>
-  </div>
-
-  <div class="mcq">
-    <p><b>Q2:</b> Avogadro સંખ્યાનો અર્થ શું છે?</p>
-    <p>① 1 ગ્રામમાં અણુની સંખ્યા<br>② 1 મોલમાં અણુની સંખ્યા<br>③ 1 લિટરમાં અણુની સંખ્યા<br>④ 1 કિલોમાં અણુની સંખ્યા</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="chemistry-ch1.pdf" class="btn" download>📘 Download PDF</a>
-    <a href="https://ybzala512.github.io/Science-notes/" class="btn">🏠 Home પર પાછા જાઓ</a>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Physics Chapter 1 MCQ – Units and Measurements</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#fff3e0; margin:20px; }
-    h2 { text-align:center; color:#e65100; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-    .btn {
-      display:inline-block; background:#e65100; color:white; padding:10px 20px;
-      border-radius:6px; text-decoration:none; margin:5px;
-    }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Physics Chapter 1: Units and Measurements (ગુજરાતીમાં)</h2>
-
-  <div class="mcq">
-    <p><b>Q1:</b> લંબાઈનું SI એકમ શું છે?</p>
-    <p>① મીટર<br>② કિલોગ્રામ<br>③ સેકંડ<br>④ એમ્પિયર</p>
-    <p><b>Answer:</b> ①</p>
-  </div>
-
-  <div class="mcq">
-    <p><b>Q2:</b> સમયનું SI એકમ કયું છે?</p>
-    <p>① મીટર<br>② સેકંડ<br>③ કેલ્વિન<br>④ મોલ</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="physics-ch1.pdf" class="btn" download>📗 Download PDF</a>
-    <a href="https://ybzala512.github.io/Science-notes/" class="btn">🏠 Home પર પાછા જાઓ</a>
-  </div>
-</body>
-</html><!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biology Chapter 1 MCQ – The Living World</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#e8f5e9; margin:20px; }
-    h2 { text-align:center; color:#1b5e20; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-    .btn {
-      display:inline-block; background:#1b5e20; color:white; padding:10px 20px;
-      border-radius:6px; text-decoration:none; margin:5px;
-    }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Biology Chapter 1: The Living World (ગુજરાતીમાં)</h2>
-
-  <div class="mcq">
-    <p><b>Q1:</b> જીવંત વસ્તુની મુખ્ય લક્ષણ શું છે?</p>
-    <p>① વૃદ્ધિ<br>② ચેતનતા<br>③ પ્રજનન<br>④ ઉપરના બધાં</p>
-    <p><b>Answer:</b> ④</p>
-  </div>
-
-  <div class="mcq">
-    <p><b>Q2:</b> વૈજ્ઞાનિક રીતે નામકરણ માટે બે ભાગ કયા છે?</p>
-    <p>① Genera અને Family<br>② Family અને Order<br>③ Genus અને Species<br>④ Order અને Class</p>
-    <p><b>Answer:</b> ③</p>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="biology-ch1.pdf" class="btn" download>📙 Download PDF</a>
-    <a href="https://ybzala512.github.io/Science-notes/" class="btn">🏠 Home પર પાછા જાઓ</a>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathematics Chapter 1 MCQ – Sets</title>
-  <style>
-    body { font-family:'Noto Sans Gujarati', sans-serif; background:#f3e5f5; margin:20px; }
-    h2 { text-align:center; color:#4a148c; }
-    .mcq { background:#fff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 0 5px #aaa; }
-    .btn {
-      display:inline-block; background:#4a148c; color:white; padding:10px 20px;
-      border-radius:6px; text-decoration:none; margin:5px;
-    }
-  </style>
-</head>
-<body>
-  <h2>11 Science – Mathematics Chapter 1: Sets (ગુજરાતીમાં)</h2>
-
-  <div class="mcq">
-    <p><b>Q1:</b> Set ની વ્યાખ્યા કોણે આપી હતી?</p>
-    <p>① Newton<br>② Cantor<br>③ Einstein<br>④ Euclid</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <div class="mcq">
-    <p><b>Q2:</b> {1, 2, 3} એ કયો પ્રકારનો Set છે?</p>
-    <p>① Infinite Set<br>② Finite Set<br>③ Null Set<br>④ Equal Set</p>
-    <p><b>Answer:</b> ②</p>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="maths-ch1.pdf" class="btn" download>📒 Download PDF</a>
-    <a href="https://ybzala512.github.io/Science-notes/" class="btn">🏠 Home પર પાછા જાઓ</a>
-  </div>
 </body>
 </html>
