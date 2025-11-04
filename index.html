@@ -46,78 +46,142 @@
 </div>
 
 <div class="section">
-  <!-- Premium professional buttons + panel switch structure --><div class="section mt-6">
-  <h2 class="text-2xl font-bold mb-4">Entrance Exam પસંદ કરો</h2>
-  <div class="grid gap-4 grid-cols-2 max-w-md mx-auto">
-    <button class="btnPrimary" onclick="showPanel('neet')">NEET</button>
-    <button class="btnPrimary" onclick="showPanel('jee')">JEE</button>
-  </div>
-</div><div class="section mt-10">
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium School Website</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .btn-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 18px;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.03);
     }
 
     .section {
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .panel {
       display: none;
-      margin-top: 20px;
+      margin-top: 30px;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
     }
 
-    .panel.active {
-      display: block;
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      background: rgba(0,0,0,0.25);
+      border: none;
+      outline: none;
+      padding: 10px;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 16px;
     }
   </style>
-  <script>
-    function showPanel(panelId) {
-      const panels = document.querySelectorAll('.panel');
-      panels.forEach(panel => {
-        panel.classList.remove('active');
-      });
-      const selectedPanel = document.getElementById(panelId);
-      selectedPanel.classList.add('active');
-    }
-
-    function openNotes() {
-      alert("My Notes section is under construction!");
-    }
-  </script>
-  <title>STD Selection</title>
 </head>
 <body>
+  <header>📚 School Premium Portal</header>
+
+  <div class="btn-container">
+    <button onclick="showStd('std11')">STD 11</button>
+    <button onclick="showStd('std12')">STD 12</button>
+    <button onclick="showStd('std10')">STD 10</button>
+    <button onclick="showStd('notes')">My Notes</button>
+  </div>
+
+  <!-- STD 11 -->
+  <div class="section" id="std11">
+    <div class="btn-container">
+      <button onclick="openFile('biology11.html')">Biology</button>
+      <button onclick="openFile('chemistry11.html')">Chemistry</button>
+      <button onclick="openFile('physics11.html')">Physics</button>
+      <button onclick="openFile('maths11.html')">Maths</button>
+    </div>
+  </div>
+
+  <!-- STD 12 -->
+  <div class="section" id="std12">
+    <div class="btn-container">
+      <button onclick="openFile('biology12.html')">Biology</button>
+      <button onclick="openFile('chemistry12.html')">Chemistry</button>
+      <button onclick="openFile('physics12.html')">Physics</button>
+      <button onclick="openFile('maths12.html')">Maths</button>
+    </div>
+  </div>
+
+  <!-- STD 10 -->
+  <div class="section" id="std10">
+    <div class="btn-container">
+      <button onclick="openFile('science10.html')">Science</button>
+      <button onclick="openFile('maths10.html')">Maths</button>
+      <button onclick="openFile('sst10.html')">Social Science</button>
+    </div>
+  </div>
+
+  <!-- My Notes -->
+  <div class="section" id="notes">
+    <h2>📝 My Notes</h2>
+    <textarea id="notesArea" oninput="saveNotes()"></textarea>
+  </div>
+
+  <script>
+    function showStd(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function openFile(page) {
+      window.location.href = page;
+    }
+
+    function saveNotes() {
+      localStorage.setItem('userNotes', document.getElementById('notesArea').value);
+    }
+
+    window.onload = () => {
+      let saved = localStorage.getItem('userNotes');
+      if (saved) document.getElementById('notesArea').value = saved;
+    }
+  </script>
+</body>
+</html>
 
   <div class="section">
     <!DOCTYPE html><html lang="en">
