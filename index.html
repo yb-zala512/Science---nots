@@ -3,79 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zala Yuvraj Sinh B - Premium School Portal</title>
+<title>Premium School Portal — Zala Yuvraj Sinh B</title>
 <style>
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #fff;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-header { padding: 18px 0; }
-h1 { margin: 0; font-size: 22px; }
-.controls { margin: 12px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.btn {
-  margin: 6px;
-  padding: 12px 18px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  cursor: pointer;
-  transition: 0.18s ease;
-}
-.btn:hover { transform: translateY(-3px); background: rgba(255,255,255,0.2); }
-.box {
-  margin: 14px auto;
-  padding: 16px;
-  width: 92%;
-  max-width: 720px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-}
-.hidden { display: none; }
-#viewer {
-  margin: 18px auto;
-  width: 95%;
-  max-width: 900px;
-  height: 640px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(2,6,23,0.7);
-  border: 1px solid rgba(255,255,255,0.06);
-  background: #0b1220;
-  display: none;
-}
-#mcqFrame { width:100%; height:100%; border:0; display:block; }
-.small { font-size: 14px; opacity: 0.9; }
-.top-actions { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap;}
+  body {
+    margin:0; font-family:"Poppins",sans-serif;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:#fff; text-align:center;
+    min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  }
+  header { padding:18px 0; }
+  h1 { margin:0; font-size:22px; }
+  .controls { margin:12px 0; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+  .btn {
+    margin:6px; padding:12px 18px; font-size:16px;
+    border:none; border-radius:10px; background:rgba(255,255,255,0.12);
+    color:#fff; cursor:pointer; transition:0.18s ease; backdrop-filter:blur(8px);
+  }
+  .btn:hover { transform:translateY(-3px); background:rgba(255,255,255,0.2); }
+  .box {
+    margin:14px auto; padding:16px; width:92%; max-width:720px;
+    background: rgba(255,255,255,0.06); border-radius:12px; backdrop-filter:blur(8px);
+    box-shadow:0 6px 18px rgba(2,6,23,0.6);
+  }
+  .hidden { display:none; }
+  #viewer {
+    margin:18px auto; width:95%; max-width:900px; height:640px;
+    border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(2,6,23,0.7);
+    border:1px solid rgba(255,255,255,0.06); background:#0b1220; display:none;
+  }
+  #mcqFrame { width:100%; height:100%; border:0; display:block; }
+  .small { font-size:14px; opacity:0.9; }
+  .top-actions { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
 </style>
 </head>
 <body>
 
 <header>
   <h1>📚 Premium School Portal — Zala Yuvraj Sinh B</h1>
-  <div class="small">STD પસંદ કરો અને પછી ભાષા — પછી વિષય ખોલો</div>
+  <div class="small">STD / NEET / JEE પસંદ કરો, પછી ભાષા અને વિષય ખોલો</div>
 </header>
 
+<!-- Home / STD / NEET / JEE Selection -->
+<div id="homeSelect" class="box">
+  <div class="controls">
+    <button class="btn" onclick="show('stdSelect')">STD 10,11,12</button>
+    <button class="btn" onclick="show('neetSelect')">NEET</button>
+    <button class="btn" onclick="show('jeeSelect')">JEE</button>
+  </div>
+</div>
+
 <!-- STD Selection -->
-<div id="stdSelect" class="box">
+<div id="stdSelect" class="box hidden">
+  <h2>STD પસંદ કરો</h2>
   <div class="controls">
     <button class="btn" onclick="show('std11')">STD 11</button>
     <button class="btn" onclick="show('std12')">STD 12</button>
     <button class="btn" onclick="show('std10')">STD 10</button>
   </div>
+  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
-<!-- STD 11 Panel -->
+<!-- STD Panels (Language selection) -->
 <div id="std11" class="box hidden">
   <h2>STD 11 — ભાષા પસંદ કરો</h2>
   <div class="controls">
@@ -85,52 +73,6 @@ h1 { margin: 0; font-size: 22px; }
   </div>
 </div>
 
-<!-- STD 11 Gujarati -->
-<div id="std11-gu" class="box hidden">
-  <h3>STD 11 — Chemistry (Gujarati)</h3>
-  <div class="controls">
-    <button class="btn" onclick="openChapter('chem11_ch1.gu.html')">Chapter 1 — Some Basic Concepts</button>
-    <button class="btn" onclick="openChapter('chem11_ch2.gu.html')">Chapter 2 — Structure of Atom</button>
-    <button class="btn" onclick="openChapter('chem11_ch3.gu.html')">Chapter 3 — Classification of Elements</button>
-    <button class="btn" onclick="openChapter('chem11_ch4.gu.html')">Chapter 4 — Chemical Bonding</button>
-  </div>
-  <div class="top-actions">
-    <button class="btn" onclick="goHome()">Home પર જાઓ</button>
-    <button class="btn" onclick="show('std11')">ભાષા બદલો</button>
-  </div>
-</div>
-
-<!-- STD 11 English -->
-<div id="std11-en" class="box hidden">
-  <h3>STD 11 — Chemistry (English)</h3>
-  <div class="controls">
-    <button class="btn" onclick="openChapter('chem11_ch1.en.html')">Chapter 1 — Some Basic Concepts</button>
-    <button class="btn" onclick="openChapter('chem11_ch2.en.html')">Chapter 2 — Structure of Atom</button>
-    <button class="btn" onclick="openChapter('chem11_ch3.en.html')">Chapter 3 — Classification of Elements</button>
-    <button class="btn" onclick="openChapter('chem11_ch4.en.html')">Chapter 4 — Chemical Bonding</button>
-  </div>
-  <div class="top-actions">
-    <button class="btn" onclick="goHome()">Home</button>
-    <button class="btn" onclick="show('std11')">Switch language</button>
-  </div>
-</div>
-
-<!-- STD 11 Hindi -->
-<div id="std11-hi" class="box hidden">
-  <h3>STD 11 — Chemistry (Hindi)</h3>
-  <div class="controls">
-    <button class="btn" onclick="openChapter('chem11_ch1.hi.html')">Chapter 1 — Some Basic Concepts</button>
-    <button class="btn" onclick="openChapter('chem11_ch2.hi.html')">Chapter 2 — Structure of Atom</button>
-    <button class="btn" onclick="openChapter('chem11_ch3.hi.html')">Chapter 3 — Classification of Elements</button>
-    <button class="btn" onclick="openChapter('chem11_ch4.hi.html')">Chapter 4 — Chemical Bonding</button>
-  </div>
-  <div class="top-actions">
-    <button class="btn" onclick="goHome()">Home पर जाओ</button>
-    <button class="btn" onclick="show('std11')">भाषा बदलो</button>
-  </div>
-</div>
-
-<!-- STD 12 Panel -->
 <div id="std12" class="box hidden">
   <h2>STD 12 — ભાષા પસંદ કરો</h2>
   <div class="controls">
@@ -140,7 +82,6 @@ h1 { margin: 0; font-size: 22px; }
   </div>
 </div>
 
-<!-- STD 10 Panel -->
 <div id="std10" class="box hidden">
   <h2>STD 10 — ભાષા પસંદ કરો</h2>
   <div class="controls">
@@ -150,55 +91,18 @@ h1 { margin: 0; font-size: 22px; }
   </div>
 </div>
 
-<!-- Viewer / iframe -->
-<div id="viewer">
-  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background: rgba(0,0,0,0.35);">
-    <div class="small">Chapter Viewer</div>
-    <div>
-      <button class="btn" onclick="closeViewer()">Close</button>
-      <button class="btn" onclick="openInNewTab()">New Tab</button>
-    </div>
-  </div>
-  <iframe id="mcqFrame" src=""></iframe>
-</div>
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Portal — NEET / JEE</title>
-<style>
-body {
-  margin:0; font-family:"Poppins",sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color:#fff; text-align:center; min-height:100vh;
-  display:flex; flex-direction:column; align-items:center;
-}
-header { padding:18px 0; }
-h1 { margin:0; font-size:22px; }
-.controls { margin:12px 0; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
-.btn { margin:6px; padding:12px 18px; font-size:16px; border:none; border-radius:10px; background:rgba(255,255,255,0.12); color:#fff; cursor:pointer; transition:0.18s ease;}
-.btn:hover { transform:translateY(-3px); background:rgba(255,255,255,0.2);}
-.box { margin:14px auto; padding:16px; width:92%; max-width:720px; background:rgba(255,255,255,0.06); border-radius:12px; backdrop-filter:blur(8px); box-shadow:0 6px 18px rgba(2,6,23,0.6);}
-.hidden { display:none; }
-#viewer { margin:18px auto; width:95%; max-width:900px; height:640px; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(2,6,23,0.7); border:1px solid rgba(255,255,255,0.06); background:#0b1220; display:none;}
-#mcqFrame { width:100%; height:100%; border:0; display:block; }
-.small { font-size:14px; opacity:0.9; }
-.top-actions { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap;}
-</style>
-</head>
-<body>
-
-<header>
-  <h1>📚 Premium Portal — NEET / JEE</h1>
-  <div class="small">NEET અને JEE માટે વિષય પસંદ કરો</div>
-</header>
-
-<!-- Home -->
-<div id="homeSelect" class="box">
+<!-- STD Language & Subjects Example: STD 11 Gujarati -->
+<div id="std11-gu" class="box hidden">
+  <h3>STD 11 — ગુજરાતી</h3>
   <div class="controls">
-    <button class="btn" onclick="show('neetSelect')">NEET</button>
-    <button class="btn" onclick="show('jeeSelect')">JEE</button>
+    <button class="btn" onclick="openPage('biology11.gu.html')">Biology</button>
+    <button class="btn" onclick="openPage('chemistry11.gu.html')">Chemistry</button>
+    <button class="btn" onclick="openPage('physics11.gu.html')">Physics</button>
+    <button class="btn" onclick="openPage('maths11.gu.html')">Maths</button>
+  </div>
+  <div class="top-actions">
+    <button class="btn" onclick="show('std11')">Language બદલો</button>
+    <button class="btn" onclick="goHome()">Home પર જાઓ</button>
   </div>
 </div>
 
@@ -206,32 +110,28 @@ h1 { margin:0; font-size:22px; }
 <div id="neetSelect" class="box hidden">
   <h2>NEET Subjects</h2>
   <div class="controls">
-    <button class="btn" onclick="openChapter('neet_biology.html')">Biology</button>
-    <button class="btn" onclick="openChapter('neet_chemistry.html')">Chemistry</button>
-    <button class="btn" onclick="openChapter('neet_physics.html')">Physics</button>
+    <button class="btn" onclick="openPage('neet_biology.html')">Biology</button>
+    <button class="btn" onclick="openPage('neet_chemistry.html')">Chemistry</button>
+    <button class="btn" onclick="openPage('neet_physics.html')">Physics</button>
   </div>
-  <div class="top-actions">
-    <button class="btn" onclick="goHome()">Home પર જાઓ</button>
-  </div>
+  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
 <!-- JEE Subjects -->
 <div id="jeeSelect" class="box hidden">
   <h2>JEE Subjects</h2>
   <div class="controls">
-    <button class="btn" onclick="openChapter('jee_maths.html')">Maths</button>
-    <button class="btn" onclick="openChapter('jee_chemistry.html')">Chemistry</button>
-    <button class="btn" onclick="openChapter('jee_physics.html')">Physics</button>
+    <button class="btn" onclick="openPage('jee_maths.html')">Maths</button>
+    <button class="btn" onclick="openPage('jee_chemistry.html')">Chemistry</button>
+    <button class="btn" onclick="openPage('jee_physics.html')">Physics</button>
   </div>
-  <div class="top-actions">
-    <button class="btn" onclick="goHome()">Home પર જાઓ</button>
-  </div>
+  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
 <!-- Viewer -->
 <div id="viewer">
   <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background: rgba(0,0,0,0.35);">
-    <div class="small">Subject Viewer</div>
+    <div class="small">વિષય દર્શક</div>
     <div>
       <button class="btn" onclick="closeViewer()">Close</button>
       <button class="btn" onclick="openInNewTab()">New Tab</button>
@@ -241,101 +141,53 @@ h1 { margin:0; font-size:22px; }
 </div>
 
 <script>
-let currentOpen=null;
+let currentOpen = null;
 
-// Show box
 function show(section){
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
+  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
   document.getElementById(section).classList.remove('hidden');
   document.getElementById('viewer').style.display='none';
-  currentOpen=null;
+  currentOpen = null;
 }
 
-// Open subject in iframe
-function openChapter(file){
-  document.getElementById('mcqFrame').src=file;
-  document.getElementById('viewer').style.display='block';
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
-  currentOpen=file;
+function showLang(std, lang){
+  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
+  const target = document.getElementById(std+'-'+lang);
+  if(target){ target.classList.remove('hidden'); }
+  else{ document.getElementById(std).classList.remove('hidden'); }
+  document.getElementById('viewer').style.display='none';
+  currentOpen = null;
 }
 
-// Close viewer
+function openPage(file){
+  document.getElementById('mcqFrame').src = file;
+  document.getElementById('viewer').style.display = 'block';
+  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
+  currentOpen = file;
+}
+
 function closeViewer(){
   document.getElementById('mcqFrame').src='';
   document.getElementById('viewer').style.display='none';
   show('homeSelect');
-  currentOpen=null;
+  currentOpen = null;
 }
 
-// Open in new tab
 function openInNewTab(){
   if(currentOpen){ window.open(currentOpen,'_blank'); }
-  else{ alert('કોઈ subject open નથી.'); }
+  else{ alert('કોઈ પેજ ખુલ્યું નથી.'); }
 }
 
-// Home
 function goHome(){
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
+  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
   document.getElementById('homeSelect').classList.remove('hidden');
   document.getElementById('viewer').style.display='none';
   document.getElementById('mcqFrame').src='';
   currentOpen=null;
 }
 
-// Initial Home
+// Initial display
 show('homeSelect');
-</script>
-
-</body>
-</html>
-<script>
-let currentOpen = null;
-
-function show(section){
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
-  document.getElementById(section).classList.remove('hidden');
-  document.getElementById('viewer').style.display='none';
-  currentOpen=null;
-}
-
-function showLang(std,lang){
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
-  const target=document.getElementById(std+'-'+lang);
-  if(target){target.classList.remove('hidden');}
-  else{document.getElementById(std).classList.remove('hidden'); console.warn('Target panel not found:', std+'-'+lang);}
-  document.getElementById('viewer').style.display='none';
-  currentOpen=null;
-}
-
-function openChapter(file){
-  document.getElementById('mcqFrame').src=file;
-  document.getElementById('viewer').style.display='block';
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
-  currentOpen=file;
-}
-
-function closeViewer(){
-  document.getElementById('mcqFrame').src='';
-  document.getElementById('viewer').style.display='none';
-  show('stdSelect');
-  currentOpen=null;
-}
-
-function openInNewTab(){
-  if(currentOpen){window.open(currentOpen,'_blank');}
-  else{alert('કોઈ chapter open નથી.');}
-}
-
-function goHome(){
-  document.querySelectorAll('.box').forEach(e=>e.classList.add('hidden'));
-  document.getElementById('stdSelect').classList.remove('hidden');
-  document.getElementById('viewer').style.display='none';
-  document.getElementById('mcqFrame').src='';
-  currentOpen=null;
-}
-
-// Initial Home
-show('stdSelect');
 </script>
 
 </body>
