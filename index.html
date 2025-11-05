@@ -91,11 +91,17 @@ textarea { width: 100%; min-height: 200px; background: rgba(0,0,0,0.25); border:
     <h2>📝 My Notes</h2>
     <textarea id="notesArea" oninput="saveNotes()"></textarea>
   </div>  <script>
+    <script
     function show(section){
       document.querySelectorAll('.box').forEach((e)=>e.classList.add('hidden'));
       document.getElementById(section).classList.remove('hidden');
     }
 
+    <script>
+function openPage(page) {
+    window.location.href = page;
+}
+</script
     function openPage(page){ window.location.href = page; }
 
     function saveNotes(){ localStorage.setItem('myNotes', document.getElementById('notesArea').value); }
