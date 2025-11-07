@@ -4,38 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium School Portal — Zala Yuvraj Sinh B</title>
+
 <style>
   body {
-    margin:0; font-family:"Poppins",sans-serif;
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color:#fff; text-align:center;
-    min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    margin:0;
+    font-family:"Poppins",sans-serif;
+    background:#f5f7fa;
+    color:#222;
+    text-align:center;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
-  header { padding:18px 0; }
-  h1 { margin:0; font-size:22px; }
-  .controls { margin:12px 0; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
-  .btn {
-    margin:6px; padding:12px 18px; font-size:16px;
-    border:none; border-radius:10px; background:rgba(255,255,255,0.12);
-    color:#fff; cursor:pointer; transition:0.18s ease; backdrop-filter:blur(8px);
+
+  header {
+    padding:20px 0;
   }
-  .btn:hover { transform:translateY(-3px); background:rgba(255,255,255,0.2); }
-  .box {
-    margin:14px auto; padding:16px; width:92%; max-width:720px;
-    background: rgba(255,255,255,0.06); border-radius:12px; backdrop-filter:blur(8px);
-    box-shadow:0 6px 18px rgba(2,6,23,0.6);
+
+  h1 {
+    margin:0;
+    font-size:22px;
+    font-weight:600;
   }
-  .hidden { display:none; }
-  #viewer {
-    margin:18px auto; width:95%; max-width:900px; height:640px;
-    border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(2,6,23,0.7);
-    border:1px solid rgba(255,255,255,0.06); background:#0b1220; display:none;
+
+  .small {
+    font-size:14px;
+    opacity:0.9;
   }
-  #mcqFrame { width:100%; height:100%; border:0; display:block; }
-  .small { font-size:14px; opacity:0.9; }
-  .top-actions { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
+
+  /* ====== Card Buttons ====== */
+  .controls {
+    margin:12px 0;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .btn{
+    padding:18px 28px;
+    font-size:18px;
+    font-weight:600;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    transition:0.25s;
+    background:#fff;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    color:#222;
+  }
+
+  .btn:hover{
+    transform:scale(1.05);
+  }
+
+  /* Color cards (like example image) */
+  .card1 { background:#FFDE7A; }  
+  .card2 { background:#9ED2FF; }  
+  .card3 { background:#FFC6DB; }  
+  .card4 { background:#C8FFB2; }  
+  .card5 { background:#E2C9FF; }  
+
+  .box{
+    margin:14px auto;
+    padding:16px;
+    width:92%;
+    max-width:750px;
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18);
+  }
+
+  .hidden{ display:none; }
+
+  /* Viewer */
+  #viewer{
+    margin:18px auto;
+    width:95%;
+    max-width:900px;
+    height:640px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.28);
+    border:1px solid #ccc;
+    background:#fff;
+    display:none;
+  }
+
+  #mcqFrame{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+  .top-actions{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    margin-top:8px;
+    flex-wrap:wrap;
+  }
+
+  /* Footer Logo */
+  .footer-logo{
+    margin:50px 0 25px 0;
+  }
+
+  .footer-logo img{
+    width:200px;
+    border-radius:15px;
+  }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -43,101 +126,88 @@
   <div class="small">STD / NEET / JEE પસંદ કરો, પછી ભાષા અને વિષય ખોલો</div>
 </header>
 
-<!-- Home / STD / NEET / JEE Selection -->
+<!-- HOME -->
 <div id="homeSelect" class="box">
   <div class="controls">
-    <button class="btn" onclick="show('stdSelect')">STD 10,11,12</button>
-    <button class="btn" onclick="show('neetSelect')">NEET</button>
-    <button class="btn" onclick="show('jeeSelect')">JEE</button>
+    <button class="btn card1" onclick="show('stdSelect')">STD 10, 11, 12</button>
+    <button class="btn card2" onclick="show('neetSelect')">NEET</button>
+    <button class="btn card3" onclick="show('jeeSelect')">JEE</button>
   </div>
 </div>
 
-<!-- STD Selection -->
+<!-- STD SELECT -->
 <div id="stdSelect" class="box hidden">
   <h2>STD પસંદ કરો</h2>
   <div class="controls">
-    <button class="btn" onclick="show('std11')">STD 11</button>
-    <button class="btn" onclick="show('std12')">STD 12</button>
-    <button class="btn" onclick="show('std10')">STD 10</button>
+    <button class="btn card4" onclick="show('std11')">STD 11</button>
+    <button class="btn card5" onclick="show('std12')">STD 12</button>
+    <button class="btn card1" onclick="show('std10')">STD 10</button>
   </div>
-  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
+  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
-<!-- STD Panels (Language selection) -->
+<!-- STD 11 -->
 <div id="std11" class="box hidden">
   <h2>STD 11 — ભાષા પસંદ કરો</h2>
   <div class="controls">
-    <button class="btn" onclick="showLang('std11','gu')">ગુજરાતી</button>
-    <button class="btn" onclick="showLang('std11','en')">English</button>
-    <button class="btn" onclick="showLang('std11','hi')">हिन्दी</button>
+    <button class="btn card1" onclick="showLang('std11','gu')">ગુજરાતી</button>
+    <button class="btn card2" onclick="showLang('std11','en')">English</button>
+    <button class="btn card3" onclick="showLang('std11','hi')">हिन्दी</button>
   </div>
 </div>
 
-<div id="std12" class="box hidden">
-  <h2>STD 12 — ભાષા પસંદ કરો</h2>
-  <div class="controls">
-    <button class="btn" onclick="showLang('std12','gu')">ગુજરાતી</button>
-    <button class="btn" onclick="showLang('std12','en')">English</button>
-    <button class="btn" onclick="showLang('std12','hi')">हिन्दी</button>
-  </div>
-</div>
-
-<div id="std10" class="box hidden">
-  <h2>STD 10 — ભાષા પસંદ કરો</h2>
-  <div class="controls">
-    <button class="btn" onclick="showLang('std10','gu')">ગુજરાતી</button>
-    <button class="btn" onclick="showLang('std10','en')">English</button>
-    <button class="btn" onclick="showLang('std10','hi')">हिन्दी</button>
-  </div>
-</div>
-
-<!-- STD Language & Subjects Example: STD 11 Gujarati -->
 <div id="std11-gu" class="box hidden">
   <h3>STD 11 — ગુજરાતી</h3>
   <div class="controls">
-    <button class="btn" onclick="openPage('biology11.gu.html')">Biology</button>
-    <button class="btn" onclick="openPage('chemistry11.gu.html')">Chemistry</button>
-    <button class="btn" onclick="openPage('physics11.gu.html')">Physics</button>
-    <button class="btn" onclick="openPage('maths11.gu.html')">Maths</button>
+    <button class="btn card4" onclick="openPage('biology11.gu.html')">Biology</button>
+    <button class="btn card5" onclick="openPage('chemistry11.gu.html')">Chemistry</button>
+    <button class="btn card1" onclick="openPage('physics11.gu.html')">Physics</button>
+    <button class="btn card2" onclick="openPage('maths11.gu.html')">Maths</button>
   </div>
+
   <div class="top-actions">
-    <button class="btn" onclick="show('std11')">Language બદલો</button>
-    <button class="btn" onclick="goHome()">Home પર જાઓ</button>
+    <button class="btn card3" onclick="show('std11')">Language બદલો</button>
+    <button class="btn card2" onclick="goHome()">Home પર જાઓ</button>
   </div>
 </div>
 
-<!-- NEET Subjects -->
+<!-- NEET -->
 <div id="neetSelect" class="box hidden">
   <h2>NEET Subjects</h2>
   <div class="controls">
-    <button class="btn" onclick="openPage('neet_biology.html')">Biology</button>
-    <button class="btn" onclick="openPage('neet_chemistry.html')">Chemistry</button>
-    <button class="btn" onclick="openPage('neet_physics.html')">Physics</button>
+    <button class="btn card4" onclick="openPage('neet_biology.html')">Biology</button>
+    <button class="btn card5" onclick="openPage('neet_chemistry.html')">Chemistry</button>
+    <button class="btn card2" onclick="openPage('neet_physics.html')">Physics</button>
   </div>
-  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
+  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
-<!-- JEE Subjects -->
+<!-- JEE -->
 <div id="jeeSelect" class="box hidden">
   <h2>JEE Subjects</h2>
   <div class="controls">
-    <button class="btn" onclick="openPage('jee_maths.html')">Maths</button>
-    <button class="btn" onclick="openPage('jee_chemistry.html')">Chemistry</button>
-    <button class="btn" onclick="openPage('jee_physics.html')">Physics</button>
+    <button class="btn card2" onclick="openPage('jee_maths.html')">Maths</button>
+    <button class="btn card5" onclick="openPage('jee_chemistry.html')">Chemistry</button>
+    <button class="btn card1" onclick="openPage('jee_physics.html')">Physics</button>
   </div>
-  <button class="btn" onclick="goHome()">Home પર જાઓ</button>
+  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
 </div>
 
-<!-- Viewer -->
+<!-- VIEWER -->
 <div id="viewer">
-  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background: rgba(0,0,0,0.35);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:#f1f1f1;">
     <div class="small">વિષય દર્શક</div>
     <div>
-      <button class="btn" onclick="closeViewer()">Close</button>
-      <button class="btn" onclick="openInNewTab()">New Tab</button>
+      <button class="btn card3" onclick="closeViewer()">Close</button>
+      <button class="btn card2" onclick="openInNewTab()">New Tab</button>
     </div>
   </div>
   <iframe id="mcqFrame" src=""></iframe>
+</div>
+
+<!-- FOOTER LOGO -->
+<div class="footer-logo">
+   <img src="logo.png" alt="Logo">
 </div>
 
 <script>
@@ -186,7 +256,6 @@ function goHome(){
   currentOpen=null;
 }
 
-// Initial display
 show('homeSelect');
 </script>
 
