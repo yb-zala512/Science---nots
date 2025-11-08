@@ -1,65 +1,153 @@
-<!DOCTYPE html><html lang="gu">
+<!-- Updated index.html with NEET & JEE structure and corrected file paths --><!DOCTYPE html><html lang="gu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium School Portal</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium School Portal — Zala Yuvraj Sinh B</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header { padding: 18px 0; }
+    h1 { margin: 0; font-size: 24px; font-weight: 600; }
+    .controls {
+      margin: 12px 0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      margin: 6px;
+      padding: 14px 22px;
+      font-size: 17px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(45deg, #22c55e, #3b82f6);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.03); }
+    .box {
+      margin: 14px auto;
+      padding: 20px;
+      width: 92%;
+      max-width: 780px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .hidden { display: none; }
+    #viewer {
+      margin: 18px auto;
+      width: 95%;
+      max-width: 900px;
+      height: 640px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: #0b1220;
+    }
+    #mcqFrame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .top-actions { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap;}
+  </style>
 </head>
 <body>
   <header>
-    <h1 class="title">Premium School Portal</h1>
-    <a class="yt-btn" href="https://youtube.com/@yuvrajsinhzala-u5k?si=b598xaH6p6DfG7Ry" target="_blank">📺 YouTube Channel</a>
-  </header>
-  <main>
-    <section>
-      <h2>STD 11</h2>
-      <div class="btn-group">
-        <a href="std11/biology11.gu.html" class="btn">Biology (GU)</a>
-        <a href="std11/biology11.en.html" class="btn">Biology (EN)</a>
-        <a href="std11/biology11.hi.html" class="btn">Biology (HI)</a>
-        <a href="std11/chemistry11.gu.html" class="btn">Chemistry (GU)</a>
-        <a href="std11/chemistry11.en.html" class="btn">Chemistry (EN)</a>
-        <a href="std11/chemistry11.hi.html" class="btn">Chemistry (HI)</a>
-        <a href="std11/physics11.gu.html" class="btn">Physics (GU)</a>
-        <a href="std11/physics11.en.html" class="btn">Physics (EN)</a>
-        <a href="std11/physics11.hi.html" class="btn">Physics (HI)</a>
-        <a href="std11/maths11.gu.html" class="btn">Maths (GU)</a>
-        <a href="std11/maths11.en.html" class="btn">Maths (EN)</a>
-        <a href="std11/maths11.hi.html" class="btn">Maths (HI)</a>
+    <h1>📚 Premium School Portal — Zala Yuvraj Sinh B</h1>
+    <div>STD પસંદ કરો → ભાષા → વિષય</div>
+  </header>  <div id="stdSelect" class="box">
+    <div class="controls">
+      <button class="btn" onclick="show('std11')">STD 11</button>
+      <button class="btn" onclick="show('std12')">STD 12</button>
+      <button class="btn" onclick="show('std10')">STD 10</button>
+      <button class="btn" onclick="show('neet')">NEET</button>
+      <button class="btn" onclick="show('jee')">JEE</button>
+      <button class="btn" onclick="openExternal('https://youtube.com/@yuvrajsinhzala-u5k')">📺 YouTube</button>
+    </div>
+  </div>  <!-- NEET Panel -->  <div id="neet" class="box hidden">
+    <h2>NEET — Subject પસંદ કરો</h2>
+    <div class="controls">
+      <button class="btn" onclick="openPage('neet/biology.neet.html')">Biology</button>
+      <button class="btn" onclick="openPage('neet/chemistry.neet.html')">Chemistry</button>
+      <button class="btn" onclick="openPage('neet/physics.neet.html')">Physics</button>
+    </div>
+    <div class="top-actions">
+      <button class="btn" onclick="goHome()">Home</button>
+    </div>
+  </div>  <!-- JEE Panel -->  <div id="jee" class="box hidden">
+    <h2>JEE — Subject પસંદ કરો</h2>
+    <div class="controls">
+      <button class="btn" onclick="openPage('jee/maths.jee.html')">Maths</button>
+      <button class="btn" onclick="openPage('jee/chemistry.jee.html')">Chemistry</button>
+      <button class="btn" onclick="openPage('jee/physics.jee.html')">Physics</button>
+    </div>
+    <div class="top-actions">
+      <button class="btn" onclick="goHome()">Home</button>
+    </div>
+  </div>  <!-- Viewer -->  <div id="viewer" class="hidden">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background: rgba(0,0,0,0.35);">
+      <div>Viewer</div>
+      <div>
+        <button class="btn" onclick="closeViewer()">Close</button>
+        <button class="btn" onclick="openInNewTab()">New Tab</button>
       </div>
-    </section>
-    <section>
-      <h2>STD 12</h2>
-      <div class="btn-group">
-        <a href="std12/biology12.gu.html" class="btn">Biology (GU)</a>
-        <a href="std12/biology12.en.html" class="btn">Biology (EN)</a>
-        <a href="std12/biology12.hi.html" class="btn">Biology (HI)</a>
-        <a href="std12/chemistry12.gu.html" class="btn">Chemistry (GU)</a>
-        <a href="std12/chemistry12.en.html" class="btn">Chemistry (EN)</a>
-        <a href="std12/chemistry12.hi.html" class="btn">Chemistry (HI)</a>
-        <a href="std12/physics12.gu.html" class="btn">Physics (GU)</a>
-        <a href="std12/physics12.en.html" class="btn">Physics (EN)</a>
-        <a href="std12/physics12.hi.html" class="btn">Physics (HI)</a>
-        <a href="std12/maths12.gu.html" class="btn">Maths (GU)</a>
-        <a href="std12/maths12.en.html" class="btn">Maths (EN)</a>
-        <a href="std12/maths12.hi.html" class="btn">Maths (HI)</a>
-      </div>
-    </section>
-    <section>
-      <h2>STD 10</h2>
-      <div class="btn-group">
-        <a href="std10/science10.gu.html" class="btn">Science (GU)</a>
-        <a href="std10/science10.en.html" class="btn">Science (EN)</a>
-        <a href="std10/science10.hi.html" class="btn">Science (HI)</a>
-        <a href="std10/maths10.gu.html" class="btn">Maths (GU)</a>
-        <a href="std10/maths10.en.html" class="btn">Maths (EN)</a>
-        <a href="std10/maths10.hi.html" class="btn">Maths (HI)</a>
-        <a href="std10/social10.gu.html" class="btn">Social (GU)</a>
-        <a href="std10/social10.en.html" class="btn">Social (EN)</a>
-        <a href="std10/social10.hi.html" class="btn">Social (HI)</a>
-      </div>
-    </section>
-  </main>
-  <script src="assets/script.js"></script>
-</body>
+    </div>
+    <iframe id="mcqFrame" src=""></iframe>
+  </div>  <script>
+    function show(section) {
+      document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
+      document.getElementById(section).classList.remove('hidden');
+      document.getElementById('viewer').classList.add('hidden');
+      currentOpen = null;
+    }
+
+    let currentOpen = null;
+    function openPage(filePath) {
+      const frame = document.getElementById('mcqFrame');
+      frame.src = filePath;
+      document.getElementById('viewer').classList.remove('hidden');
+      document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
+      currentOpen = filePath;
+    }
+
+    function closeViewer() {
+      document.getElementById('mcqFrame').src = '';
+      document.getElementById('viewer').classList.add('hidden');
+      document.getElementById('stdSelect').classList.remove('hidden');
+      currentOpen = null;
+    }
+
+    function openInNewTab() {
+      if (currentOpen) window.open(currentOpen, '_blank');
+      else alert('કોઈ પેજ ખુલ્યું નથી.');
+    }
+
+    function goHome() {
+      document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
+      document.getElementById('stdSelect').classList.remove('hidden');
+      document.getElementById('viewer').classList.add('hidden');
+      document.getElementById('mcqFrame').src = '';
+      currentOpen = null;
+    }
+
+    function openExternal(url) { window.open(url, '_blank'); }
+
+    goHome();
+  </script></body>
 </html>
