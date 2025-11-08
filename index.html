@@ -1,263 +1,65 @@
-<!DOCTYPE html>
-<html lang="gu">
+<!DOCTYPE html><html lang="gu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium School Portal — Zala Yuvraj Sinh B</title>
-
-<style>
-  body {
-    margin:0;
-    font-family:"Poppins",sans-serif;
-    background:#f5f7fa;
-    color:#222;
-    text-align:center;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-
-  header {
-    padding:20px 0;
-  }
-
-  h1 {
-    margin:0;
-    font-size:22px;
-    font-weight:600;
-  }
-
-  .small {
-    font-size:14px;
-    opacity:0.9;
-  }
-
-  /* ====== Card Buttons ====== */
-  .controls {
-    margin:12px 0;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .btn{
-    padding:18px 28px;
-    font-size:18px;
-    font-weight:600;
-    border:none;
-    border-radius:14px;
-    cursor:pointer;
-    transition:0.25s;
-    background:#fff;
-    box-shadow:0 3px 10px rgba(0,0,0,0.15);
-    color:#222;
-  }
-
-  .btn:hover{
-    transform:scale(1.05);
-  }
-
-  /* Color cards (like example image) */
-  .card1 { background:#FFDE7A; }  
-  .card2 { background:#9ED2FF; }  
-  .card3 { background:#FFC6DB; }  
-  .card4 { background:#C8FFB2; }  
-  .card5 { background:#E2C9FF; }  
-
-  .box{
-    margin:14px auto;
-    padding:16px;
-    width:92%;
-    max-width:750px;
-    background:#ffffff;
-    border-radius:18px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.18);
-  }
-
-  .hidden{ display:none; }
-
-  /* Viewer */
-  #viewer{
-    margin:18px auto;
-    width:95%;
-    max-width:900px;
-    height:640px;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.28);
-    border:1px solid #ccc;
-    background:#fff;
-    display:none;
-  }
-
-  #mcqFrame{
-    width:100%;
-    height:100%;
-    border:0;
-    display:block;
-  }
-
-  .top-actions{
-    display:flex;
-    gap:8px;
-    justify-content:center;
-    margin-top:8px;
-    flex-wrap:wrap;
-  }
-
-  /* Footer Logo */
-  .footer-logo{
-    margin:50px 0 25px 0;
-  }
-
-  .footer-logo img{
-    width:200px;
-    border-radius:15px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium School Portal</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-
-<header>
-  <h1>📚 Premium School Portal — Zala Yuvraj Sinh B</h1>
-  <div class="small">STD / NEET / JEE પસંદ કરો, પછી ભાષા અને વિષય ખોલો</div>
-</header>
-
-<!-- HOME -->
-<div id="homeSelect" class="box">
-  <div class="controls">
-    <button class="btn card1" onclick="show('stdSelect')">STD 10, 11, 12</button>
-    <button class="btn card2" onclick="show('neetSelect')">NEET</button>
-    <button class="btn card3" onclick="show('jeeSelect')">JEE</button>
-  </div>
-</div>
-
-<!-- STD SELECT -->
-<div id="stdSelect" class="box hidden">
-  <h2>STD પસંદ કરો</h2>
-  <div class="controls">
-    <button class="btn card4" onclick="show('std11')">STD 11</button>
-    <button class="btn card5" onclick="show('std12')">STD 12</button>
-    <button class="btn card1" onclick="show('std10')">STD 10</button>
-  </div>
-  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
-</div>
-
-<!-- STD 11 -->
-<div id="std11" class="box hidden">
-  <h2>STD 11 — ભાષા પસંદ કરો</h2>
-  <div class="controls">
-    <button class="btn card1" onclick="showLang('std11','gu')">ગુજરાતી</button>
-    <button class="btn card2" onclick="showLang('std11','en')">English</button>
-    <button class="btn card3" onclick="showLang('std11','hi')">हिन्दी</button>
-  </div>
-</div>
-
-<div id="std11-gu" class="box hidden">
-  <h3>STD 11 — ગુજરાતી</h3>
-  <div class="controls">
-    <button class="btn card4" onclick="openPage('biology11.gu.html')">Biology</button>
-    <button class="btn card5" onclick="openPage('chemistry11.gu.html')">Chemistry</button>
-    <button class="btn card1" onclick="openPage('physics11.gu.html')">Physics</button>
-    <button class="btn card2" onclick="openPage('maths11.gu.html')">Maths</button>
-  </div>
-
-  <div class="top-actions">
-    <button class="btn card3" onclick="show('std11')">Language બદલો</button>
-    <button class="btn card2" onclick="goHome()">Home પર જાઓ</button>
-  </div>
-</div>
-
-<!-- NEET -->
-<div id="neetSelect" class="box hidden">
-  <h2>NEET Subjects</h2>
-  <div class="controls">
-    <button class="btn card4" onclick="openPage('neet_biology.html')">Biology</button>
-    <button class="btn card5" onclick="openPage('neet_chemistry.html')">Chemistry</button>
-    <button class="btn card2" onclick="openPage('neet_physics.html')">Physics</button>
-  </div>
-  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
-</div>
-
-<!-- JEE -->
-<div id="jeeSelect" class="box hidden">
-  <h2>JEE Subjects</h2>
-  <div class="controls">
-    <button class="btn card2" onclick="openPage('jee_maths.html')">Maths</button>
-    <button class="btn card5" onclick="openPage('jee_chemistry.html')">Chemistry</button>
-    <button class="btn card1" onclick="openPage('jee_physics.html')">Physics</button>
-  </div>
-  <button class="btn card3" onclick="goHome()">Home પર જાઓ</button>
-</div>
-
-<!-- VIEWER -->
-<div id="viewer">
-  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:#f1f1f1;">
-    <div class="small">વિષય દર્શક</div>
-    <div>
-      <button class="btn card3" onclick="closeViewer()">Close</button>
-      <button class="btn card2" onclick="openInNewTab()">New Tab</button>
-    </div>
-  </div>
-  <iframe id="mcqFrame" src=""></iframe>
-</div>
-
-<!-- FOOTER LOGO -->
-<div class="footer-logo">
-   <img src="logo.png" alt="Logo">
-</div>
-
-<script>
-let currentOpen = null;
-
-function show(section){
-  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
-  document.getElementById(section).classList.remove('hidden');
-  document.getElementById('viewer').style.display='none';
-  currentOpen = null;
-}
-
-function showLang(std, lang){
-  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
-  const target = document.getElementById(std+'-'+lang);
-  if(target){ target.classList.remove('hidden'); }
-  else{ document.getElementById(std).classList.remove('hidden'); }
-  document.getElementById('viewer').style.display='none';
-  currentOpen = null;
-}
-
-function openPage(file){
-  document.getElementById('mcqFrame').src = file;
-  document.getElementById('viewer').style.display = 'block';
-  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
-  currentOpen = file;
-}
-
-function closeViewer(){
-  document.getElementById('mcqFrame').src='';
-  document.getElementById('viewer').style.display='none';
-  show('homeSelect');
-  currentOpen = null;
-}
-
-function openInNewTab(){
-  if(currentOpen){ window.open(currentOpen,'_blank'); }
-  else{ alert('કોઈ પેજ ખુલ્યું નથી.'); }
-}
-
-function goHome(){
-  document.querySelectorAll('.box').forEach(e => e.classList.add('hidden'));
-  document.getElementById('homeSelect').classList.remove('hidden');
-  document.getElementById('viewer').style.display='none';
-  document.getElementById('mcqFrame').src='';
-  currentOpen=null;
-}
-
-show('homeSelect');
-</script>
-
+  <header>
+    <h1 class="title">Premium School Portal</h1>
+    <a class="yt-btn" href="https://youtube.com/@yuvrajsinhzala-u5k?si=b598xaH6p6DfG7Ry" target="_blank">📺 YouTube Channel</a>
+  </header>
+  <main>
+    <section>
+      <h2>STD 11</h2>
+      <div class="btn-group">
+        <a href="std11/biology11.gu.html" class="btn">Biology (GU)</a>
+        <a href="std11/biology11.en.html" class="btn">Biology (EN)</a>
+        <a href="std11/biology11.hi.html" class="btn">Biology (HI)</a>
+        <a href="std11/chemistry11.gu.html" class="btn">Chemistry (GU)</a>
+        <a href="std11/chemistry11.en.html" class="btn">Chemistry (EN)</a>
+        <a href="std11/chemistry11.hi.html" class="btn">Chemistry (HI)</a>
+        <a href="std11/physics11.gu.html" class="btn">Physics (GU)</a>
+        <a href="std11/physics11.en.html" class="btn">Physics (EN)</a>
+        <a href="std11/physics11.hi.html" class="btn">Physics (HI)</a>
+        <a href="std11/maths11.gu.html" class="btn">Maths (GU)</a>
+        <a href="std11/maths11.en.html" class="btn">Maths (EN)</a>
+        <a href="std11/maths11.hi.html" class="btn">Maths (HI)</a>
+      </div>
+    </section>
+    <section>
+      <h2>STD 12</h2>
+      <div class="btn-group">
+        <a href="std12/biology12.gu.html" class="btn">Biology (GU)</a>
+        <a href="std12/biology12.en.html" class="btn">Biology (EN)</a>
+        <a href="std12/biology12.hi.html" class="btn">Biology (HI)</a>
+        <a href="std12/chemistry12.gu.html" class="btn">Chemistry (GU)</a>
+        <a href="std12/chemistry12.en.html" class="btn">Chemistry (EN)</a>
+        <a href="std12/chemistry12.hi.html" class="btn">Chemistry (HI)</a>
+        <a href="std12/physics12.gu.html" class="btn">Physics (GU)</a>
+        <a href="std12/physics12.en.html" class="btn">Physics (EN)</a>
+        <a href="std12/physics12.hi.html" class="btn">Physics (HI)</a>
+        <a href="std12/maths12.gu.html" class="btn">Maths (GU)</a>
+        <a href="std12/maths12.en.html" class="btn">Maths (EN)</a>
+        <a href="std12/maths12.hi.html" class="btn">Maths (HI)</a>
+      </div>
+    </section>
+    <section>
+      <h2>STD 10</h2>
+      <div class="btn-group">
+        <a href="std10/science10.gu.html" class="btn">Science (GU)</a>
+        <a href="std10/science10.en.html" class="btn">Science (EN)</a>
+        <a href="std10/science10.hi.html" class="btn">Science (HI)</a>
+        <a href="std10/maths10.gu.html" class="btn">Maths (GU)</a>
+        <a href="std10/maths10.en.html" class="btn">Maths (EN)</a>
+        <a href="std10/maths10.hi.html" class="btn">Maths (HI)</a>
+        <a href="std10/social10.gu.html" class="btn">Social (GU)</a>
+        <a href="std10/social10.en.html" class="btn">Social (EN)</a>
+        <a href="std10/social10.hi.html" class="btn">Social (HI)</a>
+      </div>
+    </section>
+  </main>
+  <script src="assets/script.js"></script>
 </body>
 </html>
