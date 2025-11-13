@@ -1,159 +1,169 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="gu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium School Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zala YuvrajSinh.B - Premium School Portal</title>
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
+      text-align: center;
+      min-height: 100vh;
     }
+
     h1 {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 2.2rem;
-      font-weight: 700;
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 10px rgba(255,255,255,0.3);
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
+
+    h2 {
+      margin: 20px 0 10px;
+      color: #80ffdb;
     }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 18px 32px;
-      font-size: 1.25rem;
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px auto;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff8a00, #e52e71);
       border: none;
-      border-radius: 14px;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 12px;
       cursor: pointer;
-      background: linear-gradient(45deg, #ffdd00, #ff8800);
-      color: #000;
-      font-weight: 600;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0px 6px 18px rgba(255, 255, 255, 0.4);
-      opacity: 0.95;
+
+    button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #43cea2, #185a9d);
     }
-    .hidden {
-      display: none;
+
+    iframe {
+      width: 90%;
+      height: 500px;
+      margin-top: 30px;
+      border: 2px solid #fff;
+      border-radius: 10px;
     }
+
+    .youtube {
+      margin: 40px 0;
+    }
+
+    .youtube button {
+      background: linear-gradient(135deg, #ff0000, #c31432);
+      font-size: 1.2rem;
+      padding: 18px 35px;
+    }
+
     footer {
       margin-top: 40px;
-      text-align: center;
-      padding-bottom: 30px;
-    }
-    a {
-      text-decoration: none;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <h1>Yuvrajsinh Zala</h1>
-  <div class="container">
-    <div id="menu-main">
-      <button class="btn" onclick="showNEET()">NEET</button>
-      <button class="btn" onclick="showJEE()">JEE</button>
-      <button class="btn" onclick="showSTD()">STD</button>
-    </div><!-- NEET SECTION -->
-<div id="neet" class="hidden">
-  <h2>NEET</h2>
-  <button class="btn" onclick="openFile('std11/biology11.gu.html')">Biology</button>
-  <button class="btn" onclick="openFile('std11/chemistry11.gu.html')">Chemistry</button>
-  <button class="btn" onclick="openFile('std11/physics11.gu.html')">Physics</button>
-  <button class="btn" onclick="backMain()">Back</button>
-</div>
 
-<!-- JEE SECTION -->
-<div id="jee" class="hidden">
-  <h2>JEE</h2>
-  <button class="btn" onclick="openFile('std11/maths11.gu.html')">Maths</button>
-  <button class="btn" onclick="openFile('std11/chemistry11.gu.html')">Chemistry</button>
-  <button class="btn" onclick="openFile('std11/physics11.gu.html')">Physics</button>
-  <button class="btn" onclick="backMain()">Back</button>
-</div>
+  <h1>👑 Zala YuvrajSinh.B 👑</h1>
+  <h2>Premium School Portal</h2>
 
-<!-- STD SECTION -->
-<div id="std" class="hidden">
-  <h2>Select Standard</h2>
-  <button class="btn" onclick="showSTD11()">STD 11</button>
-  <button class="btn" onclick="showSTD12()">STD 12</button>
-  <button class="btn" onclick="showSTD10()">STD 10</button>
-  <button class="btn" onclick="backMain()">Back</button>
-</div>
+  <!-- Step 1: STD Selection -->
+  <h3>પહેલાં Standard પસંદ કરો:</h3>
+  <div class="button-container" id="stdButtons">
+    <button onclick="selectSTD('std10')">STD 10</button>
+    <button onclick="selectSTD('std11')">STD 11</button>
+    <button onclick="selectSTD('std12')">STD 12</button>
+  </div>
 
-<!-- STD 11 SECTION -->
-<div id="std11" class="hidden">
-  <h2>STD 11 Subjects</h2>
-  <button class="btn" onclick="showLang('11','biology')">Biology</button>
-  <button class="btn" onclick="showLang('11','chemistry')">Chemistry</button>
-  <button class="btn" onclick="showLang('11','physics')">Physics</button>
-  <button class="btn" onclick="showLang('11','maths')">Maths</button>
-  <button class="btn" onclick="showSTD()">Back</button>
-</div>
+  <!-- Step 2: Subject Selection -->
+  <div id="subjectSection" style="display:none;">
+    <h3>વિષય પસંદ કરો:</h3>
+    <div class="button-container" id="subjectButtons"></div>
+  </div>
 
-<!-- STD 12 SECTION -->
-<div id="std12" class="hidden">
-  <h2>STD 12 Subjects</h2>
-  <button class="btn" onclick="showLang('12','biology')">Biology</button>
-  <button class="btn" onclick="showLang('12','chemistry')">Chemistry</button>
-  <button class="btn" onclick="showLang('12','physics')">Physics</button>
-  <button class="btn" onclick="showLang('12','maths')">Maths</button>
-  <button class="btn" onclick="showSTD()">Back</button>
-</div>
+  <!-- Step 3: Language Selection -->
+  <div id="languageSection" style="display:none;">
+    <h3>ભાષા પસંદ કરો:</h3>
+    <div class="button-container" id="languageButtons"></div>
+  </div>
 
-<!-- STD 10 SECTION -->
-<div id="std10" class="hidden">
-  <h2>STD 10 Subjects</h2>
-  <button class="btn" onclick="showLang('10','science')">Science</button>
-  <button class="btn" onclick="showLang('10','maths')">Maths</button>
-  <button class="btn" onclick="showLang('10','social')">Social Science</button>
-  <button class="btn" onclick="showSTD()">Back</button>
-</div>
+  <!-- Step 4: File Display -->
+  <iframe id="fileFrame" src="" style="display:none;"></iframe>
 
-<!-- LANGUAGE SELECT -->
-<div id="lang" class="hidden">
-  <h2>Select Language</h2>
-  <button class="btn" onclick="openFinal('gu')">Gujarati</button>
-  <button class="btn" onclick="openFinal('en')">English</button>
-  <button class="btn" onclick="openFinal('hi')">Hindi</button>
-  <button class="btn" onclick="backSTD()">Back</button>
-</div>
+  <!-- YouTube Button -->
+  <div class="youtube">
+    <button onclick="window.open('https://youtube.com/@yuvrajsinhzala-u5k?si=s1DZjTSpf_Xow7QO', '_blank')">
+      🎥 Visit My YouTube Channel
+    </button>
+  </div>
 
-  </div>  <footer>
-    <a href="https://youtube.com/@yuvrajsinhzala-u5k?si=s1DZjTSpf_Xow7QO" target="_blank">
-      <button class="btn">My YouTube Channel</button>
-    </a>
-  </footer>  <script>
+  <footer>© 2025 Zala YuvrajSinh.B | Premium School Portal</footer>
+
+  <script>
     let currentSTD = "";
     let currentSubject = "";
 
-    function hideAll() {
-      document.querySelectorAll("#neet,#jee,#std,#std11,#std12,#std10,#lang").forEach(e => e.classList.add("hidden"));
-    }
-    function backMain() { hideAll(); }
-    function showNEET() { hideAll(); neet.classList.remove("hidden"); }
-    function showJEE() { hideAll(); jee.classList.remove("hidden"); }
-    function showSTD() { hideAll(); std.classList.remove("hidden"); }
-    function showSTD11() { hideAll(); std11.classList.remove("hidden"); currentSTD="11"; }
-    function showSTD12() { hideAll(); std12.classList.remove("hidden"); currentSTD="12"; }
-    function showSTD10() { hideAll(); std10.classList.remove("hidden"); currentSTD="10"; }
-    function showLang(std, sub) { hideAll(); lang.classList.remove("hidden"); currentSTD = std; currentSubject = sub; }
-    function backSTD(){ hideAll(); showSTD(); }
+    const subjects = {
+      std10: ["science", "maths", "social"],
+      std11: ["physics", "chemistry", "maths", "biology"],
+      std12: ["physics", "chemistry", "maths", "biology"]
+    };
 
-    function openFinal(lang) {
-      let f = `${"std" + currentSTD}/${currentSubject + currentSTD}.${lang}.html`;
-      openFile(f);
+    function selectSTD(std) {
+      currentSTD = std;
+      document.getElementById("subjectSection").style.display = "block";
+      document.getElementById("languageSection").style.display = "none";
+      document.getElementById("fileFrame").style.display = "none";
+
+      const container = document.getElementById("subjectButtons");
+      container.innerHTML = "";
+
+      subjects[std].forEach(sub => {
+        let label = sub.charAt(0).toUpperCase() + sub.slice(1);
+        container.innerHTML += `<button onclick="selectSubject('${sub}')">${label}</button>`;
+      });
     }
 
-    function openFile(path) {
-      window.location.href = path;
+    function selectSubject(subject) {
+      currentSubject = subject;
+      document.getElementById("languageSection").style.display = "block";
+      document.getElementById("fileFrame").style.display = "none";
+
+      const langContainer = document.getElementById("languageButtons");
+      langContainer.innerHTML = `
+        <button onclick="openFile('gu')">ગુજરાતી</button>
+        <button onclick="openFile('en')">English</button>
+        <button onclick="openFile('hi')">हिंदी</button>
+      `;
     }
-  </script></body>
-    </html>
+
+    function openFile(lang) {
+      const filePath = `${currentSTD}/${currentSubject}${currentSTD.replace('std', '')}.${lang}.html`;
+      document.getElementById("fileFrame").src = filePath;
+      document.getElementById("fileFrame").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
