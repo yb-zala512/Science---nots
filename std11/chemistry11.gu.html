@@ -1,211 +1,293 @@
-<!DOCTYPE html>  <html>  
-<head>  
-<style>  
-.mcq-box {  
-  background-color: #f9f9f9;  
-  border: 1px solid #ddd;  
-  padding: 15px;  
-  margin-bottom: 10px;  
-  border-radius: 5px;  
-}  
-.ans {  
-  display: none;  
-  color: #008000;  
-  font-weight: bold;  
-  margin-top: 10px;  
-}  
-.show-ans-btn {  
-  background-color: #4CAF50; /* Green */  
-  border: none;  
-  color: white;  
-  padding: 8px 16px;  
-  text-align: center;  
-  text-decoration: none;  
-  display: inline-block;  
-  font-size: 14px;  
-  margin-top: 10px;  
-  cursor: pointer;  
-  border-radius: 4px;  
-}  
-</style>  
-<script>  
-function showAns(id) {  
-  var element = document.getElementById(id);  
-  if (element.style.display === "none") {  
-    element.style.display = "block";  
-  } else {  
-    element.style.display = "none";  
-  }  
-}  
-</script>  
-</head>  
-<body>  <div class="mcq-box">  
-1) રસાયણવિજ્ઞાનની શાખમાં શાનો સમાવેશ થતો નથી?  
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylish MCQ Quiz</title>
+
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  padding: 25px;
+}
+
+.mcq-box {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin-bottom: 22px;
+  border-left: 8px solid #4f46e5;
+  transition: 0.3s;
+}
+
+.mcq-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.mcq-box p {
+  background: #f1f5ff;
+  padding: 9px;
+  border-radius: 10px;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.ans {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: #dcfce7;
+  border-left: 6px solid #15803d;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.show-ans-btn {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.show-ans-btn:hover {
+  background: linear-gradient(45deg, #4338ca, #1d4ed8);
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+function showAns(id){
+  var element = document.getElementById(id);
+  element.style.display = (element.style.display === "block") ? "none" : "block";
+}
+</script>
+</head>
+<body>
+
+
+<!-- 🌟🌟🌟 ALL MCQ START 🌟🌟🌟 -->
+
+<div class="mcq-box">
+1) રસાયણવિજ્ઞાનની શાખમાં શાનો સમાવેશ થતો નથી?
 <br>A) એર્થનિઓ  
 <br>B) ઔદ્યોગિક  
 <br>C) જીવરસાયણ  
 <br>D) કુદરતી રસાયણ  
-<div id="a1" class="ans">✅ જવાબ: D) કુદરતી રસાયણ</div>  
-<button class="show-ans-btn" onclick="showAns('a1')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-2) કઈ દવા કેન્સરની સારવારમાં વપરાય છે.  
+<div id="a1" class="ans">✅ જવાબ: D) કુદરતી રસાયણ</div>
+<button class="show-ans-btn" onclick="showAns('a1')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+2) કઈ દવા કેન્સરની સારવારમાં વપરાય છે.
 <br>A) પેરાસિટામોલ  
 <br>B) ટેક્સોલ  
 <br>C) ઍસ્થિરિન  
 <br>D) પેનિસિલિન  
-<div id="a2" class="ans">✅ જવાબ: B) ટેક્સોલ</div>  
-<button class="show-ans-btn" onclick="showAns('a2')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-3) CFC ના બદલે રેફ્રિજરેટરમાં વપરાતો પર્યાવરણને ઓછો નુકસાનકર્તા પદાર્થ કયો છે?  
-<br>A) 1, 1, 1, 2 ટેટ્રાફ્લોરોઇથેન  
+<div id="a2" class="ans">✅ જવાબ: B) ટેક્સોલ</div>
+<button class="show-ans-btn" onclick="showAns('a2')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+3) CFC ના બદલે રેફ્રિજરેટરમાં વપરાતો પર્યાવરણને ઓછો નુકસાનકર્તા પદાર્થ કયો છે?
+<br>A) 1,1,1,2 ટેટ્રાફ્લોરોઇથેન  
 <br>B) ક્લોરોફોર્મ  
-<br>C) 1, 1, 1, 2 ટેટ્રાક્લોરોઇથેન  
+<br>C) 1,1,1,2 ટેટ્રાક્લોરોઇથેન  
 <br>D) કાર્બનટેટ્રાક્લોરાઇડ  
-<div id="a3" class="ans">✅ જવાબ: A) 1, 1, 1, 2 ટેટ્રાફ્લોરોઇથેન</div>  
-<button class="show-ans-btn" onclick="showAns('a3')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-4) નીચેના પૈકી કયું તત્ત્વ નથી?  
+<div id="a3" class="ans">✅ જવાબ: A) 1,1,1,2 ટેટ્રાફ્લોરોઇથેન</div>
+<button class="show-ans-btn" onclick="showAns('a3')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+4) નીચેના પૈકી કયું તત્ત્વ નથી?
 <br>A) હીરો  
 <br>B) ગ્રેફાઇટ  
 <br>C) ડિજિયા  
 <br>D) ઓક્સિજન  
-<div id="a4" class="ans">✅ જવાબ: C) ડિજિયા</div>  
-<button class="show-ans-btn" onclick="showAns('a4')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-5) વેગનો ઉપજાવેલો એકમ જણાવો.  
+<div id="a4" class="ans">✅ જવાબ: C) ડિજિયા</div>
+<button class="show-ans-btn" onclick="showAns('a4')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+5) વેગનો ઉપજાવેલો એકમ જણાવો.
 <br>A) m²  
 <br>B) ms⁻²  
 <br>C) m²s⁻¹  
 <br>D) ms⁻¹  
-<div id="a5" class="ans">✅ જવાબ: D) ms⁻¹</div>  
-<button class="show-ans-btn" onclick="showAns('a5')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-6) 100 ગ્રામ નીચે આપેલા પદાર્થોમાંથી કયો પદાર્થ સૌથી વધારે પરમાણુઓ ધરાવે છે?  
+<div id="a5" class="ans">✅ જવાબ: D) ms⁻¹</div>
+<button class="show-ans-btn" onclick="showAns('a5')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+6) 100 ગ્રામ નીચેના પદાર્થોમાંથી કયામાં સૌથી વધારે પરમાણુઓ હશે?
 <br>A) H  
 <br>B) C  
 <br>C) Ag  
 <br>D) S  
-<div id="a6" class="ans">✅ જવાબ: A) H</div>  
-<button class="show-ans-btn" onclick="showAns('a6')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-7) તાપમાન અને દબાણની સમાન પરિસ્થિતિમાં સમાન કદ ધરાવતા O₂, O₃ અને SO₂ ના દળનો ગુણોત્તર અનુક્રમે છે.  
+<div id="a6" class="ans">✅ જવાબ: A) H</div>
+<button class="show-ans-btn" onclick="showAns('a6')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+7) સમાન કદ ધરાવતા O₂, O₃ અને SO₂ ના દળનો ગુણોત્તર.
 <br>A) 2:1:3:1  
 <br>B) 2:3:4  
 <br>C) 4:2:1  
 <br>D) 1:2:2  
-<div id="a7" class="ans">✅ જવાબ: B) 2:3:4</div>  
-<button class="show-ans-btn" onclick="showAns('a7')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-8) 1 લિટર પાણીમાં પાણીના અણુઓની સંખ્યા કેટલી હશે?  
+<div id="a7" class="ans">✅ જવાબ: B) 2:3:4</div>
+<button class="show-ans-btn" onclick="showAns('a7')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+8) 1 લિટર પાણીમાં પાણીના અણુઓની સંખ્યા કેટલી?
 <br>A) 18  
-<br>B) 18 x 1000  
+<br>B) 18 × 1000  
 <br>C) Nₐ  
 <br>D) 55.55 Nₐ  
-<div id="a8" class="ans">✅ જવાબ: D) 55.55 Nₐ</div>  
-<button class="show-ans-btn" onclick="showAns('a8')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-9) એક ¹²C પરમાણુનું દળ ગ્રામ  
-<br>A) 1.992648 x 10²³  
-<br>B) 6.022 x 10²³  
-<br>C) 1.992648 x 10⁻²³  
+<div id="a8" class="ans">✅ જવાબ: D) 55.55 Nₐ</div>
+<button class="show-ans-btn" onclick="showAns('a8')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+9) એક ¹²C પરમાણુનું દળ.
+<br>A) 1.992648 × 10²³  
+<br>B) 6.022 × 10²³  
+<br>C) 1.992648 × 10⁻²³  
 <br>D) એકપણ નહીં  
-<div id="a9" class="ans">✅ જવાબ: C) 1.992648 x 10⁻²³</div>  
-<button class="show-ans-btn" onclick="showAns('a9')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-10) H₂O માં હાઇડ્રોજન અને ઑક્સિજનનું વજનથી પ્રમાણ છે.  
+<div id="a9" class="ans">✅ જવાબ: C) 1.992648 × 10⁻²૩</div>
+<button class="show-ans-btn" onclick="showAns('a9')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+10) H₂O માં હાઇડ્રોજન અને ઑક્સિજનનું વજનપ્રમાણ.
 <br>A) 1.008 : 16  
 <br>B) 16 : 3.008  
 <br>C) 1.008 : 8  
 <br>D) 8 : 1.008  
-<div id="a10" class="ans">✅ જવાબ: C) 1.008 : 8</div>  
-<button class="show-ans-btn" onclick="showAns('a10')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-11) H₂C₂O₄. 2H₂O (ઓક્ઝેલિક એસિડ) નું આણ્વીયદળ છે.  
+<div id="a10" class="ans">✅ જવાબ: C) 1.008 : 8</div>
+<button class="show-ans-btn" onclick="showAns('a10')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+11) H₂C₂O₄·2H₂O નું આણ્વીયદળ.
 <br>A) 90 u  
 <br>B) 126 u  
 <br>C) 124 u  
 <br>D) 136 u  
-<div id="a11" class="ans">✅ જવાબ: B) 126 u</div>  
-<button class="show-ans-btn" onclick="showAns('a11')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-12) H₂O માં H નું ટકાવાર પ્રમાણ % છે.  
-<br>A) 11.11  
-<br>B) 88.89  
-<br>C) 2  
-<br>D) 20  
-<div id="a12" class="ans">✅ જવાબ: A) 11.11</div>  
-<button class="show-ans-btn" onclick="showAns('a12')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-13) 100 મિલી 1 N ગ્લુકોઝના દ્રાવણની સાંદ્રતા 0.1 N જેટલી કરવા માટે મિલી પાણી ઉમેરવું પડે.  
+<div id="a11" class="ans">✅ જવાબ: B) 126 u</div>
+<button class="show-ans-btn" onclick="showAns('a11')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+12) H₂O માં H નું ટકાવાર પ્રમાણ.
+<br>A) 11.11%  
+<br>B) 88.89%  
+<br>C) 2%  
+<br>D) 20%  
+<div id="a12" class="ans">✅ જવાબ: A) 11.11%</div>
+<button class="show-ans-btn" onclick="showAns('a12')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+13) 1 N ને 0.1 N કરવા માટે કેટલું પાણી ઉમેરવું?
 <br>A) 1000  
 <br>B) 10  
 <br>C) 1100  
 <br>D) 900  
-<div id="a13" class="ans">✅ જવાબ: D) 900</div>  
-<button class="show-ans-btn" onclick="showAns('a13')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-14) એક સંયોજનનું પ્રમાણસૂચક સૂત્ર CH છે, જ્યારે આણ્વીયદળ 78 ગ્રામ/મોલ હોય, તો અણુસૂત્ર થાય.  
+<div id="a13" class="ans">✅ જવાબ: D) 900</div>
+<button class="show-ans-btn" onclick="showAns('a13')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+14) CH નો અણુસૂત્ર (આણ્વીયદળ 78).
 <br>A) CH₂  
 <br>B) C₆H₆  
 <br>C) C₂H₂  
 <br>D) C₃H₃  
-<div id="a14" class="ans">✅ જવાબ: B) C₆H₆</div>  
-<button class="show-ans-btn" onclick="showAns('a14')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-15) 2 મોલ HCl ના 5 લિટર જલીય દ્રાવણની મોલારિટી થશે.  
+<div id="a14" class="ans">✅ જવાબ: B) C₆H₆</div>
+<button class="show-ans-btn" onclick="showAns('a14')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+15) 5 L માં 2 મોલ HCl ની મોલારિટી.
 <br>A) 10  
 <br>B) 2.5  
 <br>C) 0.4  
 <br>D) 4  
-<div id="a15" class="ans">✅ જવાબ: C) 0.4</div>  
-<button class="show-ans-btn" onclick="showAns('a15')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-16) 0.01 મોલ સુક્રોઝને લિટર પાણીમાં ઓગાળવાથી 0.01 M દ્રાવણ બને.  
+<div id="a15" class="ans">✅ જવાબ: C) 0.4</div>
+<button class="show-ans-btn" onclick="showAns('a15')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+16) 0.01 મોલ સુક્રોઝને કેટલી લિટર પાણીમાં નાખીએ તો 0.01 M?
 <br>A) 1  
 <br>B) 0.0001  
 <br>C) 1000  
 <br>D) 0.01  
-<div id="a16" class="ans">✅ જવાબ: A) 1</div>  
-<button class="show-ans-btn" onclick="showAns('a16')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-17) 100 મિલી 0.1 M યુરિયાના દ્રાવણનું કદ 200 મિલી કરતા બનતા દ્રાવણની મોલારિટી M થાય.  
+<div id="a16" class="ans">✅ જવાબ: A) 1</div>
+<button class="show-ans-btn" onclick="showAns('a16')">જવაბ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+17) 100 મિલી 0.1 M ને 200 મિલી કરવાથી નવી મોલારિટી.
 <br>A) 0.2  
 <br>B) 0.1  
 <br>C) 0.05  
 <br>D) 0.025  
-<div id="a17" class="ans">✅ જવાબ: C) 0.05</div>  
-<button class="show-ans-btn" onclick="showAns('a17')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-18) NH₃ માં N ની ટકાવારી શોધવાનું સૂત્ર છે.  
-<br>A) 7 x 100 / 14  
-<br>B) 7 x 100 / 17  
-<br>C) 3 x 100 / 14  
-<br>D) 14 x 100 / 17  
-<div id="a18" class="ans">✅ જવાબ: D) 14 x 100 / 17</div>  
-<button class="show-ans-btn" onclick="showAns('a18')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-19) એક પરમાણ્વીયદળ એકમ એ કાર્બન પરમાણુના દળનો કેટલામો ભાગ છે?  
+<div id="a17" class="ans">✅ જવાબ: C) 0.05</div>
+<button class="show-ans-btn" onclick="showAns('a17')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+18) NH₃ માં N નું % સૂત્ર.
+<br>A) 7×100/14  
+<br>B) 7×100/17  
+<br>C) 3×100/14  
+<br>D) 14×100/17  
+<div id="a18" class="ans">✅ જવાબ: D) 14×100/17</div>
+<button class="show-ans-btn" onclick="showAns('a18')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+19) પરમાણ્વીયદળ એકમ = ¹²C દળનો કેટલો ભાગ?
 <br>A) 2  
 <br>B) 1/12  
 <br>C) 12  
 <br>D) 2  
-<div id="a19" class="ans">✅ જવાબ: B) 1/12</div>  
-<button class="show-ans-btn" onclick="showAns('a19')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-20) 500 ગ્રામ દ્રાવકમાં 2 મોલ દ્રાવ્ય ઓગાળવાથી બનતા દ્રાવણની મોલાલિટી થાય.  
+<div id="a19" class="ans">✅ જવાબ: B) 1/12</div>
+<button class="show-ans-btn" onclick="showAns('a19')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+20) 500g દ્રાવક + 2 મોલ = મોલાલિટી?
 <br>A) 2.5  
 <br>B) 1  
 <br>C) 4  
 <br>D) 0.4  
-<div id="a20" class="ans">✅ જવાબ: C) 4</div>  
-<button class="show-ans-btn" onclick="showAns('a20')">જવાબ જુઓ</button>  
-</div>  <div class="mcq-box">  
-21) H₂SO₄ ના 4.9 ગ્રામ / લિટર ધરાવતા દ્રાવણની સમપ્રમાણતા થશે.  
+<div id="a20" class="ans">✅ જવાબ: C) 4</div>
+<button class="show-ans-btn" onclick="showAns('a20')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+21) H₂SO₄ 4.9 g/L → સમપ્રમાણતા?
 <br>A) 0.1  
 <br>B) 0.01  
 <br>C) 1  
 <br>D) 0.4  
-<div id="a21" class="ans">✅ જવાબ: A) 0.1</div>  
-<button class="show-ans-btn" onclick="showAns('a21')">જવાબ જુઓ</button>  
-</div>  </body>  
-</html>  
+<div id="a21" class="ans">✅ જવાબ: A) 0.1</div>
+<button class="show-ans-btn" onclick="showAns('a21')">જવાબ જુઓ</button>
+</div>
+
+
+<!-- END ALL MCQ -->
+
+</body>
+  </html>
