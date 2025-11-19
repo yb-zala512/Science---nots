@@ -1,5 +1,91 @@
+<style>
+.mcq-box{background:#fff;padding:15px;margin-bottom:15px;border-radius:8px;box-shadow:0 0 8px rgba(0,0,0,0.2);}
+button{background:#007bff;color:#fff;border:none;padding:10px 15px;border-radius:6px;cursor:pointer;margin-top:10px;}
+button:hover{background:#0056b3;}
+.ans{display:none;margin-top:10px;background:#d1ffd1;padding:10px;border-radius:5px;}
+</style>
+
 <script>
-mathsCh1.push(
+function showAns(id){
+  let x=document.getElementById(id);
+  x.style.display=(x.style.display==="block") ? "none" : "block";
+}
+</script>
+
+<div class="mcq-box">
+<h3>1) આવમાંથી કયું શ્રેણી વર્ગીકરણ માટે મુખ્ય છે?</h3>
+<p>A) Species</p>
+<p>B) Kingdom</p>
+<p>C) Division</p>
+<p>D) Key</p>
+<div id="a1" class="ans">✅ જવાબ: D) Key</div>
+<button class="show-ans-btn" onclick="showAns('a1')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>2) જાણીતી જીવ જાતિની સંખ્યા કેટલી અનુમાની છે?</h3>
+<p>A) 1.25 મિલિયન</p>
+<p>B) 8.5 મિલિયન</p>
+<p>C) 1.025 મિલિયન</p>
+<p>D) 1.7 મિલિયન</p>
+<div id="a2" class="ans">✅ જવાબ: B) 8.5 મિલિયન</div>
+<button class="show-ans-btn" onclick="showAns('a2')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>3) કુળ (ફેમિલી) શું દર્શાવે છે?</h3>
+<p>A) કુળોની જૂથ</p>
+<p>B) જે જાતિઓ મળતા હોય છે</p>
+<p>C) કોઈ પણ પ્રકારનું જૂથ</p>
+<p>D) પૃથ્વી પર જાતોના પ્રકાર</p>
+<div id="a3" class="ans">✅ જવાબ: B) જે જાતિઓ મળતા હોય છે</div>
+<button class="show-ans-btn" onclick="showAns('a3')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>4) વૈજ્ઞાનિક નામ માટે કઈ ભાષા વાપરાય છે?</h3>
+<p>A) Latin</p>
+<p>B) Hindi</p>
+<p>C) Greek</p>
+<p>D) Sanskrit</p>
+<div id="a4" class="ans">✅ જવાબ: A) Latin</div>
+<button class="show-ans-btn" onclick="showAns('a4')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>5) નીચેનું સાચું છે – <br>
+A: વૈજ્ઞાનિક નામ Latin માં લખવું જોઈએ.<br>
+R: Latin નામને સુંદર બનાવે છે.</h3>
+<p>A) A અને R બન્ને સાચું, અને R એ Aનું યોગ્ય કારણ છે</p>
+<p>B) A અને R બન્ને સાચું, પણ R એ Aનું યોગ્ય કારણ નથી</p>
+<p>C) A સાચું, R ખોટું</p>
+<p>D) A ખોટું, R સાચું</p>
+<div id="a5" class="ans">✅ જવાબ: B) A અને R બન્ને સાચું, પણ R એ Aનું યોગ્ય કારણ નથી</div>
+<button class="show-ans-btn" onclick="showAns('a5')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>6) વર્ગીકરણ પદ્ધતિનો મુખ્ય લાભ શું છે?</h3>
+<p>A) વર્ણન ઘટે છે</p>
+<p>B) વધારે વિગતો મળે છે</p>
+<p>C) દરેક શ્રેણી ફાઈલમ મળે છે</p>
+<p>D) ફક્ત નાના જૂથ માટે</p>
+<div id="a6" class="ans">✅ જવાબ: A) વર્ણન ઘટે છે</div>
+<button class="show-ans-btn" onclick="showAns('a6')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>7) સાચો વિકલ્પ – <br>
+A: આંતરિક માળખું અને બહાર દેખાવ સામાન્ય હોય છે.<br>
+R: અંગ સ્વરૂપ સમાન હોઈ પણ કાર્ય ભિન્ન હોઈ શકે.</h3>
+<p>A) A અને R બન્ને સાચું, અને R એ Aનું યોગ્ય કારણ છે</p>
+<p>B) A અને R બન્ને સાચું, પણ R એ Aનું યોગ્ય કારણ નથી</p>
+<p>C) A સાચું, R ખોટું</p>
+<p>D) A ખોટું, R સાચું</p>
+<div id="a7" class="ans">✅ જવાબ: B) A અને R બન્ને સાચું, પણ R એ Aનું યોગ્ય કારણ નથી</div>
+<button class="show-ans-btn" onclick="showAns('a7')">જવાબ જુઓ</button>
+</div>
+
 
 {
 q:"1) સમૂહ (Set) ની વ્યાખ્યા શું છે?",
