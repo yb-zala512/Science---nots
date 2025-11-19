@@ -1,306 +1,172 @@
+<style>
+  .mcq-box{
+    border:2px solid #444;
+    padding:15px;
+    border-radius:10px;
+    margin:20px 0;
+    background:#f8f8f8;
+  }
+  .mcq-box h3{
+    margin:0 0 10px 0;
+    font-size:18px;
+  }
+  .ans{
+    display:none;
+    margin-top:10px;
+    font-weight:bold;
+    color:green;
+  }
+  .show-ans-btn{
+    margin-top:10px;
+    padding:8px 15px;
+    background:#0066ff;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+  }
+</style>
+
 <script>
-let physicsCh1 = [
-
-{
-q:"1) ભૌતિકવિજ્ઞાન એટલે શું?",
-options:["A) પદાર્થ અને ઉર્જાનો અભ્યાસ","B) જીવોનો અભ્યાસ","C) પાઠ્યપુસ્તક","D) ખગોળ વિજ્ઞાન"],
-answer:"A"
-},
-
-{
-q:"2) ‘ભૌતિકવિજ્ઞાન’ શબ્દ કઈ ભાષામાંથી આવ્યો?",
-options:["A) ગ્રીક","B) લેટિન","C) હિન્દી","D) સંસ્કૃત"],
-answer:"A"
-},
-
-{
-q:"3) બ્રહ્માંડના અભ્યાસને શું કહે છે?",
-options:["A) કોસ્મોલોજી","B) ઝૂલોજી","C) કેમેસ્ટ્રી","D) બાયોલોજી"],
-answer:"A"
-},
-
-{
-q:"4) વૈજ્ઞાનિક પદ્ધતિમાં પહેલું પગલું શું?",
-options:["A) અવલોકન","B) નિષ્કર્ષ","C) પ્રયોગ","D) સિદ્ધાંત"],
-answer:"A"
-},
-
-{
-q:"5) પ્રકાશની ગતિ કેટલી?",
-options:["A) 3×10⁸ m/s","B) 3×10⁶ m/s","C) 3×10³ m/s","D) 3×10¹⁰ m/s"],
-answer:"A"
-},
-
-{
-q:"6) આઈન્સ્ટાઈન ક્યા ક્ષેત્ર સાથે જોડાયેલા?",
-options:["A) સાપેક્ષવાદ","B) ગુરુત્વાકર્ષણ","C) વેગ","D) આલ્ઝેબ્રા"],
-answer:"A"
-},
-
-{
-q:"7) SI એકમોની સ્થાપના ક્યાં થઈ?",
-options:["A) ફ્રાન્સ","B) ભારત","C) અમેરિકા","D) જાપાન"],
-answer:"A"
-},
-
-{
-q:"8) SI માં ઉર્જાનું એકમ?",
-options:["A) જૂલ","B) વોટ","C) ન્યુટન","D) એર્ગ"],
-answer:"A"
-},
-
-{
-q:"9) ભૌતિકવિજ્ઞાનનો પિતા કોણ?",
-options:["A) ગેલિલિયો","B) ન્યૂટન","C) થોમસ એડિસન","D) આઈન્સ્ટાઈન"],
-answer:"A"
-},
-
-{
-q:"10) ભૌતિકવિજ્ઞાનમાં બે મુખ્ય શાખાઓ?",
-options:["A) કલાસિકલ, આધુનિક","B) રાસાયણિક, ઈલેક્ટ્રોનિક","C) મેડિકલ","D) જીઓલોજી"],
-answer:"A"
-},
-
-{
-q:"11) બ્રહ્માંડના સૌથી નાનાં કણોના અભ્યાસને શું?",
-options:["A) પાર્ટિકલ ફિઝિક્સ","B) કેમેસ્ટ્રી","C) ઝૂલોજી","D) બોટની"],
-answer:"A"
-},
-
-{
-q:"12) SI એકમ કોણે વિકસાવ્યું?",
-options:["A) CGPM","B) NASA","C) ISRO","D) WHO"],
-answer:"A"
-},
-
-{
-q:"13) ન્યૂટન કઈ સિદ્ધિ માટે જાણીતા?",
-options:["A) ગુરુત્વાકર્ષણ","B) DNA","C) પ્રકાશ","D) રોગચાળો"],
-answer:"A"
-},
-
-{
-q:"14) વિજ્ઞાનનું મુખ્ય લક્ષણ શું?",
-options:["A) ચોકસાઈ","B) માન્યતા","C) કલ્પના","D) ચમત્કાર"],
-answer:"A"
-},
-
-{
-q:"15) SI એકમ - સમય?",
-options:["A) સેકન્ડ","B) મિનિટ","C) કલાક","D) દિવસ"],
-answer:"A"
-},
-
-{
-q:"16) SI એકમ - લાંબાઈ?",
-options:["A) મીટર","B) કિમી","C) સેમી","D) મીમી"],
-answer:"A"
-},
-
-{
-q:"17) SI એકમ - દ્રવ્યમાન?",
-options:["A) કિલોગ્રામ","B) ગ્રામ","C) ટન","D) મિલિગ્રામ"],
-answer:"A"
-},
-
-{
-q:"18) SI એકમ - વિદ્યુત પ્રવાહ?",
-options:["A) એમ્પિયર","B) વોલ્ટ","C) કુલોમ્બ","D) ઓહ્મ"],
-answer:"A"
-},
-
-{
-q:"19) SI એકમ - તાપમાન?",
-options:["A) કેલ્વિન","B) સેલ્શિયસ","C) ફેરનહાઇટ","D) કેલોરી"],
-answer:"A"
-},
-
-{
-q:"20) SI એકમ - પદાર્થની માત્રા?",
-options:["A) મોલ","B) ગ્રામ","C) મીટર","D) સેકન્ડ"],
-answer:"A"
-},
-
-{
-q:"21) SI એકમ - તેજ?",
-options:["A) કેન્ડેલા","B) વોટ","C) જૂલ","D) ન્યુટન"],
-answer:"A"
-},
-
-{
-q:"22) બળનું SI એકમ?",
-options:["A) ન્યુટન","B) મીટર","C) પેસ્કલ","D) થર્મ"],
-answer:"A"
-},
-
-{
-q:"23) કાર્યનું SI એકમ?",
-options:["A) જૂલ","B) વોટ","C) ન્યુટન","D) પેસ્કલ"],
-answer:"A"
-},
-
-{
-q:"24) શક્તિનું SI એકમ?",
-options:["A) વોટ","B) જૂલ","C) એમ્પિયર","D) ઓહ્મ"],
-answer:"A"
-},
-
-{
-q:"25) દબાણનું SI એકમ?",
-options:["A) પેસ્કલ","B) જૂલ","C) વોટ","D) ન્યુટન"],
-answer:"A"
-},
-
-{
-q:"26) ન્યૂટનનું બીજું નિયમ શેનું સંબંધ આપે છે?",
-options:["A) બળ-દ્રવ્યમાન-ત્વરણ","B) બળ-દબાણ","C) બળ-ગતિ","D) દબાણ-ત્વરણ"],
-answer:"A"
-},
-
-{
-q:"27) વૈજ્ઞાનિક પદ્ધતિમાં પરીક્ષણ ક્યાં આવે છે?",
-options:["A) અવલોકન પછી","B) નિષ્કર્ષ પછી","C) અનુમાન પછી","D) સમીક્ષા પછી"],
-answer:"A"
-},
-
-{
-q:"28) શક્તિ = કાર્ય/ ?",
-options:["A) સમય","B) અંતર","C) બળ","D) દ્રવ્યમાન"],
-answer:"A"
-},
-
-{
-q:"29) બ્રહ્માંડની શરૂઆતના અભ્યાસને શું કહે છે?",
-options:["A) કોસ્મોલોજી","B) બોટની","C) ઝૂલોજી","D) ભૌત્રિકશાસ્ત્ર"],
-answer:"A"
-},
-
-{
-q:"30) દબાણ = બળ/ ?",
-options:["A) ક્ષેત્રફળ","B) દ્રવ્યમાન","C) વેગ","D) સમય"],
-answer:"A"
-},
-
-{
-q:"31) આધુનિક ભૌતિકવિજ્ઞાનનો આધાર શું છે?",
-options:["A) સાપેક્ષતાવાદ અને ક્વાન્ટમ","B) ન્યૂટનના નિયમો","C) રસાયણ","D) બાયોલોજી"],
-answer:"A"
-},
-
-{
-q:"32) કોસ્મોલોજી કાનો અભ્યાસ કરે છે?",
-options:["A) બ્રહ્માંડ","B) સૂક્ષ્મજીવ","C) પરમાણુ","D) પદાર્થ"],
-answer:"A"
-},
-
-{
-q:"33) SI એકમોમાં પ્રકાશિત તીવ્રતાનું એકમ?",
-options:["A) કેન્ડેલા","B) વોટ","C) જૂલ","D) પેસ્કલ"],
-answer:"A"
-},
-
-{
-q:"34) બળનું એકમ ન્યૂટન શેના નામ પર?",
-options:["A) ન્યૂટન","B) ગેલિલિયો","C) પ્લેન્ક","D) આઈન્સ્ટાઇન"],
-answer:"A"
-},
-
-{
-q:"35) ત્વરણનું SI એકમ?",
-options:["A) m/s²","B) m/s","C) m","D) s²"],
-answer:"A"
-},
-
-{
-q:"36) ગતિનો SI એકમ?",
-options:["A) m/s","B) m/s²","C) m","D) s"],
-answer:"A"
-},
-
-{
-q:"37) વિદ્યુત પોટેન્શિયલનું SI એકમ?",
-options:["A) વોલ્ટ","B) વોટ","C) જૂલ","D) ન્યુટન"],
-answer:"A"
-},
-
-{
-q:"38) 1 N = ?",
-options:["A) 1 kg × 1 m/s²","B) 1 g × 1 m/s²","C) 1 kg × 1 m","D) 1 m/s"],
-answer:"A"
-},
-
-{
-q:"39) 1 વોટ = ?",
-options:["A) 1 જૂલ/સેકન્ડ","B) 1 જૂલ","C) 1 ન્યુટન","D) 1 એમ્પિયર"],
-answer:"A"
-},
-
-{
-q:"40) 1 પેસ્કલ = ?",
-options:["A) 1 N/m²","B) 1 N/m","C) 1 J/m","D) 1 kg/m"],
-answer:"A"
-},
-
-{
-q:"41) બળ કોણે શોધ્યું?",
-options:["A) ન્યૂટન","B) ઓમ","C) પ્લેન્ક","D) એડિસન"],
-answer:"A"
-},
-
-{
-q:"42) ઊર્જાનો સંરક્ષણ સિદ્ધાંત કોણે આપ્યો?",
-options:["A) મેયર","B) ન્યૂટન","C) ગેલિલિયો","D) આઈન્સ્ટાઇન"],
-answer:"A"
-},
-
-{
-q:"43) કાર્ય = બળ × ?",
-options:["A) અંતર","B) સમય","C) દ્રવ્યમાન","D) વોલ્યુમ"],
-answer:"A"
-},
-
-{
-q:"44) 1 જૂલ = 1 ?",
-options:["A) N-m","B) N/m","C) W-s","D) kg-m"],
-answer:"A"
-},
-
-{
-q:"45) 1 વોલ્ટ = 1 ?",
-options:["A) J/C","B) N/C","C) W/A","D) A/s"],
-answer:"A"
-},
-
-{
-q:"46) 1 એમ્પિયર = 1 ?",
-options:["A) C/s","B) J/s","C) N/m","D) W/m"],
-answer:"A"
-},
-
-{
-q:"47) ભૌતિકવિજ્ઞાનના ઉપયોગ ક્યાં-ક્યાં?",
-options:["A) ટેકનોલોજી","B) મેડિકલ","C) ઇલેક્ટ્રોનિક્સ","D) ઉપરના બધા"],
-answer:"D"
-},
-
-{
-q:"48) 10⁶ ને શું કહે છે?",
-options:["A) મેગા","B) કિલો","C) ગિગા","D) મિલિ"],
-answer:"A"
-},
-
-{
-q:"49) 10³ ને શું કહે છે?",
-options:["A) કિલો","B) મેગા","C) મિલિ","D) ગિગા"],
-answer:"A"
-},
-
-{
-q:"50) 10⁻³ ને શું કહે છે?",
-options:["A) મિલિ","B) મેગા","C) કિલો","D) ગિગા"],
-answer:"A"
-}
-
-);
+  function showAns(id){
+    document.getElementById(id).style.display="block";
+  }
 </script>
-         
+
+<!-- ========================== -->
+<!--       MCQ START            -->
+<!-- ========================== -->
+
+<div class="mcq-box">
+<h3>1) ÄkíkwLkku íkkh (0.4 ± 0.002) økúk{ Ë¤, (0.3 ± 0.001) mm rºkßÞk yLku (5 ± 0.02) cm ÷tçkkE Ähkðu Au. íkuLke ½LkíkkLkk {kÃkLk{kt rLkfxík{ {n¥k{ «ríkþík ºkwrx _______ nþu. (NEET 2023)</h3>
+<p>A) 1.4% </p>
+<p>B) 1.2% </p>
+<p>C) 1.3% </p>
+<p>D) 1.6%</p>
+<div id="a1" class="ans">✅ જવાબ: C) 1.3%</div>
+<button class="show-ans-btn" onclick="showAns('a1')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>2) íkkÃk{kLk, ðkìÕxus, MkÃ÷kÞ{kt Lk Äkhu÷k VuhVkhkuLku ÷eÄu {kÃkLk{kt WËT¼ðíke ºkwrxyku _______ Au. (NEET 2023)</h3>
+<p>A) yÔÞðÂMÚkík ºkwrx</p>
+<p>B) MkkÄLkLke ºkwrx</p>
+<p>C) ÔÞÂõíkøkík ºkwrx</p>
+<p>D) ÷½wík{ {kÃk ºkwrx</p>
+<div id="a2" class="ans">✅ જવાબ: A) yÔÞðÂMÚkík ºkwrx</div>
+<button class="show-ans-btn" onclick="showAns('a2')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>3) Mk{ík÷ ¾qýk yLku ½Lk ¾qýkLku _______. (NEET 2022)</h3>
+<p>A) yuf{ nkuíkk LkÚke yLku Ãkrh{ký nkuíkkt LkÚke.</p>
+<p>B) yuf{ yLku Ãkrh{ký çktLku nkuÞ Au.</p>
+<p>C) yuf{ku nkuÞ Au, Ãký Ãkrh{ký nkuíkkt LkÚke.</p>
+<p>D) Ãkrh{ký nkuÞ, Ãký yuf{ nkuíkk LkÚke.</p>
+<div id="a3" class="ans">✅ જવાબ: C) yuf{ku nkuÞ Au, Ãký Ãkrh{ký nkuíkkt LkÚke.</div>
+<button class="show-ans-btn" onclick="showAns('a3')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>4) 55.3 m ÷tçkkE yLku 25 m Lke Ãknku¤kE Ähkðíkkt yuf ÷tçk[kuhMk rðMíkkhLkwt (m²) Mkk[k MkkÚkof ytfku{kt round off fÞko çkkË ûkuºkV¤ _______. (NEET 2022)</h3>
+<p>A) 1382.5 m²</p>
+<p>B) 14 × 10² m²</p>
+<p>C) 138 × 10¹ m²</p>
+<p>D) 1382 m²</p>
+<div id="a4" class="ans">✅ જવાબ: A) 1382.5 m²</div>
+<button class="show-ans-btn" onclick="showAns('a4')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>5) òu E yLku G yu yLkw¢{u Qòo yLku økwhwíðkf»keo y[¤ktf Ëþkoðu íkku G/E Lkwt Ãkrh{ký _______ nþu. (NEET 2021)</h3>
+<p>A) [M²][L–1][T⁰]</p>
+<p>B) [M][L–1][T–1]</p>
+<p>C) [M][L⁰][T⁰]</p>
+<p>D) [M²][L–2][T–1]</p>
+<div id="a5" class="ans">✅ જવાબ: B) [M][L–1][T–1]</div>
+<button class="show-ans-btn" onclick="showAns('a5')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>6) çk¤ [F] «ðuøk [A] yLku Mk{Þ [T]Lku {q¤¼qík ¼kiríkf hkrþyku íkhefu Mðefkhðk{kt ykðu Au. QòoLkwt Ãkrh{ký _______. (NEET 2021)</h3>
+<p>A) [F][A][T]</p>
+<p>B) [F][A][T²]</p>
+<p>C) [F][A][T–1]</p>
+<p>D) [F][A–1][T]</p>
+<div id="a6" class="ans">✅ જવાબ: C) [F][A][T–1]</div>
+<button class="show-ans-btn" onclick="showAns('a6')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>7) yuf M¢qøkusLkku WÃkÞkuøk yuf íkkhLkku ÔÞkMk {kÃkðk {kxu fhðk{kt ykðu Au… íkkhLkku ÔÞkMk _______. (NEET 2021)</h3>
+<p>A) 0.52 cm</p>
+<p>B) 0.026 cm</p>
+<p>C) 0.26 cm</p>
+<p>D) 0.052 cm</p>
+<div id="a7" class="ans">✅ જવાબ: D) 0.052 cm</div>
+<button class="show-ans-btn" onclick="showAns('a7')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>8) 9.99 m – 0.0099 mનું સાચું પરિણામ શું? (NEET 2020)</h3>
+<p>A) 9.9801 m</p>
+<p>B) 9.98 m</p>
+<p>C) 9.980 m</p>
+<p>D) 9.9 m</p>
+<div id="a8" class="ans">✅ જવાબ: B) 9.98 m</div>
+<button class="show-ans-btn" onclick="showAns('a8')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>9) M¢q સ્ક્રુ ગેજનું પિચ શું? (NEET 2020)</h3>
+<p>A) 0.01 mm</p>
+<p>B) 0.25 mm</p>
+<p>C) 0.5 mm</p>
+<p>D) 1.0 mm</p>
+<div id="a9" class="ans">✅ જવાબ: C) 0.5 mm</div>
+<button class="show-ans-btn" onclick="showAns('a9')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>10) M¢q સ્ક્રુ ગેજ રીડિંગ શોધો (NEET 2018)</h3>
+<p>A) 0.053 cm</p>
+<p>B) 0.525 cm</p>
+<p>C) 0.521 cm</p>
+<p>D) 0.529 cm</p>
+<div id="a10" class="ans">✅ જવાબ: D) 0.529 cm</div>
+<button class="show-ans-btn" onclick="showAns('a10')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>11) c, G અને e₀ ના કોમ્બિનેશનની ડિમેન્શન (NEET 2017)</h3>
+<p>A) સાચો વિકલ્પ A</p>
+<p>B) વિકલ્પ B</p>
+<p>C) વિકલ્પ C</p>
+<p>D) વિકલ્પ D</p>
+<div id="a11" class="ans">✅ જવાબ: A</div>
+<button class="show-ans-btn" onclick="showAns('a11')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>12) G, h, c નો કોમ્બિનેશન (NEET 2016)</h3>
+<p>A) hG / 3c</p>
+<p>B) G / c h / 5</p>
+<p>C) G / hc</p>
+<p>D) Gh / c × 2/3</p>
+<div id="a12" class="ans">✅ જવાબ: C) G / hc</div>
+<button class="show-ans-btn" onclick="showAns('a12')">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+<h3>13) [ηˣ ρʸ rᶻ] ના એક્સ્પોનેન્ટ્સ (NEET 2015)</h3>
+<p>A) 1, 1, 1</p>
+<p>B) 1, –1, –1</p>
+<p>C) –1, –1, 1</p>
+<p>D) –1, –1, –1</p>
+<div id="a13" class="ans">✅ જવાબ: D) –1, –1, –1</div>
+<button class="show-ans-btn" onclick="showAns('a13')">જવાબ જુઓ</button>
+</div>
+
+<!-- ========================== -->
+<!--       MCQ END              -->
+<!-- ========================== -->
