@@ -1,3 +1,112 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>जीवविज्ञान अध्याय 1 - MCQ क्विज़</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #eef2f3;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+  }
+  .mcq-box {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    color: #1a237e;
+  }
+  .options {
+    margin: 15px 0;
+    line-height: 1.6;
+  }
+  .answer {
+    display: none;
+    color: green;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  button {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button:hover {
+    background-color: #3f51b5;
+  }
+</style>
+</head>
+<body>
+
+<h1>जीवविज्ञान - अध्याय 1 MCQ क्विज़</h1>
+
+<div class="mcq-box">
+  <h3>1) जीवों को वर्गीकृत करने का उद्देश्य क्या है?</h3>
+  <div class="options">
+    A) जीवों की रक्षा करना<br />
+    B) जीवों के नाम रखना<br />
+    C) जीवों की पहचान और अध्ययन करना<br />
+    D) जीवों को खेतों में लगाना
+  </div>
+  <button onclick="toggleAnswer(this)">उत्तर दिखाएँ</button>
+  <div class="answer">✅ उत्तर: C) जीवों की पहचान और अध्ययन करना</div>
+</div>
+
+<div class="mcq-box">
+  <h3>2) कोशिका का आविष्कार किसने किया था?</h3>
+  <div class="options">
+    A) चार्ल्स डार्विन<br />
+    B) रॉबर्ट हुक<br />
+    C) रजिंदगी हुक<br />
+    D) लुई पाश्चर
+  </div>
+  <button onclick="toggleAnswer(this)">उत्तर दिखाएँ</button>
+  <div class="answer">✅ उत्तर: B) रॉबर्ट हुक</div>
+</div>
+
+<div class="mcq-box">
+  <h3>3) जीवों की सबसे न्यूनतम इकाई क्या है?</h3>
+  <div class="options">
+    A) अंग<br />
+    B) कोशिका<br />
+    C) ऊतक<br />
+    D) अंग तंत्र
+  </div>
+  <button onclick="toggleAnswer(this)">उत्तर दिखाएँ</button>
+  <div class="answer">✅ उत्तर: B) कोशिका</div>
+</div>
+
+<!-- इसी तरह अन्य प्रश्न भी यहां ऐड करें -->
+
+<script>
+  function toggleAnswer(button) {
+    const answerDiv = button.nextElementSibling;
+    if (answerDiv.style.display === "block") {
+      answerDiv.style.display = "none";
+      button.textContent = "उत्तर दिखाएँ";
+    } else {
+      answerDiv.style.display = "block";
+      button.textContent = "उत्तर छिपाएँ";
+    }
+  }
+</script>
+
+</body>
+</html>
+
 
 
 
