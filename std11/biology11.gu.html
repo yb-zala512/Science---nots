@@ -1519,6 +1519,88 @@ function showAns(id, btn){
 <button class="show-ans-btn" onclick="showAns('a26', this)">જવાબ જુઓ</button>
 </div>
 
+  <!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8" />
+<title>Gujarati Biology MCQ</title>
+<style>
+.mcq-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.ans {
+  display: none;
+  color: green;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.show-ans-btn {
+  margin-top: 6px;
+  cursor: pointer;
+}
+</style>
+<script>
+function showAns(id, btn) {
+  var ansDiv = document.getElementById(id);
+  if (ansDiv.style.display === "none" || ansDiv.style.display === "") {
+    ansDiv.style.display = "block";
+    btn.textContent = "જવાબ છુપાવો";
+  } else {
+    ansDiv.style.display = "none";
+    btn.textContent = "જવાબ જુઓ";
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="mcq-box">
+  <h3>1) પાશ્ચર કઈ પ્રક્રિયા માટે જાણીતાં છે?</h3>
+  <p>A) DNA ની શોધ</p>
+  <p>B) આલ્કોહોલિક આથવણ</p>
+  <p>C) રક્તગૃપ શોધ</p>
+  <p>D) શ્વસન પ્રક્રિયા</p>
+  <div id="a1" class="ans">✔ જવાબ: B) આલ્કોહોલિક આથવણ</div>
+  <button class="show-ans-btn" onclick="showAns('a1', this)">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+  <h3>2) જીવાણુઓ મુખ્યત્વે કઈ પદ્ધતિથી વધે છે?</h3>
+  <p>A) દ્વિવિભજન</p>
+  <p>B) અંકુરજનન</p>
+  <p>C) ગ્રાફ્ટિંગ</p>
+  <p>D) વિલયન</p>
+  <div id="a2" class="ans">✔ જવાબ: A) દ્વિવિભજન</div>
+  <button class="show-ans-btn" onclick="showAns('a2', this)">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+  <h3>3) બેક્ટેરિયા કયા પ્રકારના કોષીય જીવ છે?</h3>
+  <p>A) એકકોશીય</p>
+  <p>B) બહુ કોષીય</p>
+  <p>C) તંતુ ધરાવતા</p>
+  <p>D) સજીવ રહિત</p>
+  <div id="a3" class="ans">✔ જવાબ: A) એકકોશીય</div>
+  <button class="show-ans-btn" onclick="showAns('a3', this)">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+  <h3>4) વાયરસને જીવંત માત્ર ક્યારે માનવામાં આવે છે?</h3>
+  <p>A) નિષ્ક્રિય અવસ્થામાં</p>
+  <p>B) હોસ્ટ કોષમાં</p>
+  <p>C) પ્રકાશમાં</p>
+  <p>D) પાણીમાં</p>
+  <div id="a4" class="ans">✔ જવાબ: B) હોસ્ટ કોષમાં</div>
+  <button class="show-ans-btn" onclick="showAns('a4', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- વધુ MCQ માટે આ જ પેટર્ન અનુસરો -->
+
+</body>
+</html>
 </div>
 </body>
 </html>
