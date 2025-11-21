@@ -1,62 +1,292 @@
+
+
+
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="hi">
 <head>
-<meta charset="UTF-8" />
-<title>Gujarati Biology MCQ with Working Buttons</title>
-<style>
-.mcq-box {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-}
-.ans {
-  display: none;
-  margin-top: 8px;
-  color: green;
-  font-weight: bold;
-}
-.show-ans-btn {
-  margin-top: 5px;
-  cursor: pointer;
-}
-</style>
-<script>
-function showAns(id, btn) {
-  const ansDiv = document.getElementById(id);
-  if (ansDiv.style.display === "block") {
-    ansDiv.style.display = "none";
-    btn.textContent = "જવાબ જુઓ";
-  } else {
-    ansDiv.style.display = "block";
-    btn.textContent = "જવાબ છુપાવો";
-  }
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology Chapter - 2 (Hindi) | MCQ Quiz</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #eef2f3;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a237e;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .box {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .mcq {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+    }
+
+    .ans {
+      display: none;
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+
+    .btn {
+      padding: 8px 18px;
+      background: #1a237e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #ddd;
+      margin: 20px 0;
+    }
+  </style>
+
 </head>
+
 <body>
 
-<div class="mcq-box">
-  <h3>1) પાશ્ચર કઈ પ્રક્રિયા માટે જાણીતાં છે?</h3>
-  <p>A) DNA ની શોધ</p>
-  <p>B) આલ્કોહોલિક આથવણ</p>
-  <p>C) રક્તગૃપ શોધ</p>
-  <p>D) શ્વસન પ્રક્રિયા</p>
-  <div id="a1" class="ans">✔ જવાબ: B) આલ્કોહોલિક આથવણ</div>
-  <button class="show-ans-btn" onclick="showAns('a1', this)">જવાબ જુઓ</button>
-</div>
+  <h1>Biology Chapter - 2 (Hindi) | 26 MCQ Quiz</h1>
 
-<div class="mcq-box">
-  <h3>2) જીવાણુઓ મુખ્યત્વે કઈ પદ્ધતિથી વધે છે?</h3>
-  <p>A) દ્વિવિભજન</p>
-  <p>B) અંકુરજનન</p>
-  <p>C) ગ્રાફ્ટિંગ</p>
-  <p>D) વિલયન</p>
-  <div id="a2" class="ans">✔ જવાબ: A) દ્વિવિભજન</div>
-  <button class="show-ans-btn" onclick="showAns('a2', this)">જવાબ જુઓ</button>
-</div>
+  <div class="box">
 
-<!-- અન્ય MCQ પણ આ રીતે ઉમેરો -->
+    <!-- 1 -->
+    <div class="mcq">
+      <p><b>1) कोश की खोज किसने की थी?</b></p>
+      <p>A) लीवेनहूक<br>B) रॉबर्ट हुक<br>C) डार्विन<br>D) फ्लेमिंग</p>
+      <button class="btn" onclick="toggleAnswer(1)">उत्तर दिखाएँ</button>
+      <p id="ans1" class="ans">✔ सही उत्तर : B) रॉबर्ट हुक</p>
+    </div><hr>
+
+    <!-- 2 -->
+    <div class="mcq">
+      <p><b>2) कोश सिद्धांत किसने दिया?</b></p>
+      <p>A) मेंडल<br>B) डी व्रीज़<br>C) श्लाइडन और श्वान<br>D) हर्शे–चेज़</p>
+      <button class="btn" onclick="toggleAnswer(2)">उत्तर दिखाएँ</button>
+      <p id="ans2" class="ans">✔ सही उत्तर : C) श्लाइडन और श्वान</p>
+    </div><hr>
+
+    <!-- 3 -->
+    <div class="mcq">
+      <p><b>3) मानव कोश में गुणसूत्रों की संख्या कितनी होती है?</b></p>
+      <p>A) 32<br>B) 46<br>C) 28<br>D) 56</p>
+      <button class="btn" onclick="toggleAnswer(3)">उत्तर दिखाएँ</button>
+      <p id="ans3" class="ans">✔ सही उत्तर : B) 46</p>
+    </div><hr>
+
+    <!-- 4 -->
+    <div class="mcq">
+      <p><b>4) कोश का पावर हाउस कौन-सा है?</b></p>
+      <p>A) राइबोसोम<br>B) गॉल्जी बाडी<br>C) माइटोकॉन्ड्रिया<br>D) नाभिक</p>
+      <button class="btn" onclick="toggleAnswer(4)">उत्तर दिखाएँ</button>
+      <p id="ans4" class="ans">✔ सही उत्तर : C) माइटोकॉन्ड्रिया</p>
+    </div><hr>
+
+    <!-- 5 -->
+    <div class="mcq">
+      <p><b>5) DNA का पूर्ण नाम क्या है?</b></p>
+      <p>A) डिऑक्सीराइबोन्यूक्लिक अम्ल<br>B) डाइराइबोकार्बन अम्ल<br>C) डायनाइट्रोजन अम्ल<br>D) डाइऑक्सी अम्ल</p>
+      <button class="btn" onclick="toggleAnswer(5)">उत्तर दिखाएँ</button>
+      <p id="ans5" class="ans">✔ सही उत्तर : A) डिऑक्सीराइबोन्यूक्लिक अम्ल</p>
+    </div><hr>
+
+    <!-- 6 -->
+    <div class="mcq">
+      <p><b>6) प्रोकैरियोटिक कोश में क्या नहीं होता?</b></p>
+      <p>A) नाभिक<br>B) कोश भित्ति<br>C) प्लाज़्मा झिल्ली<br>D) राइबोसोम</p>
+      <button class="btn" onclick="toggleAnswer(6)">उत्तर दिखाएँ</button>
+      <p id="ans6" class="ans">✔ सही उत्तर : A) नाभिक</p>
+    </div><hr>
+
+    <!-- 7 -->
+    <div class="mcq">
+      <p><b>7) पादप कोश में कौन-सा अंगाणु होता है जो जन्तु कोश में नहीं होता?</b></p>
+      <p>A) माइटोटिक स्पिंडल<br>B) क्लोरोप्लास्ट<br>C) माइटोकॉन्ड्रिया<br>D) गॉल्जी बाडी</p>
+      <button class="btn" onclick="toggleAnswer(7)">उत्तर दिखाएँ</button>
+      <p id="ans7" class="ans">✔ सही उत्तर : B) क्लोरोप्लास्ट</p>
+    </div><hr>
+
+    <!-- 8 -->
+    <div class="mcq">
+      <p><b>8) कोश भित्ति मुख्य रूप से किससे बनी होती है?</b></p>
+      <p>A) ग्लूकोज़<br>B) लिपिड<br>C) सेल्यूलोज़<br>D) प्रोटीन</p>
+      <button class="btn" onclick="toggleAnswer(8)">उत्तर दिखाएँ</button>
+      <p id="ans8" class="ans">✔ सही उत्तर : C) सेल्यूलोज़</p>
+    </div><hr>
+
+    <!-- 9 -->
+    <div class="mcq">
+      <p><b>9) राइबोसोम का मुख्य कार्य क्या है?</b></p>
+      <p>A) ऊर्जा उत्पन्न करना<br>B) प्रोटीन संश्लेषण<br>C) प्रकाश संश्लेषण<br>D) DNA संग्रहीत करना</p>
+      <button class="btn" onclick="toggleAnswer(9)">उत्तर दिखाएँ</button>
+      <p id="ans9" class="ans">✔ सही उत्तर : B) प्रोटीन संश्लेषण</p>
+    </div><hr>
+
+    <!-- 10 -->
+    <div class="mcq">
+      <p><b>10) नाभिक में क्या पाया जाता है?</b></p>
+      <p>A) DNA<br>B) RNA<br>C) प्रोटीन<br>D) उपरोक्त सभी</p>
+      <button class="btn" onclick="toggleAnswer(10)">उत्तर दिखाएँ</button>
+      <p id="ans10" class="ans">✔ सही उत्तर : D) उपरोक्त सभी</p>
+    </div><hr>
+
+    <!-- 11 -->
+    <div class="mcq">
+      <p><b>11) कोश की सबसे बाहरी परत क्या है?</b></p>
+      <p>A) कोश झिल्ली (सेल मेम्ब्रेन)<br>B) साइटोप्लाज़्म<br>C) गॉल्जी तंत्र<br>D) राइबोसोम</p>
+      <button class="btn" onclick="toggleAnswer(11)">उत्तर दिखाएँ</button>
+      <p id="ans11" class="ans">✔ सही उत्तर : A) कोश झिल्ली (सेल मेम्ब्रेन)</p>
+    </div><hr>
+
+    <!-- 12 -->
+    <div class="mcq">
+      <p><b>12) प्रकाश संश्लेषण कहाँ होता है?</b></p>
+      <p>A) माइटोकॉन्ड्रिया<br>B) क्लोरोप्लास्ट<br>C) राइबोसोम<br>D) गॉल्जी तंत्र</p>
+      <button class="btn" onclick="toggleAnswer(12)">उत्तर दिखाएँ</button>
+      <p id="ans12" class="ans">✔ सही उत्तर : B) क्लोरोप्लास्ट</p>
+    </div><hr>
+
+    <!-- 13 -->
+    <div class="mcq">
+      <p><b>13) कोश के द्रव भाग को क्या कहते हैं?</b></p>
+      <p>A) नाभिक<br>B) साइटोप्लाज़्म<br>C) वैक्यूओल<br>D) प्लाज़्मा</p>
+      <button class="btn" onclick="toggleAnswer(13)">उत्तर दिखाएँ</button>
+      <p id="ans13" class="ans">✔ सही उत्तर : B) साइटोप्लाज़्म</p>
+    </div><hr>
+
+    <!-- 14 -->
+    <div class="mcq">
+      <p><b>14) वैक्यूओल का मुख्य कार्य क्या है?</b></p>
+      <p>A) आकार बनाए रखना<br>B) प्रोटीन बनाना<br>C) ATP बनाना<br>D) DNA बनाना</p>
+      <button class="btn" onclick="toggleAnswer(14)">उत्तर दिखाएँ</button>
+      <p id="ans14" class="ans">✔ सही उत्तर : A) आकार बनाए रखना</p>
+    </div><hr>
+
+    <!-- 15 -->
+    <div class="mcq">
+      <p><b>15) कोश का नियंत्रण केंद्र कौन-सा है?</b></p>
+      <p>A) राइबोसोम<br>B) माइटोकॉन्ड्रिया<br>C) नाभिक<br>D) वैक्यूओल</p>
+      <button class="btn" onclick="toggleAnswer(15)">उत्तर दिखाएँ</button>
+      <p id="ans15" class="ans">✔ सही उत्तर : C) नाभिक</p>
+    </div><hr>
+
+    <!-- 16 -->
+    <div class="mcq">
+      <p><b>16) ATP कहाँ बनता है?</b></p>
+      <p>A) गॉल्जी तंत्र<br>B) माइटोकॉन्ड्रिया<br>C) राइबोसोम<br>D) नाभिक</p>
+      <button class="btn" onclick="toggleAnswer(16)">उत्तर दिखाएँ</button>
+      <p id="ans16" class="ans">✔ सही उत्तर : B) माइटोकॉन्ड्रिया</p>
+    </div><hr>
+
+    <!-- 17 -->
+    <div class="mcq">
+      <p><b>17) कोश का सबसे बड़ा अंगाणु कौन-सा होता है (सामान्यत: जन्तु कोश में)?</b></p>
+      <p>A) राइबोसोम<br>B) वैक्यूओल<br>C) नाभिक<br>D) कोश झिल्ली</p>
+      <button class="btn" onclick="toggleAnswer(17)">उत्तर दिखाएँ</button>
+      <p id="ans17" class="ans">✔ सही उत्तर : C) नाभिक</p>
+    </div><hr>
+
+    <!-- 18 -->
+    <div class="mcq">
+      <p><b>18) कोश द्रव्य (प्रोटोप्लाज़्मिक द्राव) को क्या कहते हैं?</b></p>
+      <p>A) प्रोटोप्लाज़्म<br>B) साइटोप्लाज़्म<br>C) DNA<br>D) RNA</p>
+      <button class="btn" onclick="toggleAnswer(18)">उत्तर दिखाएँ</button>
+      <p id="ans18" class="ans">✔ सही उत्तर : A) प्रोटोप्लाज़्म</p>
+    </div><hr>
+
+    <!-- 19 -->
+    <div class="mcq">
+      <p><b>19) DNA का आकार कैसा होता है?</b></p>
+      <p>A) वलयाकार<br>B) द्वि–हेलिक्स<br>C) सीधी रेखा<br>D) गोल</p>
+      <button class="btn" onclick="toggleAnswer(19)">उत्तर दिखाएँ</button>
+      <p id="ans19" class="ans">✔ सही उत्तर : B) द्वि–हेलिक्स</p>
+    </div><hr>
+
+    <!-- 20 -->
+    <div class="mcq">
+      <p><b>20) सेंट्रियोल का कार्य क्या है?</b></p>
+      <p>A) कोश विभाजन में सहायता करना<br>B) भोजन बनाना<br>C) ATP बनाना<br>D) पानी संचित करना</p>
+      <button class="btn" onclick="toggleAnswer(20)">उत्तर दिखाएँ</button>
+      <p id="ans20" class="ans">✔ सही उत्तर : A) कोश विभाजन में सहायता करना</p>
+    </div><hr>
+
+    <!-- 21 -->
+    <div class="mcq">
+      <p><b>21) पादप कोश में सबसे बड़ा अंगाणु कौन-सा होता है?</b></p>
+      <p>A) वैक्यूओल<br>B) राइबोसोम<br>C) नाभिक<br>D) एन्डोप्लाज़्मिक रेटिकुलम (ER)</p>
+      <button class="btn" onclick="toggleAnswer(21)">उत्तर दिखाएँ</button>
+      <p id="ans21" class="ans">✔ सही उत्तर : A) वैक्यूओल</p>
+    </div><hr>
+
+    <!-- 22 -->
+    <div class="mcq">
+      <p><b>22) S.J. Singer और G. Nicolson किससे संबंधित हैं?</b></p>
+      <p>A) कोश सिद्धांत<br>B) झिल्ली मॉडल (मेम्ब्रेन मॉडल)<br>C) DNA संरचना<br>D) गुणसूत्र</p>
+      <button class="btn" onclick="toggleAnswer(22)">उत्तर दिखाएँ</button>
+      <p id="ans22" class="ans">✔ सही उत्तर : B) झिल्ली मॉडल (मेम्ब्रेन मॉडल)</p>
+    </div><hr>
+
+    <!-- 23 -->
+    <div class="mcq">
+      <p><b>23) प्रोकैरियोटिक कोश का DNA किस भाग में पाया जाता है?</b></p>
+      <p>A) नाभिक<br>B) न्यूक्लॉयड<br>C) वैक्यूओल<br>D) ER</p>
+      <button class="btn" onclick="toggleAnswer(23)">उत्तर दिखाएँ</button>
+      <p id="ans23" class="ans">✔ सही उत्तर : B) न्यूक्लॉयड</p>
+    </div><hr>
+
+    <!-- 24 -->
+    <div class="mcq">
+      <p><b>24) कोश की आकृति और ढांचा बनाए रखने में कौन-सा तंत्र मदद करता है?</b></p>
+      <p>A) वैक्यूओल<br>B) राइबोसोम<br>C) गॉल्जी तंत्र<br>D) साइटोस्केलेटन</p>
+      <button class="btn" onclick="toggleAnswer(24)">उत्तर दिखाएँ</button>
+      <p id="ans24" class="ans">✔ सही उत्तर : D) साइटोस्केलेटन</p>
+    </div><hr>
+
+    <!-- 25 -->
+    <div class="mcq">
+      <p><b>25) कोश भित्ति का मुख्य कार्य क्या है?</b></p>
+      <p>A) संरक्षण<br>B) DNA बनाना<br>C) ATP बनाना<br>D) प्रोटीन बनाना</p>
+      <button class="btn" onclick="toggleAnswer(25)">उत्तर दिखाएँ</button>
+      <p id="ans25" class="ans">✔ सही उत्तर : A) संरक्षण</p>
+    </div><hr>
+
+    <!-- 26 -->
+    <div class="mcq">
+      <p><b>26) जीवन की संरचनात्मक और क्रियात्मक इकाई क्या है?</b></p>
+      <p>A) DNA<br>B) नाभिक<br>C) कोश (सेल) स्वयं<br>D) राइबोसोम</p>
+      <button class="btn" onclick="toggleAnswer(26)">उत्तर दिखाएँ</button>
+      <p id="ans26" class="ans">✔ सही उत्तर : C) कोश (सेल) स्वयं</p>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleAnswer(n) {
+      const a = document.getElementById("ans" + n);
+      a.style.display = (a.style.display === "none" || a.style.display === "")
+        ? "block"
+        : "none";
+    }
+  </script>
 
 </body>
-</html>
+  </html>
