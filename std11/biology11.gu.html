@@ -1140,93 +1140,95 @@ function showAns(id){
 
 
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="gu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biology Chapter 2 MCQs - Gujarati</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .mcq-box {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fafafa;
-        }
-        h1 {
-            color: #0056b3;
-            text-align: center;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            font-size: 2.5em;
-        }
-        h3 {
-            color: #333;
-            margin-top: 0;
-        }
-        p {
-            margin: 5px 0;
-            padding-left: 10px;
-        }
-        .ans {
-            display: none; /* Hidden by default in CSS */
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #e9ffeb;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .show-ans-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .show-ans-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
-    <script>
-        function showAns(ansId, button) {
-            const ansElement = document.getElementById(ansId);
-            // Check computed style for display value, not just inline style
-            const isHidden = window.getComputedStyle(ansElement).display === 'none';
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biology Chapter 2 - Gujarati MCQs</title>
 
-            if (isHidden) {
-                ansElement.style.display = "block";
-                button.textContent = "જવાબ છુપાવો";
-            } else {
-                ansElement.style.display = "none";
-                button.textContent = "જવાબ જુઓ";
-            }
-        }
-    </script>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f2f2f2;
+        margin:0;
+        padding:20px;
+    }
+    .container{
+        max-width:900px;
+        margin:auto;
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 12px rgba(0,0,0,0.15);
+    }
+    h1{
+        text-align:center;
+        color:#0d47a1 !important;
+        font-size:32px;
+        margin-bottom:25px;
+        border-bottom:3px solid #0d47a1;
+        padding-bottom:10px;
+    }
+    .mcq-box{
+        background:#fafafa;
+        padding:15px;
+        margin-bottom:20px;
+        border:1px solid #ddd;
+        border-radius:8px;
+    }
+    h3{
+        margin:0 0 10px 0;
+        color:#333;
+    }
+    p{
+        margin:5px 0;
+        padding-left:10px;
+    }
+    .ans{
+        display:none;
+        margin-top:10px;
+        background:#eaffea;
+        padding:10px;
+        border-left:4px solid #2e7d32;
+        border-radius:5px;
+        font-weight:bold;
+        color:#2e7d32;
+    }
+    .show-btn{
+        margin-top:10px;
+        padding:8px 14px;
+        background:#1976d2;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+    .show-btn:hover{
+        background:#0d47a1;
+    }
+</style>
+
+<script>
+function showAns(id, btn){
+    const ans = document.getElementById(id);
+
+    if(ans.style.display === "block"){
+        ans.style.display = "none";
+        btn.textContent = "જવાબ જુઓ";
+    } else {
+        ans.style.display = "block";
+        btn.textContent = "જવાબ બંધ કરો";
+    }
+}
+</script>
+
 </head>
 <body>
 
 <div class="container">
-    <h1>Biology Cheptar :- 2 Gujrati</h1>
+    <h1>Biology Chapter 2 – Gujarati MCQs</h1>
+
 
     <!-- Question 1 (was 22) -->
     <div class="mcq-box">
