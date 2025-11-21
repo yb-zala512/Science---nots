@@ -1139,6 +1139,7 @@ function showAns(id){
 
 
 
+
   <!DOCTYPE html>
 <html lang="gu">
 <head>
@@ -1184,7 +1185,7 @@ function showAns(id){
             padding-left: 10px;
         }
         .ans {
-            display: none; /* Hidden by default */
+            display: none; /* Hidden by default in CSS */
             margin-top: 10px;
             padding: 10px;
             background-color: #e9ffeb;
@@ -1209,7 +1210,10 @@ function showAns(id){
     <script>
         function showAns(ansId, button) {
             const ansElement = document.getElementById(ansId);
-            if (ansElement.style.display === "none" || ansElement.style.display === "") {
+            // Check computed style for display value, not just inline style
+            const isHidden = window.getComputedStyle(ansElement).display === 'none';
+
+            if (isHidden) {
                 ansElement.style.display = "block";
                 button.textContent = "જવાબ છુપાવો";
             } else {
@@ -1513,6 +1517,6 @@ function showAns(id){
 </div>
 
 </body>
-</html>
+  </html>
   
-  
+          
