@@ -1139,86 +1139,89 @@ function showAns(id){
 
 
 
-
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biology Chapter 2 - Gujarati MCQs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Chapter 2 MCQs - Gujarati</title>
 
 <style>
-    body{
-        font-family: Arial, sans-serif;
-        background:#f2f2f2;
-        margin:0;
-        padding:20px;
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f1f5ff;
+        margin: 0;
+        padding: 20px;
+        color: #333;
     }
-    .container{
-        max-width:900px;
-        margin:auto;
-        background:#fff;
-        padding:20px;
-        border-radius:10px;
-        box-shadow:0 0 12px rgba(0,0,0,0.15);
+
+    .container {
+        max-width: 820px;
+        margin: auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
     }
-    h1{
-        text-align:center;
-        color:#0d47a1 !important;
-        font-size:32px;
-        margin-bottom:25px;
-        border-bottom:3px solid #0d47a1;
-        padding-bottom:10px;
+
+    h1 {
+        text-align: center;
+        color: black;
+        font-size: 32px;
+        border-bottom: 3px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
     }
-    .mcq-box{
-        background:#fafafa;
-        padding:15px;
-        margin-bottom:20px;
-        border:1px solid #ddd;
-        border-radius:8px;
+
+    .mcq-box {
+        background: #fafcff;
+        border: 1.7px solid #ccd6f6;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
-    h3{
-        margin:0 0 10px 0;
-        color:#333;
+
+    p { margin: 6px 0; }
+
+    .ans {
+        display: none;
+        background: #e9ffe9;
+        padding: 10px;
+        border-left: 4px solid #128a12;
+        border-radius: 6px;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #0a560a;
     }
-    p{
-        margin:5px 0;
-        padding-left:10px;
+
+    .show-ans-btn {
+        background: #1b62d4;
+        color: white;
+        border: none;
+        padding: 9px 15px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        transition: 0.2s;
     }
-    .ans{
-        display:none;
-        margin-top:10px;
-        background:#eaffea;
-        padding:10px;
-        border-left:4px solid #2e7d32;
-        border-radius:5px;
-        font-weight:bold;
-        color:#2e7d32;
-    }
-    .show-btn{
-        margin-top:10px;
-        padding:8px 14px;
-        background:#1976d2;
-        color:white;
-        border:none;
-        border-radius:5px;
-        cursor:pointer;
-    }
-    .show-btn:hover{
-        background:#0d47a1;
+
+    .show-ans-btn:hover {
+        background: #0d3a8f;
     }
 </style>
 
 <script>
 function showAns(id, btn){
-    const ans = document.getElementById(id);
+    let box = document.getElementById(id);
 
-    if(ans.style.display === "block"){
-        ans.style.display = "none";
-        btn.textContent = "જવાબ જુઓ";
+    if(box.style.display === "none" || box.style.display === ""){
+        box.style.display = "block";
+        btn.textContent = "જવાબ છુપાવો";
     } else {
-        ans.style.display = "block";
-        btn.textContent = "જવાબ બંધ કરો";
+        box.style.display = "none";
+        btn.textContent = "જવાબ જુઓ";
     }
 }
 </script>
@@ -1227,298 +1230,299 @@ function showAns(id, btn){
 <body>
 
 <div class="container">
-    <h1>Biology Chapter 2 – Gujarati MCQs</h1>
+<h1>Biology – Chapter 2 (Gujarati) – MCQs</h1>
 
 
-    <!-- Question 1 (was 22) -->
-    <div class="mcq-box">
-        <h3>1. પાશ્ચર શાનાથી પ્રચલિત છે?</h3>
-        <p>A) માઈક્રોસ્કોપની શોધથી</p>
-        <p>B) આલ્કોહોલિક આથવણથી</p>
-        <p>C) પોલિયોરસીની શોધથી</p>
-        <p>D) ચેપી રોગ માટે જવાબદાર સૂક્ષ્મ જીવના અભ્યાસથી</p>
-        <div id="a1" class="ans">✅ જવાબ: B) આલ્કોહોલિક આથવણથી</div>
-        <button class="show-ans-btn" onclick="showAns('a1', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 2 (was 23) -->
-    <div class="mcq-box">
-        <h3>2. ઇવાનૉવ્સ્કી શાનાથી પ્રચલિત છે?</h3>
-        <p>A) અંશતઃ ભારિત માઈક્રોસ્કોપ</p>
-        <p>B) પટેટો મૉઝેઇક વાઇરસ</p>
-        <p>C) મેક્રો મૉડેલ ડાલ્ટન</p>
-        <p>D) અપેક ફેંકી બેક ની મદદથી</p>
-        <div id="a2" class="ans">✅ જવાબ: A) અંશતઃ ભારિત માઈક્રોસ્કોપ</div>
-        <button class="show-ans-btn" onclick="showAns('a2', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 3 (was 24) -->
-    <div class="mcq-box">
-        <h3>3. સૌપ્રથમ શોધાયેલો વાઇરસ કયો છે?</h3>
-        <p>A) ઍલ્ફાએલ વાઇરસ</p>
-        <p>B) ટીએમવી</p>
-        <p>C) મેલેરીયલ વાઇરસ</p>
-        <p>D) બીએસ</p>
-        <div id="a3" class="ans">✅ જવાબ: B) ટીએમવી</div>
-        <button class="show-ans-btn" onclick="showAns('a3', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 4 (was 25) -->
-    <div class="mcq-box">
-        <h3>4. વાઇરસ શામાંથી પસાર થઈ શકે છે?</h3>
-        <p>A) બેક્ટેરિયા ફિલ્ટર</p>
-        <p>B) ફિલ્ટરમાંથી પસાર</p>
-        <p>C) બેક્ટેરિયાફિલ્ટર</p>
-        <p>D) આપેલમાંથી એકપણ નહીં</p>
-        <div id="a4" class="ans">✅ જવાબ: B) ફિલ્ટરમાંથી પસાર</div>
-        <button class="show-ans-btn" onclick="showAns('a4', this)">જવાબ જુઓ</button>
-    </div>
-    
-    <!-- Question 5 (was 26) -->
-    <div class="mcq-box">
-        <h3>5. વાઇરસની મુખ્ય લાક્ષણિકતા નથી.</h3>
-        <p>A) ન્યુક્લિઓઇડ</p>
-        <p>B) ન્યુક્લિઈક એસિડ</p>
-        <p>C) મ્યુકોપ્રોટીન</p>
-        <p>D) પ્રોટીન</p>
-        <div id="a5" class="ans">✅ જવાબ: C) મ્યુકોપ્રોટીન</div>
-        <button class="show-ans-btn" onclick="showAns('a5', this)">જવાબ જુઓ</button>
-    </div>
-    
-    <!-- Question 6 (was 27) -->
-    <div class="mcq-box">
-        <h3>6. વિરોઈડના શોધક કોણ છે?</h3>
-        <p>A) ડી.એન.એ. વાલ્ટર</p>
-        <p>B) ટીએનએ</p>
-        <p>C) સાચેચર</p>
-        <p>D) વિનીયસ</p>
-        <div id="a6" class="ans">✅ જવાબ: A) ડી.એન.એ. વાલ્ટર</div>
-        <button class="show-ans-btn" onclick="showAns('a6', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 7 (was 28) -->
-    <div class="mcq-box">
-        <h3>7. વાઇરસ કરતાં નાના સૂક્ષ્મ જીવ એટલે...</h3>
-        <p>A) બાયોલોજિકલ</p>
-        <p>B) પ્રોટોપ્લાઝમ</p>
-        <p>C) બેક્ટેરિયલ વાઇરસ</p>
-        <p>D) વિરોઈડ</p>
-        <div id="a7" class="ans">✅ જવાબ: D) વિરોઈડ</div>
-        <button class="show-ans-btn" onclick="showAns('a7', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 8 (was 29) -->
-    <div class="mcq-box">
-        <h3>8. નીચેનામાંથી કયું લાક્ષણિકતા વિરોઈડ સાથે અસંગત છે?</h3>
-        <p>A) RNA હોય</p>
-        <p>B) માનવમાં પ્રાઇમર રોગ માટે જવાબદાર</p>
-        <p>C) બટેટાનો સ્પિન્ડલ ટ્યુબર રોગ</p>
-        <p>D) શોધક ડાયનેર</p>
-        <div id="a8" class="ans">✅ જવાબ: B) માનવમાં પ્રાઇમર રોગ માટે જવાબદાર</div>
-        <button class="show-ans-btn" onclick="showAns('a8', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 9 (was 30) -->
-    <div class="mcq-box">
-        <h3>9. વાઇરસ શું ધરાવે છે?</h3>
-        <p>A) DNA</p>
-        <p>B) RNA</p>
-        <p>C) A અને B બંને</p>
-        <p>D) A અને B માંથી કોઈ એક</p>
-        <div id="a9" class="ans">✅ જવાબ: D) A અને B માંથી કોઈ એક</div>
-        <button class="show-ans-btn" onclick="showAns('a9', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 10 (was 31) -->
-    <div class="mcq-box">
-        <h3>10. માનવીમાં વાઇરસથી થતો રોગ...</h3>
-        <p>A) ક્ષય</p>
-        <p>B) મરડો</p>
-        <p>C) અછબડા</p>
-        <p>D) પોલિયો</p>
-        <div id="a10" class="ans">✅ જવાબ: C) અછબડા અને D) પોલિયો (બંને સાચા વિકલ્પ હોઈ શકે છે)</div>
-        <button class="show-ans-btn" onclick="showAns('a10', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 11 (was 32) -->
-    <div class="mcq-box">
-        <h3>11. ચેપી રોગના રોગકારક તરીકે વાઇરસ શબ્દ આપનાર પ્રથમ વૈજ્ઞાનિક કોણ?</h3>
-        <p>A) ઇવાનૉવ્સ્કી</p>
-        <p>B) પાશ્ચર</p>
-        <p>C) માર્ટીન</p>
-        <p>D) બીજરીંક</p>
-        <div id="a11" class="ans">✅ જવાબ: B) પાશ્ચર</div>
-        <button class="show-ans-btn" onclick="showAns('a11', this)">જવાબ જુઓ</button>
-    </div>
-    
-    <!-- Question 12 (was 33) -->
-    <div class="mcq-box">
-        <h3>12. નીચેનામાંથી કોણ વગરની રચના તેની છે?</h3>
-        <p>A) વાઇરસ</p>
-        <p>B) વિરોઈડ</p>
-        <p>C) પ્રિઓન્સ</p>
-        <p>D) બેક્ટેરિયા</p>
-        <div id="a12" class="ans">✅ જવાબ: B) વિરોઈડ</div>
-        <button class="show-ans-btn" onclick="showAns('a12', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 13 (was 34) -->
-    <div class="mcq-box">
-        <h3>13. વનસ્પતિસૃષ્ટિની એક મુખ્ય લાક્ષણિકતા કઈ?</h3>
-        <p>A) એકકોષી અને આદિકોષકેન્દ્રીય</p>
-        <p>B) એકકોષી સુકોષકેન્દ્રીય</p>
-        <p>C) બહુકોષી અને આદિકોષકેન્દ્રીય</p>
-        <p>D) બહુકોષી અને સુકોષકેન્દ્રીય</p>
-        <div id="a13" class="ans">✅ જવાબ: D) બહુકોષી અને સુકોષકેન્દ્રીય</div>
-        <button class="show-ans-btn" onclick="showAns('a13', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 14 (was 35) -->
-    <div class="mcq-box">
-        <h3>14. 41 ય પ્રોટીનનું રસાયણિક વિઘટન ક્યાં સેવ્યમાં અનુકૂળ રહે છે?</h3>
-        <p>A) લાઈસોઝોમ</p>
-        <p>B) આલોગોલિક વનસ્પતિ</p>
-        <p>C) પૉલિપેપ્ટાઇડ</p>
-        <p>D) વાઇરસ</p>
-        <div id="a14" class="ans">✅ જવાબ: D) વાઇરસ</div>
-        <button class="show-ans-btn" onclick="showAns('a14', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 15 (was 36) -->
-    <div class="mcq-box">
-        <h3>15. વાઇરસની રચનામાં રસાયણિક વિઘટન કયા સેવ્યમાં અનુકૂળ રહે છે?</h3>
-        <p>A) લાઈસોઝોમ</p>
-        <p>B) પ્રોટીન</p>
-        <p>C) લાઈસોઝાઇમ</p>
-        <p>D) વાઇરસ</p>
-        <div id="a15" class="ans">✅ જવાબ: C) લાઈસોઝાઇમ</div>
-        <button class="show-ans-btn" onclick="showAns('a15', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 16 (was 37) -->
-    <div class="mcq-box">
-        <h3>16. લાઈસોઝાઇમ વાઇરસનું કયા સેવ્યમાં અનુકૂળ રહે છે?</h3>
-        <p>A) લાઈસોઝાઇમ</p>
-        <p>B) બેક્ટેરિયલ વાઇરસ માટે</p>
-        <p>C) લાઈસોઝાઇમ</p>
-        <p>D) વાઇરસ</p>
-        <div id="a16" class="ans">✅ જવાબ: B) બેક્ટેરિયલ વાઇરસ માટે</div>
-        <button class="show-ans-btn" onclick="showAns('a16', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 17 (was 38) -->
-    <div class="mcq-box">
-        <h3>17. કેપ્સોમિયર શેનું બનેલું છે?</h3>
-        <p>A) ન્યુક્લિઓઇડનું શુભવા</p>
-        <p>B) ન્યુક્લિઓટાઇડ્સનું શુભવા</p>
-        <p>C) પૉલિપેપ્ટાઇડ</p>
-        <p>D) પૉલિપેપ્ટાઇડ્સનું શુભવા</p>
-        <div id="a17" class="ans">✅ જવાબ: C) પૉલિપેપ્ટાઇડ</div>
-        <button class="show-ans-btn" onclick="showAns('a17', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 18 (was 39) -->
-    <div class="mcq-box">
-        <h3>18. હરિત દેવને શું કહેવાય?</h3>
-        <p>A) પ્રોટીન</p>
-        <p>B) RNA</p>
-        <p>C) પૉલિપેપ્ટાઇડ</p>
-        <p>D) ચુનાવ</p>
-        <div id="a18" class="ans">✅ જવાબ: C) પૉલિપેપ્ટાઇડ</div>
-        <button class="show-ans-btn" onclick="showAns('a18', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 19 (was 40) -->
-    <div class="mcq-box">
-        <h3>19. લીલનું મુખ્ય કાર્ય કોનું બનેલું છે?</h3>
-        <p>A) સ્ત્રાવણ</p>
-        <p>B) રેસા</p>
-        <p>C) ગ્લુકોઝ અને સબક્યુટિકલ</p>
-        <p>D) મ્યુસીન</p>
-        <div id="a19" class="ans">✅ જવાબ: C) ગ્લુકોઝ અને સબક્યુટિકલ</div>
-        <button class="show-ans-btn" onclick="showAns('a19', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 20 (was 41) -->
-    <div class="mcq-box">
-        <h3>20. લીલની એક મુખ્ય લાક્ષણિકતા કઈ છે?</h3>
-        <p>A) સ્વાવલંબી અને પરાવલંબી</p>
-        <p>B) એકકોષી અને બહુવિધાન</p>
-        <p>C) પરાવલંબી અને આદિકોષકેન્દ્રીય</p>
-        <p>D) આપેલ પૈકી કોઈ પણ નહિ</p>
-        <div id="a20" class="ans">✅ જવાબ: B) એકકોષી અને બહુવિધાન</div>
-        <button class="show-ans-btn" onclick="showAns('a20', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 21 (was 42) -->
-    <div class="mcq-box">
-        <h3>21. ફૂગની કોષદિવાલ શાની બનેલી છે?</h3>
-        <p>A) સેલ્યુલોઝ</p>
-        <p>B) કાઈટિન</p>
-        <p>C) ક્યુટીન</p>
-        <p>D) લ્યુટીન</p>
-        <div id="a21" class="ans">✅ જવાબ: B) કાઈટિન</div>
-        <button class="show-ans-btn" onclick="showAns('a21', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 22 (was 43) -->
-    <div class="mcq-box">
-        <h3>22. ફૂગમાં સંગ્રહિત ખોરાક તરીકે નીચેનામાંથી કયો પદાર્થ છે?</h3>
-        <p>A) ગ્લુકોઝ અને ક્યુટીન</p>
-        <p>B) ગ્લાયકોજન અને ક્યુટીન</p>
-        <p>C) ગ્લુકોઝ અને ગ્લાયકોજન</p>
-        <p>D) લિપિડ</p>
-        <div id="a22" class="ans">✅ જવાબ: C) ગ્લુકોઝ અને ગ્લાયકોજન</div>
-        <button class="show-ans-btn" onclick="showAns('a22', this)">જવાબ જુઓ</button>
-    </div>
-    
-     <!-- Question 23 (was 44) -->
-    <div class="mcq-box">
-        <h3>23. ફૂગમાં લિંગી પ્રજનન માટે કયો તબક્કો સામે નથી?</h3>
-        <p>A) કોષરસ સંયુગ્મન</p>
-        <p>B) ફળસંયુગ્મન</p>
-        <p>C) મધ્યવર્તી તબક્કો</p>
-        <p>D) અર્ધસૂત્રણ</p>
-        <div id="a23" class="ans">✅ જવાબ: C) મધ્યવર્તી તબક્કો</div>
-        <button class="show-ans-btn" onclick="showAns('a23', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 24 (was 45) -->
-    <div class="mcq-box">
-        <h3>24. ફૂગમાં લિંગી પ્રજનનની એક પદ્ધતિ સાચી નથી.</h3>
-        <p>A) સમયુગ્મન</p>
-        <p>B) વિષમયુગ્મન</p>
-        <p>C) અંડજન્યુ</p>
-        <p>D) જન્યુવાહિની</p>
-        <div id="a24" class="ans">✅ જવાબ: D) જન્યુવાહિની</div>
-        <button class="show-ans-btn" onclick="showAns('a24', this)">જવાબ જુઓ</button>
-    </div>
-
-    <!-- Question 25 (was 46) -->
-    <div class="mcq-box">
-        <h3>25. બ્રેડ મૉલ્ડનું સામાન્ય નામ શું છે?</h3>
-        <p>A) ઈનોયસ</p>
-        <p>B) ફૂગ</p>
-        <p>C) પેનિસિલિયમ</p>
-        <p>D) બીજાણુ</p>
-        <div id="a25" class="ans">✅ જવાબ: C) પેનિસિલિયમ</div>
-        <button class="show-ans-btn" onclick="showAns('a25', this)">જવાબ જુઓ</button>
-    </div>
-    
-    <!-- Question 26 (was 47) -->
-    <div class="mcq-box">
-        <h3>26. બધી ફૂગની પોષણ પદ્ધતિ આ છે.</h3>
-        <p>A) સ્વાવલંબી</p>
-        <p>B) પરાવલંબી</p>
-        <p>C) વિષમપોષી</p>
-        <p>D) મૃતપોષી</p>
-        <div id="a26" class="ans">✅ જવાબ: C) વિષમપોષી</div>
-        <button class="show-ans-btn" onclick="showAns('a26', this)">જવાબ જુઓ</button>
-    </div>
-
+  <!-- ========== 1 ========== -->
+<div class="mcq-box">
+<h3>1) પાશ્ચર કઈ પ્રક્રિયા માટે જાણીતાં છે?</h3>
+<p>A) DNA ની શોધ</p>
+<p>B) આલ્કોહોલિક આથવણ</p>
+<p>C) રક્તગૃપ શોધ</p>
+<p>D) શ્વસન પ્રક્રિયા</p>
+<div id="a1" class="ans">✔ જવાબ: B) આલ્કોહોલિક આથવણ</div>
+<button class="show-ans-btn" onclick="showAns('a1', this)">જવાબ જુઓ</button>
 </div>
 
+<!-- 2 -->
+<div class="mcq-box">
+<h3>2) જીવાણુઓ મુખ્યત્વે કઈ પદ્ધતિથી વધે છે?</h3>
+<p>A) દ્વિવિભજન</p>
+<p>B) અંકુરજનન</p>
+<p>C) ગ્રાફ્ટિંગ</p>
+<p>D) વિલયન</p>
+<div id="a2" class="ans">✔ જવાબ: A) દ્વિવિભજન</div>
+<button class="show-ans-btn" onclick="showAns('a2', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 3 -->
+<div class="mcq-box">
+<h3>3) બેક્ટેરિયા કયા પ્રકારના કોષીય જીવ છે?</h3>
+<p>A) એકકોશીય</p>
+<p>B) બહુ કોષીય</p>
+<p>C) તંતુ ધરાવતા</p>
+<p>D) સજીવ રહિત</p>
+<div id="a3" class="ans">✔ જવાબ: A) એકકોશીય</div>
+<button class="show-ans-btn" onclick="showAns('a3', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 4 -->
+<div class="mcq-box">
+<h3>4) વાયરસને જીવંત માત્ર ક્યારે માનવામાં આવે છે?</h3>
+<p>A) નિષ્ક્રિય અવસ્થામાં</p>
+<p>B) હોસ્ટ કોષમાં</p>
+<p>C) પ્રકાશમાં</p>
+<p>D) પાણીમાં</p>
+<div id="a4" class="ans">✔ જવાબ: B) હોસ્ટ કોષમાં</div>
+<button class="show-ans-btn" onclick="showAns('a4', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 5 -->
+<div class="mcq-box">
+<h3>5) ઇસ્ટું મુખ્યત્વે કઈ પ્રક્રિયામાં ઉપયોગ થાય છે?</h3>
+<p>A) લોહી પરીક્ષણ</p>
+<p>B) દૂધનું જમણ</p>
+<p>C) બ્રેડ બનાવવું</p>
+<p>D) ઓક્સિજન ઉત્પાદન</p>
+<div id="a5" class="ans">✔ જવાબ: C) બ્રેડ બનાવવું</div>
+<button class="show-ans-btn" onclick="showAns('a5', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 6 -->
+<div class="mcq-box">
+<h3>6) કઈ પ્રક્રિયા જીવાણુઓને નિયંત્રિત કરવામાં મદદરૂપ છે?</h3>
+<p>A) દહીં બનાવવું</p>
+<p>B) વેક્સિનેશન</p>
+<p>C) સુર્યપ્રકાશ</p>
+<p>D) પાચન ક્રિયા</p>
+<div id="a6" class="ans">✔ જવાબ: B) વેક્સિનેશન</div>
+<button class="show-ans-btn" onclick="showAns('a6', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 7 -->
+<div class="mcq-box">
+<h3>7) હાનિકારક બેક્ટેરિયા કઈ વસ્તુ ઉત્પન્ન કરે છે?</h3>
+<p>A) વિટામિન</p>
+<p>B) ટોક્સિન</p>
+<p>C) પ્રોટીન</p>
+<p>D) સ્ટાર્ચ</p>
+<div id="a7" class="ans">✔ જવાબ: B) ટોક્સિન</div>
+<button class="show-ans-btn" onclick="showAns('a7', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 8 -->
+<div class="mcq-box">
+<h3>8) એન્ટીબાયોટિક્સ પ્રથમ વખત કોને શોધી?</h3>
+<p>A) પાસ્ટર</p>
+<p>B) ફ્લેમિંગ</p>
+<p>C) ડાર્વિન</p>
+<p>D) મેન્ડેલ</p>
+<div id="a8" class="ans">✔ જવાબ: B) ફ્લેમિંગ</div>
+<button class="show-ans-btn" onclick="showAns('a8', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 9 -->
+<div class="mcq-box">
+<h3>9) પેનિસીલિન કઈ વસ્તુમાંથી બને છે?</h3>
+<p>A) બેક્ટેરિયા</p>
+<p>B) ફૂગ</p>
+<p>C) વાયરસ</p>
+<p>D) પ્રોટોઝોઆ</p>
+<div id="a9" class="ans">✔ જવાબ: B) ફૂગ</div>
+<button class="show-ans-btn" onclick="showAns('a9', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 10 -->
+<div class="mcq-box">
+<h3>10) દહીં બનવાની પ્રક્રિયા કયો જીવ કરે છે?</h3>
+<p>A) ઈસ્ટું</p>
+<p>B) લેક્ટોબેસિલસ</p>
+<p>C) પેરામેશિયમ</p>
+<p>D) ફૂગ</p>
+<div id="a10" class="ans">✔ જવાબ: B) લેક્ટોબેસિલસ</div>
+<button class="show-ans-btn" onclick="showAns('a10', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 11 -->
+<div class="mcq-box">
+<h3>11) રક્તમાં પ્લાઝ્મા પ્રોટીન કોણ બનાવે છે?</h3>
+<p>A) લોહી કોષ</p>
+<p>B) યકૃત</p>
+<p>C) વૃક્ક</p>
+<p>D) પળી</p>
+<div id="a11" class="ans">✔ જવાબ: B) યકૃત</div>
+<button class="show-ans-btn" onclick="showAns('a11', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 12 -->
+<div class="mcq-box">
+<h3>12) છોડમાં energy કોણ બનાવે છે?</h3>
+<p>A) મૂળ</p>
+<p>B) ડાંઠ</p>
+<p>C) ક્લોરોપ્લાસ્ટ</p>
+<p>D) સુકંદ</p>
+<div id="a12" class="ans">✔ જવાબ: C) ક્લોરોપ્લાસ્ટ</div>
+<button class="show-ans-btn" onclick="showAns('a12', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 13 -->
+<div class="mcq-box">
+<h3>13) માનવ શરીરમાં સૌથી મોટું અંગ કયું?</h3>
+<p>A) હૃદય</p>
+<p>B) ચામડી</p>
+<p>C) ફેફસા</p>
+<p>D) યકૃત</p>
+<div id="a13" class="ans">✔ જવાબ: B) ચામડી</div>
+<button class="show-ans-btn" onclick="showAns('a13', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 14 -->
+<div class="mcq-box">
+<h3>14) DNAનું મુખ્ય કાર્ય શું છે?</h3>
+<p>A) energy બનાવવી</p>
+<p>B) લોહી બનાવવું</p>
+<p>C) વારસાગત માહિતી સંગ્રહવું</p>
+<p>D) શ્વસન કરવું</p>
+<div id="a14" class="ans">✔ જવાબ: C) વારસાગત માહિતી સંગ્રહવું</div>
+<button class="show-ans-btn" onclick="showAns('a14', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 15 -->
+<div class="mcq-box">
+<h3>15) કોષનું પાવરહાઉસ કયું છે?</h3>
+<p>A) રાઈબોઝોમ</p>
+<p>B) ગોલ્ગી બોડી</p>
+<p>C) માઇટોકોન્ડ્રિયા</p>
+<p>D) ન્યુક્લિયસ</p>
+<div id="a15" class="ans">✔ જવાબ: C) માઇટોકોન્ડ્રિયા</div>
+<button class="show-ans-btn" onclick="showAns('a15', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 16 -->
+<div class="mcq-box">
+<h3>16) માનવ શરીરમાં રક્ત શુદ્ધ કોણ કરે છે?</h3>
+<p>A) ફેફસા</p>
+<p>B) મગજ</p>
+<p>C) વૃક્ક</p>
+<p>D) યકૃત</p>
+<div id="a16" class="ans">✔ જવાબ: C) વૃક્ક</div>
+<button class="show-ans-btn" onclick="showAns('a16', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 17 -->
+<div class="mcq-box">
+<h3>17) રક્તનો રંગ કયા કારણે છે?</h3>
+<p>A) DNA</p>
+<p>B) હેમોગ્લોબિન</p>
+<p>C) પ્રોટીન</p>
+<p>D) કોષભિત્તિ</p>
+<div id="a17" class="ans">✔ જવાબ: B) હેમોગ્લોબિન</div>
+<button class="show-ans-btn" onclick="showAns('a17', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 18 -->
+<div class="mcq-box">
+<h3>18) લિવર માનવ શરીરમાં શું સંગ્રહ કરે છે?</h3>
+<p>A) નાઇટ્રોજન</p>
+<p>B) ગ્લાયકોજન</p>
+<p>C) કાર્બન</p>
+<p>D) સેલ્યુલોઝ</p>
+<div id="a18" class="ans">✔ જવાબ: B) ગ્લાયકોજન</div>
+<button class="show-ans-btn" onclick="showAns('a18', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 19 -->
+<div class="mcq-box">
+<h3>19) રાઈબોઝોમનું મુખ્ય કાર્ય શું છે?</h3>
+<p>A) પાચન</p>
+<p>B) પ્રોટીન સંશ્લેષણ</p>
+<p>C) ઓક્સિજન પરિવહન</p>
+<p>D)ગરમી ઉત્પન્ન કરવી</p>
+<div id="a19" class="ans">✔ જવાબ: B) પ્રોટીન સંશ્લેષણ</div>
+<button class="show-ans-btn" onclick="showAns('a19', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 20 -->
+<div class="mcq-box">
+<h3>20) કોષનો નિયંત્રણ કેન્દ્ર કયું છે?</h3>
+<p>A) રાઈબોઝોમ</p>
+<p>B) ન્યુરોન</p>
+<p>C) ન્યુક્લિયસ</p>
+<p>D) પ્લાઝ્મા</p>
+<div id="a20" class="ans">✔ જવાબ: C) ન્યુક્લિયસ</div>
+<button class="show-ans-btn" onclick="showAns('a20', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 21 -->
+<div class="mcq-box">
+<h3>21) માનવ શરીરમાં વાયુ ವಿನિમય ક્યાં થાય છે?</h3>
+<p>A) યકૃત</p>
+<p>B) એલ્વીઓલાઈ</p>
+<p>C) વૃક્ક</p>
+<p>D) રક્તનાળ</p>
+<div id="a21" class="ans">✔ જવાબ: B) એલ્વીઓલાઈ</div>
+<button class="show-ans-btn" onclick="showAns('a21', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 22 -->
+<div class="mcq-box">
+<h3>22) છોડમાં પાણીનો પરિવહન કોણ કરે છે?</h3>
+<p>A) ઝાઈલમ</p>
+<p>B) ફ્લોઈમ</p>
+<p>C) પાથે</p>
+<p>D) સુકંદ</p>
+<div id="a22" class="ans">✔ જવાબ: A) ઝાઈલમ</div>
+<button class="show-ans-btn" onclick="showAns('a22', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 23 -->
+<div class="mcq-box">
+<h3>23) મૂળનું મુખ્ય કાર્ય શું છે?</h3>
+<p>A) પ્રકાશ સંશ્લેષણ</p>
+<p>B) પાણી શોષવું</p>
+<p>C) દ્રાવણ બનાવવું</p>
+<p>D) બીજ બનાવવું</p>
+<div id="a23" class="ans">✔ જવાબ: B) પાણી શોષવું</div>
+<button class="show-ans-btn" onclick="showAns('a23', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 24 -->
+<div class="mcq-box">
+<h3>24) ATP નું સંપૂર્ણ નામ શું છે?</h3>
+<p>A) એડેનોઝીન ટ્રાય ફોસ્ફેટ</p>
+<p>B) એક્ટિવ ટિસ્યુ પાવર</p>
+<p>C) એડવાન્સ થર્મલ પાવર</p>
+<p>D) એરોમેટિક પ્રોટીન</p>
+<div id="a24" class="ans">✔ જવાબ: A) એડેનોઝીન ટ્રાય ફોસ્ફેટ</div>
+<button class="show-ans-btn" onclick="showAns('a24', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 25 -->
+<div class="mcq-box">
+<h3>25) કઈ વસ્તુ માત્ર વાયરસમાં હોય છે?</h3>
+<p>A) કોષભિત્તિ</p>
+<p>B) DNA અથવા RNA</p>
+<p>C) રાઈબોઝોમ</p>
+<p>D) માઇટોકોન્ડ્રિયા</p>
+<div id="a25" class="ans">✔ જવાબ: B) DNA અથવા RNA</div>
+<button class="show-ans-btn" onclick="showAns('a25', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- 26 -->
+<div class="mcq-box">
+<h3>26) પરોપજીવી જીવાણુ ક્યાં રહે છે?</h3>
+<p>A) પાણીમાં</p>
+<p>B) જીવંત હોસ્ટમાં</p>
+<p>C) પથ્થરોમાં</p>
+<p>D) હવામાં</p>
+<div id="a26" class="ans">✔ જવાબ: B) જીવંત હોસ્ટમાં</div>
+<button class="show-ans-btn" onclick="showAns('a26', this)">જવાબ જુઓ</button>
+</div>
+
+</div>
 </body>
-  </html>
-  
-          
+</html>
+
+
+
+        
