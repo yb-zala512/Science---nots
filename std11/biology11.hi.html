@@ -1,1 +1,62 @@
-<print>Zala yuvraj singh song by step samjavo aane ka nam 
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8" />
+<title>Gujarati Biology MCQ with Working Buttons</title>
+<style>
+.mcq-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.ans {
+  display: none;
+  margin-top: 8px;
+  color: green;
+  font-weight: bold;
+}
+.show-ans-btn {
+  margin-top: 5px;
+  cursor: pointer;
+}
+</style>
+<script>
+function showAns(id, btn) {
+  const ansDiv = document.getElementById(id);
+  if (ansDiv.style.display === "block") {
+    ansDiv.style.display = "none";
+    btn.textContent = "જવાબ જુઓ";
+  } else {
+    ansDiv.style.display = "block";
+    btn.textContent = "જવાબ છુપાવો";
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="mcq-box">
+  <h3>1) પાશ્ચર કઈ પ્રક્રિયા માટે જાણીતાં છે?</h3>
+  <p>A) DNA ની શોધ</p>
+  <p>B) આલ્કોહોલિક આથવણ</p>
+  <p>C) રક્તગૃપ શોધ</p>
+  <p>D) શ્વસન પ્રક્રિયા</p>
+  <div id="a1" class="ans">✔ જવાબ: B) આલ્કોહોલિક આથવણ</div>
+  <button class="show-ans-btn" onclick="showAns('a1', this)">જવાબ જુઓ</button>
+</div>
+
+<div class="mcq-box">
+  <h3>2) જીવાણુઓ મુખ્યત્વે કઈ પદ્ધતિથી વધે છે?</h3>
+  <p>A) દ્વિવિભજન</p>
+  <p>B) અંકુરજનન</p>
+  <p>C) ગ્રાફ્ટિંગ</p>
+  <p>D) વિલયન</p>
+  <div id="a2" class="ans">✔ જવાબ: A) દ્વિવિભજન</div>
+  <button class="show-ans-btn" onclick="showAns('a2', this)">જવાબ જુઓ</button>
+</div>
+
+<!-- અન્ય MCQ પણ આ રીતે ઉમેરો -->
+
+</body>
+</html>
