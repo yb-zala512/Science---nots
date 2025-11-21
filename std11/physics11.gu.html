@@ -172,119 +172,135 @@
 <!-- ========================== -->
 
 
+
 <!DOCTYPE html>
 <html lang="gu">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Physics Chapter 8 Gujarati MCQ</title>
 
 <style>
-/* --- MAIN TITLE --- */
-.main-title {
-    color: #1e40af !important; 
-    text-align: center !important;
-    font-size: 30px;
-    font-weight: 800;
-    margin-bottom: 25px;
+
+/* ---------- WEBSITE BACKGROUND ---------- */
+body {
+    background: #eef4ff;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 15px;
 }
 
-/* --- MCQ BOX STYLE --- */
+/* ---------- TITLE ---------- */
+.page-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: #123e8a !important;
+    margin-bottom: 25px;
+    padding: 10px 0;
+    background: #d7e4ff;
+    border-radius: 10px;
+    border: 2px solid #789ce8;
+}
+
+/* ---------- MCQ BOX DESIGN ---------- */
 .mcq-box {
-    border: 2px solid #444;
-    background: #f0f6ff;
+    background: #ffffff;
+    border: 2px solid #2d3e50;
     padding: 15px;
     border-radius: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 17px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-/* --- ANSWER BOX --- */
+/* ---------- ANSWER BOX ---------- */
 .ans {
     display: none;
     margin-top: 10px;
-    background: #d4ffd4;
+    background: #d9ffd9;
     padding: 10px;
-    border: 1px solid #1b7c32;
-    border-radius: 8px;
+    border: 1px solid #1c7c2e;
+    border-radius: 6px;
     font-weight: bold;
 }
 
-/* --- BUTTON STYLE --- */
+/* ---------- BUTTON STYLE ---------- */
 .show-ans-btn {
-    margin-top: 12px;
-    padding: 8px 15px;
-    background: #ff5722;
-    color: white;
+    padding: 10px 16px;
+    background: #ff5e20;
+    color: #fff;
+    font-weight: bold;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 700;
+    margin-top: 10px;
+    transition: 0.2s;
 }
 
 .show-ans-btn:hover {
-    background: #d84315;
+    background: #e0480d;
 }
+
 </style>
 
 <script>
 function showAns(id) {
-    let x = document.getElementById(id);
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+    let box = document.getElementById(id);
+    box.style.display = (box.style.display === "block") ? "none" : "block";
 }
 </script>
 
 </head>
 <body>
 
-<h2 class="main-title">
+<!-- ================= TITLE ================= -->
+<h2 class="page-title">
     Physics Chapter – 8 (Gujarati)  
     ઘન પદાર્થોના યાંત્રિક ગુણધર્મો – Rewrite MCQs
 </h2>
 
 
-<!-- ===================== MCQ – 1 ===================== -->
+<!-- ================= MCQ 1 ================= -->
 <div class="mcq-box">
-<h3>1) બળ દૂર કરતા ઘન પદાર્થ પોતાની મૂળ લંબાઇ પર પાછો ફરે તેને શું કહેવાય?</h3>
+<h3>1) બાહ્ય બળ દૂર કર્યા પછી પદાર્થ પોતાની મૂળ આકૃતિ મેળવે, તેને શું કહે છે?</h3>
 
-<p>A) સ્થિતિસ્થાપકતા</p>
-<p>B) લચીલાશ</p>
+<p>A) કઠોરતા</p>
+<p>B) સ્થિતિસ્થાપકતા</p>
 <p>C) નમ્રતા</p>
-<p>D) કઠિનતા</p>
+<p>D) પ્લાસ્ટિકતા</p>
 
-<div id="a1" class="ans">✅ જવાબ: A) સ્થિતિસ્થાપકતા</div>
+<div id="a1" class="ans">✔ જવાબ: B) સ્થિતિસ્થાપકતા</div>
 <button class="show-ans-btn" onclick="showAns('a1')">જવાબ જુઓ</button>
 </div>
 
 
-<!-- ===================== MCQ – 2 ===================== -->
+<!-- ================= MCQ 2 ================= -->
 <div class="mcq-box">
-<h3>2) લંબાઇમાં થયેલો ફેરફાર મૂળ લંબાઇના ભાવમાં દર્શાવાય તે શું છે?</h3>
+<h3>2) તાણની વ્યાખ્યા નીચેમાંથી કઈ છે?</h3>
 
-<p>A) તાણ</p>
-<p>B) બળ</p>
-<p>C) વિસ્તાર</p>
-<p>D) દબાણ</p>
+<p>A) બળ / વિસ્તાર</p>
+<p>B) વિસ્તાર / લંબાઇ</p>
+<p>C) બળ × સમય</p>
+<p>D) દબાણ / લંબાઈ</p>
 
-<div id="a2" class="ans">✅ જવાબ: C) વિસ્તાર</div>
+<div id="a2" class="ans">✔ જવાબ: A) બળ / વિસ્તાર</div>
 <button class="show-ans-btn" onclick="showAns('a2')">જવાબ જુઓ</button>
 </div>
 
 
-<!-- ===================== MCQ – 3 ===================== -->
+<!-- ================= MCQ 3 ================= -->
 <div class="mcq-box">
-<h3>3) ઘન પદાર્થની 'યુંગ મોડ્યુલસ' કઈ માત્રાનું પ્રમાણ છે?</h3>
+<h3>3) લંબાઇમાં થયેલ ફેરફાર મૂળ લંબાઇની સરખામણીએ દર્શાવાય, તેને શું કહે છે?</h3>
 
-<p>A) તાણ / વિસ્તાર</p>
-<p>B) વિસ્તાર / તાણ</p>
-<p>C) દબાણ / વૉલ્યુમ</p>
-<p>D) બળ / વિસ્તાર</p>
+<p>A) તાણ</p>
+<p>B) વિસ્તાર</p>
+<p>C) ઘનતા</p>
+<p>D) દબાણ</p>
 
-<div id="a3" class="ans">✅ જવાબ: A) તાણ / વિસ્તાર</div>
+<div id="a3" class="ans">✔ જવાબ: B) વિસ્તાર</div>
 <button class="show-ans-btn" onclick="showAns('a3')">જવાબ જુઓ</button>
 </div>
-
 
 </body>
 </html>
