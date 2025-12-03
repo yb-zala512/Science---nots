@@ -595,15 +595,14 @@ function showAns(id){
 <style>
     body{
         font-family: Arial, sans-serif;
-        background:#eef2f7;
-        padding:20px;
-        margin:0;
+        background: #e9eef3;
+        padding: 20px;
+        margin: 0;
     }
     h2{
         text-align:center;
         margin-bottom:25px;
         color:#222;
-        font-size:26px;
     }
     .mcq-box{
         background:#ffffff;
@@ -611,25 +610,21 @@ function showAns(id){
         margin-bottom:20px;
         border-radius:14px;
         box-shadow:0px 4px 12px rgba(0,0,0,0.12);
-        transition:0.3s ease;
+        transition:0.3s;
     }
     .mcq-box:hover{
-        transform:scale(1.01);
-        box-shadow:0px 6px 18px rgba(0,0,0,0.20);
+        transform: scale(1.01);
+        box-shadow:0px 5px 16px rgba(0,0,0,0.18);
     }
     .question{
         font-size:18px;
-        margin-bottom:10px;
-        color:#333;
         font-weight:bold;
+        margin-bottom:12px;
+        color:#333;
     }
     .option{
-        margin:5px 0;
+        margin:4px 0;
         font-size:16px;
-        padding:6px 10px;
-        border-left:4px solid #007bff;
-        background:#f4f7ff;
-        border-radius:6px;
     }
     .answer{
         display:none;
@@ -642,14 +637,13 @@ function showAns(id){
     }
     button{
         margin-top:12px;
-        padding:10px 20px;
+        padding:8px 18px;
         background:#007bff;
         color:white;
         border:none;
         border-radius:8px;
         font-size:15px;
         cursor:pointer;
-        transition:0.2s;
     }
     button:hover{
         background:#005fcc;
@@ -658,16 +652,23 @@ function showAns(id){
 
 <script>
 function toggleAnswer(id){
-    let ans = document.getElementById(id);
-    ans.style.display = ans.style.display === "block" ? "none" : "block";
+    var ans = document.getElementById(id);
+    if(ans.style.display === "block"){
+        ans.style.display = "none";
+    } else {
+        ans.style.display = "block";
+    }
 }
 </script>
+
 </head>
 <body>
 
 <h2>📘 10 Science – Chapter 3 (MCQ & Answer)</h2>
 
-<!-- Example MCQ Template -->
+<!-- ====== 1 થી 30 MCQ START ====== -->
+
+<!-- 1 -->
 <div class="mcq-box">
     <div class="question">1) કાર્બનનું અપરરૂપ વિદ્યુતનું સુવાહક કયું છે?</div>
     <div class="option">A) હીરો</div>
@@ -678,36 +679,107 @@ function toggleAnswer(id){
     <div class="answer" id="a1">સાચો જવાબ: C) ગ્રેફાઇટ</div>
 </div>
 
-<!-- More MCQs can be added below following the same format -->
+<!-- 2 -->
+<div class="mcq-box">
+    <div class="question">2) સ્ટીલ અને લોખંડ પર ઝિંકનું પાતળું સ્તર ચડાવવાની પદ્ધતિને શું કહે છે?</div>
+    <div class="option">A) એલોયિંગ</div>
+    <div class="option">B) ગેલ્વેનાઈઝેશન</div>
+    <div class="option">C) અનિલીંગ</div>
+    <div class="option">D) બ્રેઝિંગ</div>
+    <button onclick="toggleAnswer('a2')">જવાબ જુઓ</button>
+    <div class="answer" id="a2">સાચો જવાબ: B) ગેલ્વેનાઈઝેશન</div>
+</div>
+
+<!-- 3 -->
+<div class="mcq-box">
+    <div class="question">3) લોખંડમાં ભેજયુક્ત હવા સાથેની પ્રક્રિયાથી થતો ફેરફાર શું કહેવાય?</div>
+    <div class="option">A) ક્ષરણ</div>
+    <div class="option">B) કાટ લાગવો</div>
+    <div class="option">C) ઓક્સિડેશન</div>
+    <div class="option">D) જંગ લાગવો</div>
+    <button onclick="toggleAnswer('a3')">જવાબ જુઓ</button>
+    <div class="answer" id="a3">સાચો જવાબ: B) કાટ લાગવો</div>
+</div>
+
+<!-- 4 -->
+<div class="mcq-box">
+    <div class="question">4) ટિફિનના ડબ્બાનો ઇલેક્ટ્રોપ્લેટિંગ કયા ધાતુથી કરવામાં આવે છે?</div>
+    <div class="option">A) ક્રોમિયમ</div>
+    <div class="option">B) કાંસું</div>
+    <div class="option">C) ટીન</div>
+    <div class="option">D) સ્ટીલ</div>
+    <button onclick="toggleAnswer('a4')">જવાબ જુઓ</button>
+    <div class="answer" id="a4">સાચો જવાબ: C) ટીન</div>
+</div>
+
+<!-- 5 -->
+<div class="mcq-box">
+    <div class="question">5) નીચેના પૈકી કયું ધાતુના ગુણધર્મોમાં શામેલ નથી?</div>
+    <div class="option">A) રણક</div>
+    <div class="option">B) ચમક</div>
+    <div class="option">C) તોડતા નરમ અવાજ</div>
+    <div class="option">D) સુવાહકતા</div>
+    <button onclick="toggleAnswer('a5')">જવાબ જુઓ</button>
+    <div class="answer" id="a5">સાચો જવાબ: C) તોડતા નરમ અવાજ</div>
+</div>
+
+<!-- 6 -->
+<div class="mcq-box">
+    <div class="question">6) સૌથી વધુ તનનીય ધાતુ કઈ છે?</div>
+    <div class="option">A) ચાંદી</div>
+    <div class="option">B) સોનું</div>
+    <div class="option">C) પ્લેટિનમ</div>
+    <div class="option">D) તાંબું</div>
+    <button onclick="toggleAnswer('a6')">જવાબ જુઓ</button>
+    <div class="answer" id="a6">સાચો જવાબ: B) સોવું</div>
+</div>
+
+<!-- 7 -->
+<div class="mcq-box">
+    <div class="question">7) સખત સપાટી પર પછાડવાથી ધ્વનિ ઉત્પન્ન કરતી ધાતુઓને શું કહે છે?</div>
+    <div class="option">A) ટિપાઉ</div>
+    <div class="option">B) રણકદાર</div>
+    <div class="option">C) ચમકદાર</div>
+    <div class="option">D) સુવાહક</div>
+    <button onclick="toggleAnswer('a7')">જવાબ જુઓ</button>
+    <div class="answer" id="a7">સાચો જવાબ: B) રણકદાર</div>
+</div>
+
+<!-- 8 -->
+<div class="mcq-box">
+    <div class="question">8) કઈ ધાતુ ઓરડાના તાપમાને પ્રવાહી સ્વરૂપમાં હોય છે?</div>
+    <div class="option">A) સોડિયમ</div>
+    <div class="option">B) એલ્યુમિનિયમ</div>
+    <div class="option">C) મરક્યુરી</div>
+    <div class="option">D) મેગ્નેશિયમ</div>
+    <button onclick="toggleAnswer('a8')">જવાબ જુઓ</button>
+    <div class="answer" id="a8">સાચો જવાબ: C) મરક્યુરી</div>
+</div>
+
+<!-- 9 -->
+<div class="mcq-box">
+    <div class="question">9) સોડિયમ અને પોટેશિયમ જેવી ધાતુઓને શામાં સાચવવામાં આવે છે?</div>
+    <div class="option">A) પાણી</div>
+    <div class="option">B) તેલ</div>
+    <div class="option">C) કેરોસીન</div>
+    <div class="option">D) આલ્કોહોલ</div>
+    <button onclick="toggleAnswer('a9')">જવાબ જુઓ</button>
+    <div class="answer" id="a9">સાચો જવાબ: C) કેરોસીન</div>
+</div>
+
+<!-- 10 -->
+<div class="mcq-box">
+    <div class="question">10) સૌથી ઓછી સક્રિય ધાતુ મુક્ત અવસ્થામાં મળે છે, તે કઈ?</div>
+    <div class="option">A) કેલ્શિયમ</div>
+    <div class="option">B) સોડિયમ</div>
+    <div class="option">C) સોવું</div>
+    <div class="option">D) મેગ્નેશિયમ</div>
+    <button onclick="toggleAnswer('a10')">જવાબ જુઓ</button>
+    <div class="answer" id="a10">સાચો જવાબ: C) સોવું</div>
+</div>
 
 </body>
-</html>
-    
-
-
-<!-- Example MCQ Template -->
-<div class="mcq-box">
-    <div class="question">1) કાર્બનનું અપરરૂપ વિદ્યુતનું સુવાહક કયું છે?</div>
-    <div class="option">A) હીરો</div>
-    <div class="option">B) કોક</div>
-    <div class="option">C) ગ્રેફાઇટ</div>
-    <div class="option">D) કોલસો</div>
-    <button onclick="toggleAnswer('a1')">જવાબ જુઓ</button>
-    <div class="answer" id="a1">સાચો જવાબ: C) ગ્રેફાઇટ</div>
-</div>
-
-<!-- More MCQs can be added below following the same format -->
-    
-<div class="mcq-box">
-<h3>1) કાર્બનનું અપરરૂપ વિદ્યુતનું સુવાહક કયું છે?</h3>
-<p>A) હીરો</p>
-<p>B) કોક</p>
-<p>C) ગ્રેફાઇટ</p>
-<p>D) કોલસો</p>
-<div id="a1" class="ans">સાચો જવાબ: C) ગ્રેફાઇટ</div>
-<button onclick="showAns('a1')">જવાબ જુઓ</button>
-</div>
-
+    </html>
 <div class="mcq-box">
 <h3>2) સ્ટીલ અને લોખંડ પર ઝિંકનું પાતળું સ્તર ચડાવવાની પદ્ધતિને શું કહે છે?</h3>
 <p>A) એલોયિંગ</p>
